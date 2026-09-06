@@ -23,336 +23,345 @@
 
   <style>
     .production-page {
-      --production-bg: #171619;
-      --production-accent: #A99ABE;
-      --production-light: #F5F2EC;
-      --production-muted: #A8A1AA;
+      --production-bg:#171619;
+      --production-accent:#A99ABE;
+      --production-light:#F5F2EC;
+      --production-muted:#A8A1AA;
     }
 
     .production-hero {
-      background: var(--production-bg);
-      color: var(--production-light);
-      overflow: hidden;
+      background:var(--production-bg);
+      color:var(--production-light);
     }
 
     .production-hero-inner {
-      min-height: 720px;
-      display: grid;
-      grid-template-columns: 1.08fr .92fr;
+      min-height:720px;
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
     }
 
     .production-copy {
-      padding: 72px 56px 58px 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding:72px 56px 58px 0;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
 
     .production-kicker {
-      color: var(--production-muted);
-      font-size: .68rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
+      color:var(--production-muted);
+      font-size:.68rem;
+      letter-spacing:.2em;
+      text-transform:uppercase;
     }
 
     .production-kicker span {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      margin-right: 10px;
-      border-radius: 50%;
-      background: var(--production-accent);
+      display:inline-block;
+      width:8px;
+      height:8px;
+      margin-right:10px;
+      border-radius:50%;
+      background:var(--production-accent);
     }
 
     .production-title {
-      margin: 24px 0 0;
-      font-size: clamp(4rem, 9vw, 8.6rem);
-      font-weight: 500;
-      letter-spacing: -.06em;
-      line-height: .84;
+      margin:24px 0 0;
+      font-size:clamp(4rem,9vw,8.6rem);
+      font-weight:500;
+      letter-spacing:-.06em;
+      line-height:.84;
     }
 
     .production-subtitle {
-      margin: 28px 0 0;
-      color: #DDD6DF;
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(2rem, 3.6vw, 3.2rem);
-      line-height: 1.03;
+      margin:28px 0 0;
+      color:#DDD6DF;
+      font-family:"Instrument Serif",Georgia,serif;
+      font-size:clamp(2rem,3.6vw,3.2rem);
+      line-height:1.03;
     }
 
     .production-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 36px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:36px;
     }
 
     .production-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 20px;
-      border: 1px solid rgba(245,242,236,.25);
-      color: var(--production-light);
-      font-size: .68rem;
-      font-weight: 600;
-      letter-spacing: .14em;
-      text-transform: uppercase;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 20px;
+      border:1px solid rgba(245,242,236,.25);
+      color:var(--production-light);
+      font-size:.68rem;
+      font-weight:600;
+      letter-spacing:.14em;
+      text-transform:uppercase;
     }
 
     .production-button.primary {
-      background: var(--production-accent);
-      border-color: var(--production-accent);
-      color: var(--production-bg);
+      background:var(--production-accent);
+      border-color:var(--production-accent);
+      color:var(--production-bg);
     }
 
     .production-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 34px;
-      padding-top: 22px;
-      border-top: 1px solid rgba(245,242,236,.16);
-      color: var(--production-muted);
-      font-size: .68rem;
-      letter-spacing: .13em;
-      text-transform: uppercase;
+      display:flex;
+      flex-wrap:wrap;
+      gap:34px;
+      padding-top:22px;
+      border-top:1px solid rgba(245,242,236,.16);
+      color:var(--production-muted);
+      font-size:.68rem;
+      letter-spacing:.13em;
+      text-transform:uppercase;
     }
 
     .production-cover {
-      min-height: 720px;
-      background: #222025;
-      overflow: hidden;
+      min-height:720px;
+      overflow:hidden;
+      background:#222025;
     }
 
     .production-cover img {
-      width: 100%;
-      height: 100%;
-      min-height: 720px;
-      object-fit: cover;
-      object-position: center top;
+      width:100%;
+      height:100%;
+      min-height:720px;
+      object-fit:cover;
+      object-position:center top;
+      display:block;
     }
 
     .production-info {
-      padding: 110px 0;
+      padding:110px 0;
     }
 
     .production-info-grid {
-      display: grid;
-      grid-template-columns: .42fr 1.58fr;
-      gap: 60px;
+      display:grid;
+      grid-template-columns:.42fr 1.58fr;
+      gap:60px;
     }
 
     .production-info h2 {
-      margin: 0;
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(3rem,6vw,5.7rem);
-      font-weight: 400;
-      line-height: .98;
+      margin:0;
+      font-family:"Instrument Serif",Georgia,serif;
+      font-size:clamp(3rem,6vw,5.7rem);
+      font-weight:400;
+      line-height:.98;
     }
 
     .production-info h2 span {
-      color: var(--production-accent);
+      color:var(--production-accent);
     }
 
     .production-info p {
-      max-width: 760px;
-      margin: 30px 0 0;
-      color: var(--muted);
-      line-height: 1.85;
+      max-width:760px;
+      margin:30px 0 0;
+      color:var(--muted);
+      line-height:1.85;
     }
 
     .cast-band {
-      padding: 88px 0;
-      background: var(--ivory);
+      padding:88px 0;
+      background:var(--ivory);
     }
 
     .cast-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      border-top: 1px solid var(--stone);
-      border-bottom: 1px solid var(--stone);
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      border-top:1px solid var(--stone);
+      border-bottom:1px solid var(--stone);
     }
 
     .cast-item {
-      min-height: 220px;
-      padding: 28px 24px;
-      border-right: 1px solid var(--stone);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      min-height:220px;
+      padding:28px 24px;
+      border-right:1px solid var(--stone);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
 
     .cast-item:last-child {
-      border-right: 0;
+      border-right:0;
     }
 
     .cast-number {
-      color: #968D99;
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: 2.5rem;
+      color:#968D99;
+      font-family:"Instrument Serif",Georgia,serif;
+      font-size:2.5rem;
     }
 
     .cast-item h3 {
-      margin: 0 0 5px;
-      font-size: 1.1rem;
+      margin:0 0 5px;
+      font-size:1.1rem;
     }
 
     .cast-item p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .7rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
+      margin:0;
+      color:var(--muted);
+      font-size:.7rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
     }
 
     .chapter-band {
-      padding: 88px 0 105px;
-      background: #fff;
+      padding:88px 0 105px;
+      background:#fff;
     }
 
     .chapter-row {
-      display: grid;
-      grid-template-columns: 150px 62px 1fr auto;
-      gap: 24px;
-      align-items: center;
-      padding: 20px 0;
-      border-top: 1px solid var(--stone);
+      display:grid;
+      grid-template-columns:220px 62px 1fr auto;
+      gap:28px;
+      align-items:center;
+      padding:24px 0;
+      border-top:1px solid var(--stone);
     }
 
     .chapter-row:last-child {
-      border-bottom: 1px solid var(--stone);
+      border-bottom:1px solid var(--stone);
     }
 
     .chapter-thumb {
-      width: 150px;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      background: var(--stone);
+      width:220px;
+      overflow:hidden;
+      background:#171619;
     }
 
     .chapter-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
+      display:block;
+      width:100%;
+      height:auto;
+      object-fit:contain;
     }
 
     .chapter-no,
     .chapter-link {
-      color: var(--muted);
-      font-size: .66rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
+      color:var(--muted);
+      font-size:.66rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
     }
 
     .chapter-row h3 {
-      margin: 0;
-      font-size: 1.35rem;
+      margin:0;
+      font-size:1.45rem;
     }
 
     .return-band {
-      padding: 68px 0;
-      background: var(--ivory);
-      text-align: center;
+      padding:68px 0;
+      background:var(--ivory);
+      text-align:center;
     }
 
     .return-band a {
-      border-bottom: 1px solid var(--production-accent);
-      padding-bottom: 4px;
-      font-size: .7rem;
-      font-weight: 600;
-      letter-spacing: .15em;
-      text-transform: uppercase;
+      border-bottom:1px solid var(--production-accent);
+      padding-bottom:4px;
+      font-size:.7rem;
+      font-weight:600;
+      letter-spacing:.15em;
+      text-transform:uppercase;
     }
 
     @media(max-width:850px) {
       .production-hero-inner {
-        grid-template-columns: 1fr;
+        grid-template-columns:1fr;
       }
 
       .production-copy {
-        min-height: 600px;
-        padding: 52px 0 44px;
+        min-height:600px;
+        padding:52px 0 44px;
       }
 
       .production-cover,
       .production-cover img {
-        min-height: 520px;
+        min-height:0;
+        height:auto;
       }
 
       .production-info-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
+        grid-template-columns:1fr;
+        gap:28px;
       }
 
       .cast-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:1fr 1fr;
       }
 
       .cast-item:nth-child(2) {
-        border-right: 0;
+        border-right:0;
       }
 
       .cast-item:nth-child(-n+2) {
-        border-bottom: 1px solid var(--stone);
+        border-bottom:1px solid var(--stone);
       }
     }
 
     @media(max-width:600px) {
       .production-actions {
-        display: grid;
+        display:grid;
       }
 
       .production-button {
-        width: 100%;
-      }
-
-      .production-cover,
-      .production-cover img {
-        min-height: 0;
-        height: auto;
+        width:100%;
       }
 
       .cast-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:1fr;
       }
 
       .cast-item {
-        min-height: 150px;
-        border-right: 0;
-        border-bottom: 1px solid var(--stone);
+        min-height:150px;
+        border-right:0;
+        border-bottom:1px solid var(--stone);
       }
 
       .cast-item:last-child {
-        border-bottom: 0;
+        border-bottom:0;
+      }
+
+      .chapter-band {
+        padding:70px 0 85px;
       }
 
       .chapter-row {
-        grid-template-columns: 110px 1fr;
-        gap: 14px 18px;
+        display:grid;
+        grid-template-columns:1fr auto;
+        gap:12px 18px;
+        padding:30px 0;
       }
 
       .chapter-thumb {
-        width: 110px;
-        grid-row: 1 / 3;
+        grid-column:1 / -1;
+        width:100%;
+        max-width:none;
+        margin-bottom:8px;
+      }
+
+      .chapter-thumb img {
+        width:100%;
+        height:auto;
       }
 
       .chapter-no {
-        grid-column: 2;
+        grid-column:1;
       }
 
       .chapter-row h3 {
-        grid-column: 2;
+        grid-column:1;
+        font-size:1.65rem;
       }
 
       .chapter-link {
-        grid-column: 2;
+        grid-column:2;
+        grid-row:2 / 4;
+        align-self:center;
       }
     }
   </style>
 </head>
-
 
 <body class="production-page">
 
@@ -482,7 +491,10 @@
             <h2>THE FOUR</h2>
           </div>
 
-          <span class="serif" style="font-size:1.3rem;color:var(--muted)">
+          <span
+            class="serif"
+            style="font-size:1.3rem;color:var(--muted)"
+          >
             Different people. Same problem.
           </span>
 
@@ -556,9 +568,7 @@
           </div>
 
           <span class="chapter-no">01</span>
-
           <h3>Chapter 1</h3>
-
           <span class="chapter-link">Read →</span>
 
         </a>
@@ -578,9 +588,7 @@
           </div>
 
           <span class="chapter-no">02</span>
-
           <h3>Chapter 2</h3>
-
           <span class="chapter-link">Read →</span>
 
         </a>
@@ -624,5 +632,4 @@
   </footer>
 
 </body>
-
 </html>
