@@ -29,10 +29,10 @@
 
     .studio-project {
       display: grid;
-      grid-template-columns: 150px 72px 1fr auto;
-      gap: 26px;
+      grid-template-columns: 180px 72px 1fr auto;
+      gap: 28px;
       align-items: center;
-      padding: 24px 0;
+      padding: 28px 0;
       border-top: 1px solid var(--stone);
     }
 
@@ -41,16 +41,16 @@
     }
 
     .studio-cover {
-      width: 150px;
-      aspect-ratio: 3 / 4;
+      width: 180px;
       overflow: hidden;
       background: var(--stone);
     }
 
     .studio-cover img {
+      display: block;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
     }
 
     .studio-no {
@@ -84,23 +84,23 @@
       color: var(--lilac);
     }
 
-    @media(max-width:750px) {
+    @media(max-width:850px) {
       .studio-project {
-        grid-template-columns: 94px 1fr;
-        gap: 18px;
+        grid-template-columns: 150px 1fr;
+        gap: 22px;
         align-items: start;
       }
 
       .studio-cover {
         grid-row: 1 / 4;
-        width: 94px;
+        width: 150px;
       }
 
       .studio-no {
         grid-column: 2;
       }
 
-      .studio-project > div {
+      .studio-project > div:not(.studio-cover) {
         grid-column: 2;
       }
 
@@ -109,18 +109,56 @@
       }
     }
 
-    @media(max-width:430px) {
+    @media(max-width:600px) {
+      .studio-slate {
+        padding: 62px 0 88px;
+      }
+
       .studio-project {
-        grid-template-columns: 82px 1fr;
-        gap: 15px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px 18px;
+        padding: 34px 0 38px;
       }
 
       .studio-cover {
-        width: 82px;
+        grid-column: 1 / -1;
+        grid-row: auto;
+        width: 100%;
+        margin-bottom: 10px;
+        background: transparent;
+      }
+
+      .studio-cover img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .studio-no {
+        grid-column: 1;
+        font-size: .7rem;
+      }
+
+      .studio-project > div:not(.studio-cover) {
+        grid-column: 1 / -1;
       }
 
       .studio-project h3 {
-        font-size: 1.25rem;
+        font-size: clamp(1.7rem, 8vw, 2.25rem);
+        line-height: 1.05;
+        margin-top: 4px;
+      }
+
+      .studio-project p {
+        margin-top: 10px;
+        font-size: .9rem;
+      }
+
+      .studio-link {
+        grid-column: 1 / -1;
+        margin-top: 6px;
+        font-size: .7rem;
       }
     }
   </style>
@@ -257,11 +295,13 @@
         >
 
           <div class="studio-cover">
+
             <img
               src="https://raw.githubusercontent.com/mr-bubs/graphic-novels/main/Polynomials/pages/page-01.png"
               alt="Polynomials cover artwork"
               loading="lazy"
             >
+
           </div>
 
           <span class="studio-no">
@@ -293,11 +333,13 @@
         >
 
           <div class="studio-cover">
+
             <img
               src="https://raw.githubusercontent.com/mr-bubs/graphic-novels/main/Assigned/pages/page-01.png"
               alt="The Assigned cover artwork"
               loading="lazy"
             >
+
           </div>
 
           <span class="studio-no">
@@ -329,11 +371,13 @@
         >
 
           <div class="studio-cover">
+
             <img
               src="https://raw.githubusercontent.com/mr-bubs/graphic-novels/main/art-of-love/pages/page-01.png"
               alt="The Art of Love and Destruction cover artwork"
               loading="lazy"
             >
+
           </div>
 
           <span class="studio-no">
@@ -365,11 +409,13 @@
         >
 
           <div class="studio-cover">
+
             <img
               src="https://raw.githubusercontent.com/mr-bubs/graphic-novels/main/fallen/pages/page-01.png"
               alt="Falling. Fallen. cover artwork"
               loading="lazy"
             >
+
           </div>
 
           <span class="studio-no">
