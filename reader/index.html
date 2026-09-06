@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Reader — House of Koshi</title>
+
+  <meta
+    name="description"
+    content="Read House of Koshi productions."
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../assets/css/reader.css"
+  >
+</head>
+
+<body>
+
+  <header class="reader-header">
+
+    <a
+      class="reader-back"
+      id="reader-back"
+      href="../studios/"
+      aria-label="Back to production"
+    >
+      ←
+    </a>
+
+    <div class="reader-heading">
+
+      <div class="reader-brand">
+        Koshi Studios · Reader
+      </div>
+
+      <div
+        class="reader-title"
+        id="reader-title"
+      >
+        Loading…
+      </div>
+
+    </div>
+
+    <div class="reader-actions">
+
+      <a
+        class="reader-source"
+        id="reader-source"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Source ↗
+      </a>
+
+      <select
+        class="reader-select"
+        id="chapter-select"
+        aria-label="Select chapter"
+      >
+      </select>
+
+    </div>
+
+  </header>
+
+  <div
+    class="reader-status"
+    id="reader-status"
+  >
+    Loading production…
+  </div>
+
+  <main
+    class="reader-pages"
+    id="reader-pages"
+  ></main>
+
+  <footer
+    class="reader-end"
+    id="reader-end"
+  >
+
+    <div class="reader-end-rule"></div>
+
+    <div
+      class="reader-end-label"
+      id="reader-end-label"
+    >
+      End
+    </div>
+
+    <a
+      class="reader-end-link"
+      id="reader-end-link"
+      href="../studios/"
+    >
+      Return to production
+    </a>
+
+  </footer>
+
+  <script src="../assets/js/books.js"></script>
+  <script src="../assets/js/reader.js"></script>
+
+</body>
+</html>
