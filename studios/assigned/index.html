@@ -23,272 +23,256 @@
 
   <style>
     .production-page {
-      --production-bg: #171619;
-      --production-accent: #A99ABE;
-      --production-light: #F5F2EC;
-      --production-muted: #A8A1AA;
+      --production-bg:#171619;
+      --production-accent:#A99ABE;
+      --production-light:#F5F2EC;
+      --production-muted:#A8A1AA;
     }
 
     .production-hero {
-      background: var(--production-bg);
-      color: var(--production-light);
+      background:var(--production-bg);
+      color:var(--production-light);
     }
 
     .production-hero-inner {
-      min-height: 690px;
-      display: grid;
-      grid-template-columns: 1.08fr .92fr;
+      min-height:700px;
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
     }
 
     .production-copy {
-      padding: 72px 56px 58px 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding:72px 56px 58px 0;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
 
     .production-kicker {
-      color: var(--production-muted);
-      font-size: .68rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
+      color:var(--production-muted);
+      font-size:.68rem;
+      letter-spacing:.2em;
+      text-transform:uppercase;
     }
 
     .production-kicker span {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      margin-right: 10px;
-      border-radius: 50%;
-      background: var(--production-accent);
+      display:inline-block;
+      width:8px;
+      height:8px;
+      margin-right:10px;
+      border-radius:50%;
+      background:var(--production-accent);
     }
 
     .production-title {
-      margin: 24px 0 0;
-      max-width: 800px;
-      font-size: clamp(4rem, 8vw, 8rem);
-      font-weight: 500;
-      letter-spacing: -.055em;
-      line-height: .86;
+      margin:24px 0 0;
+      font-size:clamp(4rem,8vw,8rem);
+      font-weight:500;
+      letter-spacing:-.055em;
+      line-height:.86;
     }
 
     .production-subtitle {
-      margin: 26px 0 0;
-      color: #D7D0D9;
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(1.8rem, 3.5vw, 3rem);
-      line-height: 1.05;
+      margin:26px 0 0;
+      color:#D7D0D9;
+      font-family:"Instrument Serif",Georgia,serif;
+      font-size:clamp(1.8rem,3.5vw,3rem);
+      line-height:1.05;
     }
 
     .production-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 36px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:36px;
     }
 
     .production-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 20px;
-      border: 1px solid rgba(245, 242, 236, .25);
-      color: var(--production-light);
-      font-size: .68rem;
-      font-weight: 600;
-      letter-spacing: .14em;
-      text-transform: uppercase;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 20px;
+      border:1px solid rgba(245,242,236,.25);
+      color:var(--production-light);
+      font-size:.68rem;
+      font-weight:600;
+      letter-spacing:.14em;
+      text-transform:uppercase;
     }
 
     .production-button.primary {
-      border-color: var(--production-accent);
-      background: var(--production-accent);
-      color: var(--production-bg);
-    }
-
-    .production-button:hover {
-      border-color: var(--production-accent);
-      color: #E7E0ED;
-    }
-
-    .production-button.primary:hover {
-      background: #E7E0ED;
-      border-color: #E7E0ED;
-      color: var(--production-bg);
+      border-color:var(--production-accent);
+      background:var(--production-accent);
+      color:var(--production-bg);
     }
 
     .production-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 34px;
-      padding-top: 22px;
-      border-top: 1px solid rgba(245, 242, 236, .16);
-      color: var(--production-muted);
-      font-size: .68rem;
-      letter-spacing: .13em;
-      text-transform: uppercase;
+      display:flex;
+      flex-wrap:wrap;
+      gap:34px;
+      padding-top:22px;
+      border-top:1px solid rgba(245,242,236,.16);
+      color:var(--production-muted);
+      font-size:.68rem;
+      letter-spacing:.13em;
+      text-transform:uppercase;
     }
 
-    .production-art {
-      position: relative;
-      min-height: 690px;
-      overflow: hidden;
-      background:
-        linear-gradient(
-          145deg,
-          #2B2930,
-          #1A191E
-        );
+    .production-cover {
+      min-height:700px;
+      overflow:hidden;
+      background:#222025;
     }
 
-    .production-art::before {
-      content: "A";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -54%);
-      color: rgba(169, 154, 190, .22);
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(14rem, 30vw, 25rem);
-    }
-
-    .production-art::after {
-      content: "";
-      position: absolute;
-      inset: 34px;
-      border-top: 1px solid rgba(169, 154, 190, .3);
-      border-bottom: 1px solid rgba(169, 154, 190, .3);
-    }
-
-    .production-art-label {
-      position: absolute;
-      z-index: 2;
-      left: 42px;
-      bottom: 42px;
-      color: #807987;
-      font-size: .62rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
+    .production-cover img {
+      width:100%;
+      height:100%;
+      min-height:700px;
+      object-fit:cover;
+      object-position:center top;
     }
 
     .production-info {
-      padding: 110px 0;
+      padding:110px 0;
     }
 
     .production-info-grid {
-      display: grid;
-      grid-template-columns: .42fr 1.58fr;
-      gap: 60px;
+      display:grid;
+      grid-template-columns:.42fr 1.58fr;
+      gap:60px;
     }
 
     .production-info h2 {
-      margin: 0;
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(3rem, 6vw, 5.6rem);
-      font-weight: 400;
-      line-height: .98;
+      margin:0;
+      font-family:"Instrument Serif",Georgia,serif;
+      font-size:clamp(3rem,6vw,5.6rem);
+      font-weight:400;
+      line-height:.98;
     }
 
     .production-info h2 span {
-      color: var(--production-accent);
+      color:var(--production-accent);
     }
 
     .production-info p {
-      max-width: 720px;
-      margin: 30px 0 0;
-      color: var(--muted);
-      line-height: 1.85;
+      max-width:720px;
+      margin:30px 0 0;
+      color:var(--muted);
+      line-height:1.85;
     }
 
     .chapter-band {
-      padding: 86px 0 100px;
-      background: var(--ivory);
+      padding:88px 0 105px;
+      background:var(--ivory);
     }
 
     .chapter-row {
-      display: grid;
-      grid-template-columns: 90px 1fr auto;
-      gap: 24px;
-      align-items: center;
-      padding: 28px 0;
-      border-top: 1px solid var(--stone);
+      display:grid;
+      grid-template-columns:150px 62px 1fr auto;
+      gap:24px;
+      align-items:center;
+      padding:20px 0;
+      border-top:1px solid var(--stone);
+      border-bottom:1px solid var(--stone);
     }
 
-    .chapter-row:last-child {
-      border-bottom: 1px solid var(--stone);
+    .chapter-thumb {
+      width:150px;
+      aspect-ratio:16/9;
+      overflow:hidden;
+      background:var(--stone);
     }
 
-    .chapter-row h3 {
-      margin: 0;
-      font-size: 1.5rem;
+    .chapter-thumb img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
     }
 
     .chapter-no,
     .chapter-link {
-      color: var(--muted);
-      font-size: .68rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
+      color:var(--muted);
+      font-size:.66rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .chapter-row h3 {
+      margin:0;
+      font-size:1.35rem;
     }
 
     .return-band {
-      padding: 68px 0;
-      text-align: center;
+      padding:68px 0;
+      background:#fff;
+      text-align:center;
     }
 
     .return-band a {
-      border-bottom: 1px solid var(--production-accent);
-      padding-bottom: 4px;
-      font-size: .7rem;
-      font-weight: 600;
-      letter-spacing: .15em;
-      text-transform: uppercase;
+      border-bottom:1px solid var(--production-accent);
+      padding-bottom:4px;
+      font-size:.7rem;
+      font-weight:600;
+      letter-spacing:.15em;
+      text-transform:uppercase;
     }
 
     @media(max-width:850px) {
       .production-hero-inner {
-        grid-template-columns: 1fr;
+        grid-template-columns:1fr;
       }
 
       .production-copy {
-        min-height: 580px;
-        padding: 52px 0 44px;
+        min-height:580px;
+        padding:52px 0 44px;
       }
 
-      .production-art {
-        min-height: 390px;
+      .production-cover,
+      .production-cover img {
+        min-height:520px;
       }
 
       .production-info-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
+        grid-template-columns:1fr;
+        gap:28px;
       }
     }
 
     @media(max-width:600px) {
-      .production-title {
-        font-size: clamp(3.5rem, 17vw, 5rem);
-      }
-
       .production-actions {
-        display: grid;
+        display:grid;
       }
 
       .production-button {
-        width: 100%;
+        width:100%;
+      }
+
+      .production-cover,
+      .production-cover img {
+        min-height:0;
+        height:auto;
       }
 
       .chapter-row {
-        grid-template-columns: 1fr auto;
+        grid-template-columns:110px 1fr;
+        gap:14px 18px;
       }
 
-      .chapter-no {
-        grid-column: 1 / -1;
+      .chapter-thumb {
+        width:110px;
+        grid-row:1 / 4;
+      }
+
+      .chapter-no,
+      .chapter-row h3,
+      .chapter-link {
+        grid-column:2;
       }
     }
   </style>
 </head>
+
 
 <body class="production-page">
 
@@ -296,31 +280,15 @@
 
     <div class="container nav">
 
-      <a
-        href="../../"
-        aria-label="House of Koshi home"
-      >
+      <a href="../../" aria-label="House of Koshi home">
         <span class="wordmark-small">House of</span>
         <span class="wordmark-main">KOSHI</span>
       </a>
 
-      <nav
-        class="navlinks"
-        aria-label="Primary"
-      >
+      <nav class="navlinks" aria-label="Primary">
         <a href="../../artists/">Artists</a>
-
-        <a
-          href="../"
-          aria-current="page"
-        >
-          Studios
-        </a>
-
-        <a href="../../media-editorials/">
-          Media &amp; Editorials
-        </a>
-
+        <a href="../" aria-current="page">Studios</a>
+        <a href="../../media-editorials/">Media &amp; Editorials</a>
         <a href="../../about/">About</a>
       </nav>
 
@@ -345,7 +313,8 @@
           <div>
 
             <h1 class="production-title">
-              THE<br>ASSIGNED
+              THE<br>
+              ASSIGNED
             </h1>
 
             <p class="production-subtitle">
@@ -381,11 +350,12 @@
         </div>
 
 
-        <div class="production-art">
+        <div class="production-cover">
 
-          <div class="production-art-label">
-            Production artwork coming later
-          </div>
+          <img
+            src="https://raw.githubusercontent.com/mr-bubs/graphic-novels/main/Assigned/pages/page-01.png"
+            alt="The Assigned cover artwork"
+          >
 
         </div>
 
@@ -427,12 +397,10 @@
       <div class="container">
 
         <div class="section-head">
-
           <div>
             <div class="section-label">Read</div>
             <h2>CHAPTERS</h2>
           </div>
-
         </div>
 
 
@@ -440,13 +408,23 @@
           class="chapter-row"
           href="../../reader/?book=the-assigned&amp;chapter=1"
         >
+
+          <div class="chapter-thumb">
+
+            <img
+              src="https://raw.githubusercontent.com/mr-bubs/graphic-novels/main/Assigned/pages/page-01.png"
+              alt="The Assigned Chapter 1 thumbnail"
+              loading="lazy"
+            >
+
+          </div>
+
           <span class="chapter-no">01</span>
 
           <h3>Chapter 1</h3>
 
-          <span class="chapter-link">
-            Read →
-          </span>
+          <span class="chapter-link">Read →</span>
+
         </a>
 
       </div>
@@ -474,18 +452,19 @@
     <div class="container footer-grid">
 
       <div>
-        <span class="wordmark-small">House of</span>
-        <span class="wordmark-main">KOSHI</span>
 
-        <div
-          style="
-            margin-top:12px;
-            color:var(--muted);
-            font-size:.8rem
-          "
-        >
+        <span class="wordmark-small">
+          House of
+        </span>
+
+        <span class="wordmark-main">
+          KOSHI
+        </span>
+
+        <div style="margin-top:12px;color:var(--muted);font-size:.8rem">
           Artists. Stories. Worlds.
         </div>
+
       </div>
 
       <div class="smallprint">
