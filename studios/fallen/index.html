@@ -130,6 +130,7 @@
       min-height:720px;
       object-fit:cover;
       object-position:center top;
+      display:block;
     }
 
     .production-info {
@@ -170,10 +171,10 @@
 
     .chapter-row {
       display:grid;
-      grid-template-columns:150px 62px 1fr auto;
-      gap:24px;
+      grid-template-columns:220px 62px 1fr auto;
+      gap:28px;
       align-items:center;
-      padding:20px 0;
+      padding:24px 0;
       border-top:1px solid var(--stone);
     }
 
@@ -182,17 +183,16 @@
     }
 
     .chapter-thumb {
-      width:150px;
-      aspect-ratio:16/9;
+      width:220px;
       overflow:hidden;
-      background:var(--stone);
+      background:#171619;
     }
 
     .chapter-thumb img {
+      display:block;
       width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center top;
+      height:auto;
+      object-fit:contain;
     }
 
     .chapter-no,
@@ -205,7 +205,7 @@
 
     .chapter-row h3 {
       margin:0;
-      font-size:1.35rem;
+      font-size:1.45rem;
     }
 
     .credit-section {
@@ -257,7 +257,8 @@
 
       .production-cover,
       .production-cover img {
-        min-height:520px;
+        min-height:0;
+        height:auto;
       }
 
       .production-info-grid,
@@ -276,31 +277,45 @@
         width:100%;
       }
 
-      .production-cover,
-      .production-cover img {
-        min-height:0;
-        height:auto;
+      .chapter-band {
+        padding:70px 0 85px;
       }
 
       .chapter-row {
-        grid-template-columns:110px 1fr;
-        gap:14px 18px;
+        display:grid;
+        grid-template-columns:1fr auto;
+        gap:12px 18px;
+        padding:30px 0;
       }
 
       .chapter-thumb {
-        width:110px;
-        grid-row:1 / 4;
+        grid-column:1 / -1;
+        width:100%;
+        margin-bottom:8px;
       }
 
-      .chapter-no,
-      .chapter-row h3,
+      .chapter-thumb img {
+        width:100%;
+        height:auto;
+      }
+
+      .chapter-no {
+        grid-column:1;
+      }
+
+      .chapter-row h3 {
+        grid-column:1;
+        font-size:1.65rem;
+      }
+
       .chapter-link {
         grid-column:2;
+        grid-row:2 / 4;
+        align-self:center;
       }
     }
   </style>
 </head>
-
 
 <body class="production-page">
 
@@ -598,5 +613,4 @@
   </footer>
 
 </body>
-
 </html>
