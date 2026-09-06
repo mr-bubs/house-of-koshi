@@ -1,1 +1,1021 @@
+<!doctype html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="Polynomials — an original House of Koshi production. Four women. One friendship. Far too many bad decisions."
+  >
+
+  <title>Polynomials — Koshi Studios</title>
+
+  <link
+    rel="stylesheet"
+    href="../../assets/css/site.css"
+  >
+
+  <style>
+    .poly-page {
+      --poly-dark: #171619;
+      --poly-charcoal: #353238;
+      --poly-ivory: #F5F2EC;
+      --poly-stone: #D8D2CA;
+      --poly-lilac: #A99ABE;
+      --poly-lavender: #E7E0ED;
+    }
+
+    .poly-hero {
+      background: var(--poly-dark);
+      color: var(--poly-ivory);
+      overflow: hidden;
+    }
+
+    .poly-hero-inner {
+      min-height: 720px;
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+    }
+
+    .poly-hero-copy {
+      padding: 76px 56px 60px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .poly-kicker {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #aaa4ad;
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .poly-kicker-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--poly-lilac);
+      flex: 0 0 auto;
+    }
+
+    .poly-title {
+      margin: 22px 0 0;
+      font-size: clamp(4rem, 9vw, 8.8rem);
+      font-weight: 500;
+      letter-spacing: -.06em;
+      line-height: .84;
+    }
+
+    .poly-dek {
+      max-width: 650px;
+      margin: 30px 0 0;
+      color: #ddd6df;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2rem, 3.8vw, 3.5rem);
+      line-height: 1.02;
+    }
+
+    .poly-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 38px;
+    }
+
+    .poly-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 20px;
+      border: 1px solid rgba(245, 242, 236, .25);
+      color: var(--poly-ivory);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease;
+    }
+
+    .poly-button:hover {
+      border-color: var(--poly-lilac);
+      color: var(--poly-lavender);
+    }
+
+    .poly-button-primary {
+      border-color: var(--poly-lilac);
+      background: var(--poly-lilac);
+      color: var(--poly-dark);
+    }
+
+    .poly-button-primary:hover {
+      background: var(--poly-lavender);
+      border-color: var(--poly-lavender);
+      color: var(--poly-dark);
+    }
+
+    .poly-meta {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      justify-content: start;
+      gap: 34px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(245, 242, 236, .18);
+    }
+
+    .poly-meta-block span {
+      display: block;
+    }
+
+    .poly-meta-label {
+      margin-bottom: 5px;
+      color: #817b84;
+      font-size: .58rem;
+      font-weight: 600;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .poly-meta-value {
+      color: #d5ced7;
+      font-size: .72rem;
+    }
+
+    .poly-hero-art {
+      position: relative;
+      min-height: 720px;
+      display: flex;
+      align-items: stretch;
+      background:
+        linear-gradient(
+          145deg,
+          #38323b 0%,
+          #272329 48%,
+          #1d1a1f 100%
+        );
+    }
+
+    .poly-art-placeholder {
+      position: relative;
+      width: 100%;
+      min-height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 42px;
+      overflow: hidden;
+    }
+
+    .poly-art-placeholder::before {
+      content: "P";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -53%);
+      color: rgba(169, 154, 190, .26);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(13rem, 30vw, 25rem);
+      line-height: 1;
+    }
+
+    .poly-art-placeholder::after {
+      content: "";
+      position: absolute;
+      inset: 34px;
+      border-top: 1px solid rgba(169, 154, 190, .32);
+      border-bottom: 1px solid rgba(169, 154, 190, .32);
+    }
+
+    .poly-art-note {
+      position: relative;
+      z-index: 2;
+      color: #8f8792;
+      font-size: .62rem;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .poly-intro {
+      padding: 120px 0;
+      background: #fff;
+    }
+
+    .poly-intro-grid {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+    }
+
+    .poly-intro-title {
+      max-width: 900px;
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3.1rem, 6vw, 6rem);
+      font-weight: 400;
+      line-height: .98;
+    }
+
+    .poly-intro-title em {
+      color: var(--poly-lilac);
+      font-style: normal;
+    }
+
+    .poly-intro-copy {
+      max-width: 760px;
+      margin: 34px 0 0;
+      color: #625d64;
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .poly-cast {
+      padding: 90px 0 105px;
+      background: var(--poly-ivory);
+    }
+
+    .poly-section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 38px;
+    }
+
+    .poly-section-head h2 {
+      margin: 5px 0 0;
+      font-size: 2.2rem;
+      font-weight: 500;
+    }
+
+    .poly-section-note {
+      color: var(--muted);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 1.3rem;
+    }
+
+    .poly-cast-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--poly-stone);
+      border-bottom: 1px solid var(--poly-stone);
+    }
+
+    .poly-cast-item {
+      min-height: 270px;
+      padding: 30px 26px;
+      border-right: 1px solid var(--poly-stone);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .poly-cast-item:last-child {
+      border-right: 0;
+    }
+
+    .poly-cast-number {
+      color: #968d99;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 2.8rem;
+    }
+
+    .poly-cast-item h3 {
+      margin: 0 0 5px;
+      font-size: 1.15rem;
+      letter-spacing: .03em;
+    }
+
+    .poly-cast-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .poly-read {
+      padding: 105px 0;
+      background: var(--poly-dark);
+      color: var(--poly-ivory);
+    }
+
+    .poly-read-top {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+      margin-bottom: 54px;
+    }
+
+    .poly-read-title {
+      max-width: 800px;
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3.1rem, 6vw, 5.8rem);
+      font-weight: 400;
+      line-height: .98;
+    }
+
+    .poly-read-title span {
+      color: #b9a8ca;
+    }
+
+    .poly-chapters {
+      border-top: 1px solid rgba(245, 242, 236, .17);
+    }
+
+    .poly-chapter {
+      display: grid;
+      grid-template-columns: 90px 1fr auto;
+      gap: 28px;
+      align-items: center;
+      padding: 29px 0;
+      border-bottom: 1px solid rgba(245, 242, 236, .17);
+      transition: color .2s ease;
+    }
+
+    .poly-chapter:hover {
+      color: var(--poly-lilac);
+    }
+
+    .poly-chapter-no {
+      color: #77717a;
+      font-size: .66rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .poly-chapter h3 {
+      margin: 0;
+      font-size: 1.45rem;
+      font-weight: 500;
+    }
+
+    .poly-chapter-status {
+      color: #918b93;
+      font-size: .64rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .poly-reader-all {
+      display: inline-flex;
+      margin-top: 34px;
+      color: var(--poly-ivory);
+      font-size: .69rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--poly-lilac);
+      padding-bottom: 5px;
+    }
+
+    .poly-reader-all:hover {
+      color: var(--poly-lilac);
+    }
+
+    .poly-status {
+      padding: 92px 0;
+      background: #fff;
+    }
+
+    .poly-status-grid {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+    }
+
+    .poly-status-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .poly-status-item {
+      border-top: 1px solid var(--poly-stone);
+      padding-top: 20px;
+    }
+
+    .poly-status-item h3 {
+      margin: 0 0 10px;
+      font-size: .72rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .poly-status-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: .9rem;
+    }
+
+    .poly-back {
+      padding: 70px 0;
+      background: var(--poly-ivory);
+      text-align: center;
+    }
+
+    .poly-back a {
+      display: inline-block;
+      color: var(--poly-dark);
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--poly-lilac);
+      padding-bottom: 5px;
+    }
+
+    .poly-back a:hover {
+      color: #756681;
+    }
+
+    @media (max-width: 900px) {
+      .poly-hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .poly-hero-copy {
+        min-height: 620px;
+        padding: 56px 0 46px;
+      }
+
+      .poly-hero-art {
+        min-height: 430px;
+      }
+
+      .poly-intro-grid,
+      .poly-read-top,
+      .poly-status-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .poly-cast-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .poly-cast-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .poly-cast-item:nth-child(-n+2) {
+        border-bottom: 1px solid var(--poly-stone);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .poly-hero-copy {
+        min-height: 560px;
+        padding: 42px 0 36px;
+      }
+
+      .poly-title {
+        font-size: clamp(3.7rem, 18vw, 5.5rem);
+      }
+
+      .poly-dek {
+        font-size: 2rem;
+      }
+
+      .poly-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .poly-button {
+        width: 100%;
+      }
+
+      .poly-meta {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .poly-hero-art {
+        min-height: 340px;
+      }
+
+      .poly-art-placeholder {
+        padding: 28px;
+      }
+
+      .poly-art-placeholder::after {
+        inset: 22px;
+      }
+
+      .poly-intro {
+        padding: 76px 0;
+      }
+
+      .poly-cast {
+        padding: 68px 0 78px;
+      }
+
+      .poly-section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .poly-cast-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .poly-cast-item,
+      .poly-cast-item:nth-child(2) {
+        min-height: 190px;
+        border-right: 0;
+        border-bottom: 1px solid var(--poly-stone);
+      }
+
+      .poly-cast-item:last-child {
+        border-bottom: 0;
+      }
+
+      .poly-read {
+        padding: 76px 0;
+      }
+
+      .poly-chapter {
+        grid-template-columns: 1fr auto;
+        gap: 8px 18px;
+      }
+
+      .poly-chapter-no {
+        grid-column: 1 / -1;
+      }
+
+      .poly-status {
+        padding: 72px 0;
+      }
+
+      .poly-status-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+
+
+<body class="poly-page">
+
+  <header class="site-header">
+
+    <div class="container nav">
+
+      <a
+        href="../../"
+        aria-label="House of Koshi home"
+      >
+        <span class="wordmark-small">House of</span>
+        <span class="wordmark-main">KOSHI</span>
+      </a>
+
+      <nav
+        class="navlinks"
+        aria-label="Primary"
+      >
+        <a href="../../artists/">
+          Artists
+        </a>
+
+        <a
+          href="../"
+          aria-current="page"
+        >
+          Studios
+        </a>
+
+        <a href="../../media-editorials/">
+          Media &amp; Editorials
+        </a>
+
+        <a href="../../about/">
+          About
+        </a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="poly-hero">
+
+      <div class="container">
+
+        <div class="poly-hero-inner">
+
+          <div class="poly-hero-copy">
+
+            <div class="poly-kicker">
+              <span class="poly-kicker-dot"></span>
+              Koshi Studios · Original Production
+            </div>
+
+            <div>
+
+              <h1 class="poly-title">
+                POLYNOMIALS
+              </h1>
+
+              <p class="poly-dek">
+                Four women. One friendship.<br>
+                Far too many bad decisions.
+              </p>
+
+              <div class="poly-actions">
+
+                <a
+                  class="poly-button poly-button-primary"
+                  href="../../reader/?book=polynomials"
+                >
+                  Read now →
+                </a>
+
+                <a
+                  class="poly-button"
+                  href="../../reader/?book=polynomials&amp;chapter=1"
+                >
+                  Chapter 1
+                </a>
+
+                <a
+                  class="poly-button"
+                  href="../../reader/?book=polynomials&amp;chapter=2"
+                >
+                  Chapter 2
+                </a>
+
+              </div>
+
+            </div>
+
+            <div class="poly-meta">
+
+              <div class="poly-meta-block">
+                <span class="poly-meta-label">
+                  Format
+                </span>
+                <span class="poly-meta-value">
+                  Webtoon
+                </span>
+              </div>
+
+              <div class="poly-meta-block">
+                <span class="poly-meta-label">
+                  Genre
+                </span>
+                <span class="poly-meta-value">
+                  Comedy / Drama
+                </span>
+              </div>
+
+              <div class="poly-meta-block">
+                <span class="poly-meta-label">
+                  Status
+                </span>
+                <span class="poly-meta-value">
+                  In production
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="poly-hero-art">
+
+            <div class="poly-art-placeholder">
+
+              <div class="poly-art-note">
+                Production artwork coming later
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="poly-intro">
+
+      <div class="container poly-intro-grid">
+
+        <div class="section-label">
+          The production
+        </div>
+
+        <div>
+
+          <h2 class="poly-intro-title">
+            Friendship gets complicated.
+            <br>
+            <em>They make it worse.</em>
+          </h2>
+
+          <p class="poly-intro-copy">
+            Polynomials is an adult slice-of-life comedy and drama
+            centered on Shawna, Mira, Layla and Polly — four women
+            navigating friendship, relationships, nights out,
+            domestic chaos and the consequences of their own
+            decisions.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="poly-cast">
+
+      <div class="container">
+
+        <div class="poly-section-head">
+
+          <div>
+
+            <div class="section-label">
+              Core cast
+            </div>
+
+            <h2>
+              THE FOUR
+            </h2>
+
+          </div>
+
+          <div class="poly-section-note">
+            Different people. Same problem.
+          </div>
+
+        </div>
+
+
+        <div class="poly-cast-grid">
+
+          <article class="poly-cast-item">
+
+            <div class="poly-cast-number">
+              01
+            </div>
+
+            <div>
+              <h3>SHAWNA KOSHI</h3>
+              <p>Core cast</p>
+            </div>
+
+          </article>
+
+
+          <article class="poly-cast-item">
+
+            <div class="poly-cast-number">
+              02
+            </div>
+
+            <div>
+              <h3>MIRA</h3>
+              <p>Core cast</p>
+            </div>
+
+          </article>
+
+
+          <article class="poly-cast-item">
+
+            <div class="poly-cast-number">
+              03
+            </div>
+
+            <div>
+              <h3>LAYLA</h3>
+              <p>Core cast</p>
+            </div>
+
+          </article>
+
+
+          <article class="poly-cast-item">
+
+            <div class="poly-cast-number">
+              04
+            </div>
+
+            <div>
+              <h3>POLLY</h3>
+              <p>Core cast</p>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section
+      class="poly-read"
+      id="read"
+    >
+
+      <div class="container">
+
+        <div class="poly-read-top">
+
+          <div class="section-label" style="color:#817b84">
+            Read / Polynomials
+          </div>
+
+          <div>
+
+            <h2 class="poly-read-title">
+              Start at the beginning.
+              <br>
+              <span>Or pick up where you left off.</span>
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="poly-chapters">
+
+          <a
+            class="poly-chapter"
+            href="../../reader/?book=polynomials&amp;chapter=1"
+          >
+
+            <span class="poly-chapter-no">
+              01
+            </span>
+
+            <h3>
+              Chapter 1
+            </h3>
+
+            <span class="poly-chapter-status">
+              Read →
+            </span>
+
+          </a>
+
+
+          <a
+            class="poly-chapter"
+            href="../../reader/?book=polynomials&amp;chapter=2"
+          >
+
+            <span class="poly-chapter-no">
+              02
+            </span>
+
+            <h3>
+              Chapter 2
+            </h3>
+
+            <span class="poly-chapter-status">
+              Read →
+            </span>
+
+          </a>
+
+        </div>
+
+
+        <a
+          class="poly-reader-all"
+          href="../../reader/?book=polynomials"
+        >
+          Open full reader →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <section class="poly-status">
+
+      <div class="container poly-status-grid">
+
+        <div class="section-label">
+          Production notes
+        </div>
+
+        <div class="poly-status-content">
+
+          <div class="poly-status-item">
+
+            <h3>
+              House of Koshi Original
+            </h3>
+
+            <p>
+              Polynomials is an original Koshi Studios production.
+            </p>
+
+          </div>
+
+
+          <div class="poly-status-item">
+
+            <h3>
+              Currently in production
+            </h3>
+
+            <p>
+              The story is ongoing. New material can be added to the
+              House of Koshi reader as production continues.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="poly-back">
+
+      <div class="container">
+
+        <a href="../">
+          ← All Koshi Studios productions
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer-grid">
+
+      <div>
+
+        <span class="wordmark-small">
+          House of
+        </span>
+
+        <span class="wordmark-main">
+          KOSHI
+        </span>
+
+        <div
+          style="
+            margin-top:12px;
+            color:var(--muted);
+            font-size:.8rem
+          "
+        >
+          Artists. Stories. Worlds.
+        </div>
+
+      </div>
+
+      <div class="smallprint">
+        Koshi Studios<br>
+        Polynomials · Original Production
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
