@@ -1,1 +1,843 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>MEDIA & EDITORIALS — House of Koshi</title><link rel="stylesheet" href="../assets/css/site.css"></head><body><header class="site-header"><div class="container nav"><a href="../"><span class="wordmark-small">House of</span><span class="wordmark-main">KOSHI</span></a><nav class="navlinks"><a href="../artists/">Artists</a><a href="../studios/">Studios</a><a href="../media-editorials/">Media &amp; Editorials</a><a href="../about/">About</a></nav></div></header><main><section class="page-hero"><div class="container"><div class="section-label">Koshi / 03</div><h1>MEDIA & EDITORIALS</h1><p class="page-copy">Editorials, campaigns, interviews and studio media that allow Koshi artists to exist beyond the roles they play.</p></div></section><section class="placeholder-list"><div class="container"><div class="placeholder-item"><div class="project-no">01</div><div><h2>Structure locked</h2><p>This landing page is ready for the real House of Koshi content, imagery and individual entries.</p></div></div><div class="placeholder-item"><div class="project-no">02</div><div><h2>Designed to expand</h2><p>The GitHub Pages structure is already in place, so new artists, productions and editorials can be added without changing the global navigation.</p></div></div></div></section></main></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="Koshi Media & Editorials — editorials, interviews, campaigns and contemporary media from House of Koshi."
+  >
+
+  <title>Media &amp; Editorials — House of Koshi</title>
+
+  <link
+    rel="stylesheet"
+    href="../assets/css/site.css"
+  >
+
+  <style>
+    .media-hero {
+      padding: 105px 0 95px;
+      background: var(--ink);
+      color: var(--ivory);
+    }
+
+    .media-hero-grid {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+    }
+
+    .media-hero-title {
+      margin: 0;
+      max-width: 1050px;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(4rem, 8vw, 8rem);
+      font-weight: 400;
+      line-height: .88;
+    }
+
+    .media-hero-title span {
+      color: #B9A8CA;
+    }
+
+    .media-hero-copy {
+      max-width: 760px;
+      margin: 34px 0 0;
+      color: #C2BBC4;
+      font-size: 1.02rem;
+      line-height: 1.9;
+    }
+
+    .media-intro {
+      padding: 110px 0;
+      background: #fff;
+    }
+
+    .media-intro-grid {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+    }
+
+    .media-intro-title {
+      margin: 0;
+      max-width: 930px;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3.2rem, 6vw, 6rem);
+      font-weight: 400;
+      line-height: .98;
+    }
+
+    .media-intro-title span {
+      color: var(--lilac);
+    }
+
+    .media-intro-copy {
+      max-width: 760px;
+      margin: 32px 0 0;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .featured-editorial {
+      padding: 90px 0 110px;
+      background: var(--ivory);
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 42px;
+      align-items: stretch;
+    }
+
+    .featured-art {
+      position: relative;
+      min-height: 680px;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          145deg,
+          #D9D0DF,
+          #BEB0C9
+        );
+    }
+
+    .featured-art::before {
+      content: "E";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -54%);
+      color: rgba(117, 103, 126, .32);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(14rem, 28vw, 24rem);
+      line-height: 1;
+    }
+
+    .featured-art::after {
+      content: "";
+      position: absolute;
+      inset: 34px;
+      border-top: 1px solid rgba(53, 50, 56, .17);
+      border-bottom: 1px solid rgba(53, 50, 56, .17);
+    }
+
+    .featured-art-note {
+      position: absolute;
+      z-index: 2;
+      left: 38px;
+      bottom: 38px;
+      color: #756D78;
+      font-size: .62rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .featured-copy {
+      padding: 18px 0 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .featured-type {
+      color: var(--muted);
+      font-size: .66rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .featured-title {
+      margin: 14px 0 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 400;
+      line-height: .96;
+    }
+
+    .featured-copy p {
+      max-width: 520px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .media-link {
+      display: inline-block;
+      width: fit-content;
+      margin-top: 28px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--lilac);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .media-link.muted {
+      color: #999199;
+      border-bottom-color: var(--stone);
+      pointer-events: none;
+    }
+
+    .media-sections {
+      padding: 105px 0;
+      background: #fff;
+    }
+
+    .media-list {
+      border-top: 1px solid var(--stone);
+    }
+
+    .media-row {
+      display: grid;
+      grid-template-columns: 85px 1fr .75fr auto;
+      gap: 30px;
+      align-items: start;
+      padding: 38px 0;
+      border-bottom: 1px solid var(--stone);
+    }
+
+    .media-row-no {
+      color: var(--muted);
+      font-size: .65rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .media-row h3 {
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .media-row p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .media-row-status {
+      color: #938C95;
+      font-size: .65rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .media-philosophy {
+      padding: 110px 0;
+      background: var(--ink);
+      color: var(--ivory);
+    }
+
+    .media-philosophy-grid {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+    }
+
+    .media-philosophy h2 {
+      margin: 0;
+      max-width: 900px;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3.2rem, 6vw, 5.8rem);
+      font-weight: 400;
+      line-height: .98;
+    }
+
+    .media-philosophy h2 span {
+      color: #B9A8CA;
+    }
+
+    .media-philosophy p {
+      max-width: 740px;
+      margin: 32px 0 0;
+      color: #BDB6C0;
+      line-height: 1.85;
+    }
+
+    .media-coming {
+      padding: 105px 0;
+      background: var(--ivory);
+    }
+
+    .coming-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--stone);
+      border-bottom: 1px solid var(--stone);
+    }
+
+    .coming-item {
+      min-height: 250px;
+      padding: 30px 26px;
+      border-right: 1px solid var(--stone);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .coming-item:last-child {
+      border-right: 0;
+    }
+
+    .coming-label {
+      color: var(--muted);
+      font-size: .63rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .coming-item h3 {
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .coming-item p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: .9rem;
+    }
+
+    @media(max-width:900px) {
+      .media-hero-grid,
+      .media-intro-grid,
+      .media-philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-art {
+        min-height: 520px;
+      }
+
+      .media-row {
+        grid-template-columns: 65px 1fr;
+      }
+
+      .media-row p,
+      .media-row-status {
+        grid-column: 2;
+      }
+
+      .coming-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .coming-item {
+        min-height: 190px;
+        border-right: 0;
+        border-bottom: 1px solid var(--stone);
+      }
+
+      .coming-item:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media(max-width:650px) {
+      .media-hero {
+        padding: 78px 0;
+      }
+
+      .media-hero-title {
+        font-size: clamp(4rem, 17vw, 6rem);
+      }
+
+      .media-intro {
+        padding: 76px 0;
+      }
+
+      .featured-editorial {
+        padding: 66px 0 82px;
+      }
+
+      .featured-art {
+        min-height: 420px;
+      }
+
+      .featured-copy {
+        padding-top: 8px;
+      }
+
+      .media-sections {
+        padding: 76px 0;
+      }
+
+      .media-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 30px 0;
+      }
+
+      .media-row p,
+      .media-row-status {
+        grid-column: 1;
+      }
+
+      .media-philosophy {
+        padding: 80px 0;
+      }
+
+      .media-coming {
+        padding: 76px 0 90px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <header class="site-header">
+
+    <div class="container nav">
+
+      <a
+        href="../"
+        aria-label="House of Koshi home"
+      >
+        <span class="wordmark-small">House of</span>
+        <span class="wordmark-main">KOSHI</span>
+      </a>
+
+      <nav
+        class="navlinks"
+        aria-label="Primary"
+      >
+        <a href="../artists/">
+          Artists
+        </a>
+
+        <a href="../studios/">
+          Studios
+        </a>
+
+        <a
+          href="./"
+          aria-current="page"
+        >
+          Media &amp; Editorials
+        </a>
+
+        <a href="../about/">
+          About
+        </a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="media-hero">
+
+      <div class="container media-hero-grid">
+
+        <div
+          class="section-label"
+          style="color:#817B84"
+        >
+          House of Koshi / Media &amp; Editorials
+        </div>
+
+        <div>
+
+          <h1 class="media-hero-title">
+            MEDIA<br>
+            <span>&amp; EDITORIALS</span>
+          </h1>
+
+          <p class="media-hero-copy">
+            Portraiture, interviews, campaigns and contemporary media
+            exploring the artists beyond a single role or production.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="media-intro">
+
+      <div class="container media-intro-grid">
+
+        <div class="section-label">
+          Koshi / 03
+        </div>
+
+        <div>
+
+          <h2 class="media-intro-title">
+            Beyond the role.<br>
+            <span>
+              Beyond the production.
+            </span>
+          </h2>
+
+          <p class="media-intro-copy">
+            Koshi Media &amp; Editorials creates space for House of Koshi
+            artists to exist outside the stories they perform in —
+            through portraiture, fashion, conversation, campaigns
+            and future media formats.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="featured-editorial">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="section-label">
+              Featured
+            </div>
+
+            <h2>
+              EDITORIAL
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <article class="featured-grid">
+
+          <div class="featured-art">
+
+            <div class="featured-art-note">
+              Selected editorial image coming later
+            </div>
+
+          </div>
+
+
+          <div class="featured-copy">
+
+            <div>
+
+              <div class="featured-type">
+                Editorial / 001
+              </div>
+
+              <h2 class="featured-title">
+                The Individual,<br>
+                Unscripted.
+              </h2>
+
+              <p>
+                A developing House of Koshi editorial format focused
+                on portraiture, fashion and artist identity beyond
+                individual productions.
+              </p>
+
+            </div>
+
+
+            <span class="media-link muted">
+              Editorial coming later
+            </span>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <section class="media-sections">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="section-label">
+              Formats
+            </div>
+
+            <h2>
+              MEDIA
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="media-list">
+
+          <article class="media-row">
+
+            <span class="media-row-no">
+              01
+            </span>
+
+            <h3>
+              Between Takes
+            </h3>
+
+            <p>
+              Conversations with Koshi artists about the work,
+              creative process and the person behind the performance.
+            </p>
+
+            <span class="media-row-status">
+              Interviews
+            </span>
+
+          </article>
+
+
+          <article class="media-row">
+
+            <span class="media-row-no">
+              02
+            </span>
+
+            <h3>
+              Koshi Sessions
+            </h3>
+
+            <p>
+              A future space for audio, conversation and experimental
+              studio media.
+            </p>
+
+            <span class="media-row-status">
+              Coming later
+            </span>
+
+          </article>
+
+
+          <article class="media-row">
+
+            <span class="media-row-no">
+              03
+            </span>
+
+            <h3>
+              Campaigns
+            </h3>
+
+            <p>
+              Visual campaigns and creative image-making built around
+              individual artists and the wider House of Koshi identity.
+            </p>
+
+            <span class="media-row-status">
+              In development
+            </span>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="media-philosophy">
+
+      <div class="container media-philosophy-grid">
+
+        <div
+          class="section-label"
+          style="color:#817B84"
+        >
+          Editorial philosophy
+        </div>
+
+        <div>
+
+          <h2>
+            A performer is more<br>
+            <span>
+              than the role.
+            </span>
+          </h2>
+
+          <p>
+            Productions show an artist inside a story. Media &amp;
+            Editorials gives that artist room to exist outside it —
+            through image, conversation, fashion and other forms
+            of creative expression.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="media-coming">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="section-label">
+              Developing slate
+            </div>
+
+            <h2>
+              WHAT LIVES HERE
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="coming-grid">
+
+          <article class="coming-item">
+
+            <span class="coming-label">
+              Editorials
+            </span>
+
+            <div>
+
+              <h3>
+                Portrait &amp; Fashion
+              </h3>
+
+              <p>
+                Artist-led visual stories and image series.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="coming-item">
+
+            <span class="coming-label">
+              Interviews
+            </span>
+
+            <div>
+
+              <h3>
+                Conversation
+              </h3>
+
+              <p>
+                Artist interviews and creative discussions.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="coming-item">
+
+            <span class="coming-label">
+              Media
+            </span>
+
+            <div>
+
+              <h3>
+                Experiments
+              </h3>
+
+              <p>
+                Future audio, campaign and studio-media formats.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer-grid">
+
+      <div>
+
+        <span class="wordmark-small">
+          House of
+        </span>
+
+        <span class="wordmark-main">
+          KOSHI
+        </span>
+
+        <div
+          style="
+            margin-top:12px;
+            color:var(--muted);
+            font-size:.8rem
+          "
+        >
+          Artists. Stories. Worlds.
+        </div>
+
+      </div>
+
+      <div class="smallprint">
+        Koshi Media &amp; Editorials<br>
+        Editorials · Interviews · Campaigns · Media
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
