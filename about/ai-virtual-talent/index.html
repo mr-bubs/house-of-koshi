@@ -1,1 +1,615 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI & Virtual Talent — House of Koshi</title><link rel="stylesheet" href="../../assets/css/site.css"></head><body><header class="site-header"><div class="container nav"><a href="../../"><span class="wordmark-small">House of</span><span class="wordmark-main">KOSHI</span></a><nav class="navlinks"><a href="../../artists/">Artists</a><a href="../../studios/">Studios</a><a href="../../media-editorials/">Media &amp; Editorials</a><a href="../">About</a></nav></div></header><main><section class="page-hero"><div class="container"><div class="section-label">Our practice</div><h1 class="serif">A fictional studio.<br>A real creative project.</h1><p class="page-copy">House of Koshi is an AI-assisted fictional entertainment studio built around virtual characters, visual storytelling, original work and creative adaptation. Its artists, representation structure and studio ecosystem are fictional; the creative direction, stories, character development and worlds behind them form an ongoing independent project.</p></div></section></main></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="AI & Virtual Talent at House of Koshi — how the fictional studio and its virtual artists are created."
+  >
+
+  <title>AI &amp; Virtual Talent — House of Koshi</title>
+
+  <link
+    rel="stylesheet"
+    href="../../assets/css/site.css"
+  >
+
+  <style>
+    .ai-hero {
+      padding: 110px 0 105px;
+      background: var(--ink);
+      color: var(--ivory);
+    }
+
+    .ai-hero-grid {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+    }
+
+    .ai-title {
+      max-width: 1050px;
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(4rem, 8vw, 8rem);
+      font-weight: 400;
+      line-height: .88;
+    }
+
+    .ai-title span {
+      color: #B9A8CA;
+    }
+
+    .ai-lead {
+      max-width: 760px;
+      margin: 36px 0 0;
+      color: #C4BDC7;
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    .ai-definition {
+      padding: 115px 0;
+      background: #fff;
+    }
+
+    .ai-grid {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+    }
+
+    .ai-heading {
+      max-width: 900px;
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3rem, 6vw, 5.7rem);
+      font-weight: 400;
+      line-height: .98;
+    }
+
+    .ai-heading span {
+      color: var(--lilac);
+    }
+
+    .ai-copy {
+      max-width: 760px;
+      margin: 30px 0 0;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .ai-principles {
+      padding: 90px 0 110px;
+      background: var(--ivory);
+    }
+
+    .principle-list {
+      border-top: 1px solid var(--stone);
+    }
+
+    .principle {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 28px;
+      padding: 34px 0;
+      border-bottom: 1px solid var(--stone);
+    }
+
+    .principle-number {
+      color: var(--muted);
+      font-size: .66rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .principle h3 {
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .principle p {
+      max-width: 720px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .fiction-section {
+      padding: 110px 0;
+      background: var(--ink);
+      color: var(--ivory);
+    }
+
+    .fiction-grid {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+    }
+
+    .fiction-title {
+      max-width: 950px;
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3.2rem, 6vw, 6rem);
+      font-weight: 400;
+      line-height: .98;
+    }
+
+    .fiction-title span {
+      color: #B9A8CA;
+    }
+
+    .fiction-copy {
+      max-width: 760px;
+      margin: 32px 0 0;
+      color: #BDB6C0;
+      line-height: 1.9;
+    }
+
+    .source-section {
+      padding: 110px 0;
+      background: #fff;
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+    }
+
+    .source-panel {
+      padding: 42px;
+      border: 1px solid var(--stone);
+    }
+
+    .source-panel h3 {
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .source-panel p {
+      max-width: 700px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .ai-return {
+      padding: 70px 0;
+      background: var(--ivory);
+      text-align: center;
+    }
+
+    .ai-return a {
+      display: inline-block;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--lilac);
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    @media(max-width:850px) {
+      .ai-hero-grid,
+      .ai-grid,
+      .fiction-grid,
+      .source-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media(max-width:650px) {
+      .ai-hero {
+        padding: 78px 0;
+      }
+
+      .ai-title {
+        font-size: clamp(4rem, 18vw, 6rem);
+      }
+
+      .ai-definition {
+        padding: 78px 0;
+      }
+
+      .ai-principles {
+        padding: 68px 0 84px;
+      }
+
+      .principle {
+        grid-template-columns: 1fr;
+        gap: 9px;
+        padding: 30px 0;
+      }
+
+      .fiction-section {
+        padding: 80px 0;
+      }
+
+      .source-section {
+        padding: 78px 0;
+      }
+
+      .source-panel {
+        padding: 30px 24px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <header class="site-header">
+
+    <div class="container nav">
+
+      <a
+        href="../../"
+        aria-label="House of Koshi home"
+      >
+        <span class="wordmark-small">House of</span>
+        <span class="wordmark-main">KOSHI</span>
+      </a>
+
+      <nav
+        class="navlinks"
+        aria-label="Primary"
+      >
+        <a href="../../artists/">
+          Artists
+        </a>
+
+        <a href="../../studios/">
+          Studios
+        </a>
+
+        <a href="../../media-editorials/">
+          Media &amp; Editorials
+        </a>
+
+        <a
+          href="../"
+          aria-current="page"
+        >
+          About
+        </a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="ai-hero">
+
+      <div class="container ai-hero-grid">
+
+        <div
+          class="section-label"
+          style="color:#817B84"
+        >
+          About / AI &amp; Virtual Talent
+        </div>
+
+        <div>
+
+          <h1 class="ai-title">
+            A fictional studio.<br>
+            <span>
+              A real creative project.
+            </span>
+          </h1>
+
+          <p class="ai-lead">
+            House of Koshi is a fictional entertainment and talent
+            studio developed as an AI-assisted creative project.
+            Its artists, productions and studio world are fictional,
+            while the creative work used to build that world is real.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="ai-definition">
+
+      <div class="container ai-grid">
+
+        <div class="section-label">
+          Virtual talent
+        </div>
+
+        <div>
+
+          <h2 class="ai-heading">
+            Characters treated as<br>
+            <span>
+              creative performers.
+            </span>
+          </h2>
+
+          <p class="ai-copy">
+            The people represented by Koshi Artists are virtual,
+            fictional performers developed through writing,
+            visual creation and AI-assisted creative tools.
+          </p>
+
+          <p class="ai-copy">
+            Within the House of Koshi website they are presented
+            through the language of artist representation,
+            productions, portfolios and editorials. That presentation
+            is part of the fictional studio concept rather than a
+            claim that the artists are real human performers.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="ai-principles">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="section-label">
+              Creative framework
+            </div>
+
+            <h2>
+              HOW TO READ THE PROJECT
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="principle-list">
+
+          <article class="principle">
+
+            <span class="principle-number">
+              01
+            </span>
+
+            <div>
+
+              <h3>
+                The studio is fictional.
+              </h3>
+
+              <p>
+                House of Koshi, its divisions and its represented
+                virtual artists form a fictional entertainment-studio
+                universe.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="principle">
+
+            <span class="principle-number">
+              02
+            </span>
+
+            <div>
+
+              <h3>
+                The creative project is real.
+              </h3>
+
+              <p>
+                The writing, visual development, design, adaptation,
+                world-building and website are genuine creative work
+                developed for the project.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="principle">
+
+            <span class="principle-number">
+              03
+            </span>
+
+            <div>
+
+              <h3>
+                AI is part of the process.
+              </h3>
+
+              <p>
+                AI-assisted tools are used as part of the project's
+                creative workflow, including visual development and
+                storytelling.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="principle">
+
+            <span class="principle-number">
+              04
+            </span>
+
+            <div>
+
+              <h3>
+                Adaptations remain attributed.
+              </h3>
+
+              <p>
+                When House of Koshi presents a creative adaptation
+                of another author's work, the source work and author
+                remain identified and credited.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="fiction-section">
+
+      <div class="container fiction-grid">
+
+        <div
+          class="section-label"
+          style="color:#817B84"
+        >
+          Presentation
+        </div>
+
+        <div>
+
+          <h2 class="fiction-title">
+            The fiction works better<br>
+            <span>
+              when it is allowed to be fiction.
+            </span>
+          </h2>
+
+          <p class="fiction-copy">
+            Most House of Koshi pages therefore present the studio
+            world directly. Artist pages read like artist portfolios.
+            Studio pages read like production pages. Editorial work
+            can treat the artists as performers within that creative
+            universe.
+          </p>
+
+          <p class="fiction-copy">
+            This page exists so that the nature of the project remains
+            clear without requiring every normal page to interrupt the
+            fictional presentation with repeated AI disclaimers.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="source-section">
+
+      <div class="container source-grid">
+
+        <div class="section-label">
+          Creative adaptations
+        </div>
+
+        <div class="source-panel">
+
+          <h3>
+            Source work stays visible.
+          </h3>
+
+          <p>
+            House of Koshi distinguishes between original productions
+            and creative adaptations. Adaptation pages and the House
+            of Koshi reader retain source attribution where applicable,
+            including links to the credited source when available.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="ai-return">
+
+      <div class="container">
+
+        <a href="../">
+          ← About House of Koshi
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer-grid">
+
+      <div>
+
+        <span class="wordmark-small">
+          House of
+        </span>
+
+        <span class="wordmark-main">
+          KOSHI
+        </span>
+
+        <div
+          style="
+            margin-top:12px;
+            color:var(--muted);
+            font-size:.8rem
+          "
+        >
+          Artists. Stories. Worlds.
+        </div>
+
+      </div>
+
+      <div class="smallprint">
+        House of Koshi<br>
+        AI &amp; Virtual Talent
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
