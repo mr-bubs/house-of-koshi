@@ -19,6 +19,38 @@
     rel="stylesheet"
     href="assets/css/site.css"
   >
+
+  <style>
+    .hero-cover {
+      width: 100%;
+      height: 100%;
+      min-height: 610px;
+      overflow: hidden;
+      background: #1d1b20;
+    }
+
+    .hero-cover img {
+      width: 100%;
+      height: 100%;
+      min-height: 610px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    @media(max-width:850px) {
+      .hero-cover,
+      .hero-cover img {
+        min-height: 0;
+        height: auto;
+      }
+
+      .hero-art {
+        padding: 0;
+        min-height: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -97,19 +129,12 @@
 
         <div class="hero-art">
 
-          <div class="hero-slot">
+          <div class="hero-cover">
 
-            <div class="serif letter">
-              P
-            </div>
-
-            <div class="eyebrow">
-              Featured production artwork
-            </div>
-
-            <small>
-              Hero image slot
-            </small>
+            <img
+              src="https://raw.githubusercontent.com/mr-bubs/graphic-novels/main/Polynomials/pages/page-01.png"
+              alt="Polynomials cover artwork"
+            >
 
           </div>
 
@@ -202,9 +227,7 @@
               </span>
             </div>
 
-            <h3>
-              SHAWNA KOSHI
-            </h3>
+            <h3>SHAWNA KOSHI</h3>
 
             <p>
               Actor · Model · Creative
@@ -224,9 +247,7 @@
               </span>
             </div>
 
-            <h3>
-              LAYLA
-            </h3>
+            <h3>LAYLA</h3>
 
             <p>
               Actor · Model
@@ -246,9 +267,7 @@
               </span>
             </div>
 
-            <h3>
-              MIRA
-            </h3>
+            <h3>MIRA</h3>
 
             <p>
               Actor · Model
@@ -268,9 +287,7 @@
               </span>
             </div>
 
-            <h3>
-              POLLY
-            </h3>
+            <h3>POLLY</h3>
 
             <p>
               Actor · Model
@@ -343,7 +360,7 @@
 
         <a
           class="project-row"
-          href="studios/fallen/"
+          href="studios/assigned/"
         >
 
           <span class="project-no">
@@ -353,11 +370,11 @@
           <div>
 
             <h3>
-              FALLING. FALLEN.
+              THE ASSIGNED
             </h3>
 
             <p>
-              Creative adaptation · Supernatural romantic drama
+              Original · In progress
             </p>
 
           </div>
@@ -386,6 +403,34 @@
 
             <p>
               Creative adaptation · Psychological drama
+            </p>
+
+          </div>
+
+          <span class="project-link">
+            View project →
+          </span>
+
+        </a>
+
+
+        <a
+          class="project-row"
+          href="studios/fallen/"
+        >
+
+          <span class="project-no">
+            004
+          </span>
+
+          <div>
+
+            <h3>
+              FALLING. FALLEN.
+            </h3>
+
+            <p>
+              Creative adaptation · Supernatural romantic drama
             </p>
 
           </div>
