@@ -22,697 +22,418 @@
   >
 
   <style>
-    .poly-page {
-      --poly-dark: #171619;
-      --poly-charcoal: #353238;
-      --poly-ivory: #F5F2EC;
-      --poly-stone: #D8D2CA;
-      --poly-lilac: #A99ABE;
-      --poly-lavender: #E7E0ED;
+    .production-page {
+      --production-bg: #171619;
+      --production-accent: #A99ABE;
+      --production-light: #F5F2EC;
+      --production-muted: #A8A1AA;
     }
 
-    .poly-hero {
-      background: var(--poly-dark);
-      color: var(--poly-ivory);
+    .production-hero {
+      background: var(--production-bg);
+      color: var(--production-light);
       overflow: hidden;
     }
 
-    .poly-hero-inner {
+    .production-hero-inner {
       min-height: 720px;
       display: grid;
-      grid-template-columns: 1.12fr .88fr;
+      grid-template-columns: 1.08fr .92fr;
     }
 
-    .poly-hero-copy {
-      padding: 76px 56px 60px 0;
+    .production-copy {
+      padding: 72px 56px 58px 0;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    .poly-kicker {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #aaa4ad;
+    .production-kicker {
+      color: var(--production-muted);
       font-size: .68rem;
-      font-weight: 500;
       letter-spacing: .2em;
       text-transform: uppercase;
     }
 
-    .poly-kicker-dot {
+    .production-kicker span {
+      display: inline-block;
       width: 8px;
       height: 8px;
+      margin-right: 10px;
       border-radius: 50%;
-      background: var(--poly-lilac);
-      flex: 0 0 auto;
+      background: var(--production-accent);
     }
 
-    .poly-title {
-      margin: 22px 0 0;
-      font-size: clamp(4rem, 9vw, 8.8rem);
+    .production-title {
+      margin: 24px 0 0;
+      font-size: clamp(4rem, 9vw, 8.6rem);
       font-weight: 500;
       letter-spacing: -.06em;
       line-height: .84;
     }
 
-    .poly-dek {
-      max-width: 650px;
-      margin: 30px 0 0;
-      color: #ddd6df;
+    .production-subtitle {
+      margin: 28px 0 0;
+      color: #DDD6DF;
       font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(2rem, 3.8vw, 3.5rem);
-      line-height: 1.02;
+      font-size: clamp(2rem, 3.6vw, 3.2rem);
+      line-height: 1.03;
     }
 
-    .poly-actions {
+    .production-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 38px;
+      margin-top: 36px;
     }
 
-    .poly-button {
+    .production-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 46px;
       padding: 0 20px;
-      border: 1px solid rgba(245, 242, 236, .25);
-      color: var(--poly-ivory);
+      border: 1px solid rgba(245,242,236,.25);
+      color: var(--production-light);
       font-size: .68rem;
       font-weight: 600;
       letter-spacing: .14em;
       text-transform: uppercase;
-      transition:
-        background .2s ease,
-        border-color .2s ease,
-        color .2s ease;
     }
 
-    .poly-button:hover {
-      border-color: var(--poly-lilac);
-      color: var(--poly-lavender);
+    .production-button.primary {
+      background: var(--production-accent);
+      border-color: var(--production-accent);
+      color: var(--production-bg);
     }
 
-    .poly-button-primary {
-      border-color: var(--poly-lilac);
-      background: var(--poly-lilac);
-      color: var(--poly-dark);
-    }
-
-    .poly-button-primary:hover {
-      background: var(--poly-lavender);
-      border-color: var(--poly-lavender);
-      color: var(--poly-dark);
-    }
-
-    .poly-meta {
-      display: grid;
-      grid-template-columns: repeat(3, auto);
-      justify-content: start;
+    .production-meta {
+      display: flex;
+      flex-wrap: wrap;
       gap: 34px;
       padding-top: 22px;
-      border-top: 1px solid rgba(245, 242, 236, .18);
-    }
-
-    .poly-meta-block span {
-      display: block;
-    }
-
-    .poly-meta-label {
-      margin-bottom: 5px;
-      color: #817b84;
-      font-size: .58rem;
-      font-weight: 600;
-      letter-spacing: .17em;
+      border-top: 1px solid rgba(245,242,236,.16);
+      color: var(--production-muted);
+      font-size: .68rem;
+      letter-spacing: .13em;
       text-transform: uppercase;
     }
 
-    .poly-meta-value {
-      color: #d5ced7;
-      font-size: .72rem;
-    }
-
-    .poly-hero-art {
-      position: relative;
+    .production-cover {
       min-height: 720px;
-      display: flex;
-      align-items: stretch;
-      background:
-        linear-gradient(
-          145deg,
-          #38323b 0%,
-          #272329 48%,
-          #1d1a1f 100%
-        );
-    }
-
-    .poly-art-placeholder {
-      position: relative;
-      width: 100%;
-      min-height: 100%;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
-      padding: 42px;
+      background: #222025;
       overflow: hidden;
     }
 
-    .poly-art-placeholder::before {
-      content: "P";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -53%);
-      color: rgba(169, 154, 190, .26);
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(13rem, 30vw, 25rem);
-      line-height: 1;
+    .production-cover img {
+      width: 100%;
+      height: 100%;
+      min-height: 720px;
+      object-fit: cover;
+      object-position: center top;
     }
 
-    .poly-art-placeholder::after {
-      content: "";
-      position: absolute;
-      inset: 34px;
-      border-top: 1px solid rgba(169, 154, 190, .32);
-      border-bottom: 1px solid rgba(169, 154, 190, .32);
+    .production-info {
+      padding: 110px 0;
     }
 
-    .poly-art-note {
-      position: relative;
-      z-index: 2;
-      color: #8f8792;
-      font-size: .62rem;
-      letter-spacing: .17em;
-      text-transform: uppercase;
-    }
-
-    .poly-intro {
-      padding: 120px 0;
-      background: #fff;
-    }
-
-    .poly-intro-grid {
+    .production-info-grid {
       display: grid;
       grid-template-columns: .42fr 1.58fr;
       gap: 60px;
     }
 
-    .poly-intro-title {
-      max-width: 900px;
+    .production-info h2 {
       margin: 0;
       font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(3.1rem, 6vw, 6rem);
+      font-size: clamp(3rem,6vw,5.7rem);
       font-weight: 400;
       line-height: .98;
     }
 
-    .poly-intro-title em {
-      color: var(--poly-lilac);
-      font-style: normal;
+    .production-info h2 span {
+      color: var(--production-accent);
     }
 
-    .poly-intro-copy {
+    .production-info p {
       max-width: 760px;
-      margin: 34px 0 0;
-      color: #625d64;
-      font-size: 1rem;
-      line-height: 1.9;
-    }
-
-    .poly-cast {
-      padding: 90px 0 105px;
-      background: var(--poly-ivory);
-    }
-
-    .poly-section-head {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 38px;
-    }
-
-    .poly-section-head h2 {
-      margin: 5px 0 0;
-      font-size: 2.2rem;
-      font-weight: 500;
-    }
-
-    .poly-section-note {
+      margin: 30px 0 0;
       color: var(--muted);
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: 1.3rem;
+      line-height: 1.85;
     }
 
-    .poly-cast-grid {
+    .cast-band {
+      padding: 88px 0;
+      background: var(--ivory);
+    }
+
+    .cast-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--poly-stone);
-      border-bottom: 1px solid var(--poly-stone);
+      grid-template-columns: repeat(4,1fr);
+      border-top: 1px solid var(--stone);
+      border-bottom: 1px solid var(--stone);
     }
 
-    .poly-cast-item {
-      min-height: 270px;
-      padding: 30px 26px;
-      border-right: 1px solid var(--poly-stone);
+    .cast-item {
+      min-height: 220px;
+      padding: 28px 24px;
+      border-right: 1px solid var(--stone);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    .poly-cast-item:last-child {
+    .cast-item:last-child {
       border-right: 0;
     }
 
-    .poly-cast-number {
-      color: #968d99;
+    .cast-number {
+      color: #968D99;
       font-family: "Instrument Serif", Georgia, serif;
-      font-size: 2.8rem;
+      font-size: 2.5rem;
     }
 
-    .poly-cast-item h3 {
+    .cast-item h3 {
       margin: 0 0 5px;
-      font-size: 1.15rem;
-      letter-spacing: .03em;
+      font-size: 1.1rem;
     }
 
-    .poly-cast-item p {
+    .cast-item p {
       margin: 0;
       color: var(--muted);
-      font-size: .75rem;
-      letter-spacing: .1em;
+      font-size: .7rem;
+      letter-spacing: .12em;
       text-transform: uppercase;
     }
 
-    .poly-read {
-      padding: 105px 0;
-      background: var(--poly-dark);
-      color: var(--poly-ivory);
-    }
-
-    .poly-read-top {
-      display: grid;
-      grid-template-columns: .42fr 1.58fr;
-      gap: 60px;
-      margin-bottom: 54px;
-    }
-
-    .poly-read-title {
-      max-width: 800px;
-      margin: 0;
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(3.1rem, 6vw, 5.8rem);
-      font-weight: 400;
-      line-height: .98;
-    }
-
-    .poly-read-title span {
-      color: #b9a8ca;
-    }
-
-    .poly-chapters {
-      border-top: 1px solid rgba(245, 242, 236, .17);
-    }
-
-    .poly-chapter {
-      display: grid;
-      grid-template-columns: 90px 1fr auto;
-      gap: 28px;
-      align-items: center;
-      padding: 29px 0;
-      border-bottom: 1px solid rgba(245, 242, 236, .17);
-      transition: color .2s ease;
-    }
-
-    .poly-chapter:hover {
-      color: var(--poly-lilac);
-    }
-
-    .poly-chapter-no {
-      color: #77717a;
-      font-size: .66rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .poly-chapter h3 {
-      margin: 0;
-      font-size: 1.45rem;
-      font-weight: 500;
-    }
-
-    .poly-chapter-status {
-      color: #918b93;
-      font-size: .64rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .poly-reader-all {
-      display: inline-flex;
-      margin-top: 34px;
-      color: var(--poly-ivory);
-      font-size: .69rem;
-      font-weight: 600;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      border-bottom: 1px solid var(--poly-lilac);
-      padding-bottom: 5px;
-    }
-
-    .poly-reader-all:hover {
-      color: var(--poly-lilac);
-    }
-
-    .poly-status {
-      padding: 92px 0;
+    .chapter-band {
+      padding: 88px 0 105px;
       background: #fff;
     }
 
-    .poly-status-grid {
+    .chapter-row {
       display: grid;
-      grid-template-columns: .42fr 1.58fr;
-      gap: 60px;
+      grid-template-columns: 150px 62px 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 20px 0;
+      border-top: 1px solid var(--stone);
     }
 
-    .poly-status-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
+    .chapter-row:last-child {
+      border-bottom: 1px solid var(--stone);
     }
 
-    .poly-status-item {
-      border-top: 1px solid var(--poly-stone);
-      padding-top: 20px;
+    .chapter-thumb {
+      width: 150px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: var(--stone);
     }
 
-    .poly-status-item h3 {
-      margin: 0 0 10px;
-      font-size: .72rem;
-      letter-spacing: .16em;
+    .chapter-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .chapter-no,
+    .chapter-link {
+      color: var(--muted);
+      font-size: .66rem;
+      letter-spacing: .14em;
       text-transform: uppercase;
     }
 
-    .poly-status-item p {
+    .chapter-row h3 {
       margin: 0;
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: .9rem;
+      font-size: 1.35rem;
     }
 
-    .poly-back {
-      padding: 70px 0;
-      background: var(--poly-ivory);
+    .return-band {
+      padding: 68px 0;
+      background: var(--ivory);
       text-align: center;
     }
 
-    .poly-back a {
-      display: inline-block;
-      color: var(--poly-dark);
+    .return-band a {
+      border-bottom: 1px solid var(--production-accent);
+      padding-bottom: 4px;
       font-size: .7rem;
       font-weight: 600;
-      letter-spacing: .16em;
+      letter-spacing: .15em;
       text-transform: uppercase;
-      border-bottom: 1px solid var(--poly-lilac);
-      padding-bottom: 5px;
     }
 
-    .poly-back a:hover {
-      color: #756681;
-    }
-
-    @media (max-width: 900px) {
-      .poly-hero-inner {
+    @media(max-width:850px) {
+      .production-hero-inner {
         grid-template-columns: 1fr;
       }
 
-      .poly-hero-copy {
-        min-height: 620px;
-        padding: 56px 0 46px;
+      .production-copy {
+        min-height: 600px;
+        padding: 52px 0 44px;
       }
 
-      .poly-hero-art {
-        min-height: 430px;
+      .production-cover,
+      .production-cover img {
+        min-height: 520px;
       }
 
-      .poly-intro-grid,
-      .poly-read-top,
-      .poly-status-grid {
+      .production-info-grid {
         grid-template-columns: 1fr;
         gap: 28px;
       }
 
-      .poly-cast-grid {
+      .cast-grid {
         grid-template-columns: 1fr 1fr;
       }
 
-      .poly-cast-item:nth-child(2) {
+      .cast-item:nth-child(2) {
         border-right: 0;
       }
 
-      .poly-cast-item:nth-child(-n+2) {
-        border-bottom: 1px solid var(--poly-stone);
+      .cast-item:nth-child(-n+2) {
+        border-bottom: 1px solid var(--stone);
       }
     }
 
-    @media (max-width: 600px) {
-      .poly-hero-copy {
-        min-height: 560px;
-        padding: 42px 0 36px;
-      }
-
-      .poly-title {
-        font-size: clamp(3.7rem, 18vw, 5.5rem);
-      }
-
-      .poly-dek {
-        font-size: 2rem;
-      }
-
-      .poly-actions {
+    @media(max-width:600px) {
+      .production-actions {
         display: grid;
-        grid-template-columns: 1fr;
       }
 
-      .poly-button {
+      .production-button {
         width: 100%;
       }
 
-      .poly-meta {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+      .production-cover,
+      .production-cover img {
+        min-height: 0;
+        height: auto;
       }
 
-      .poly-hero-art {
-        min-height: 340px;
-      }
-
-      .poly-art-placeholder {
-        padding: 28px;
-      }
-
-      .poly-art-placeholder::after {
-        inset: 22px;
-      }
-
-      .poly-intro {
-        padding: 76px 0;
-      }
-
-      .poly-cast {
-        padding: 68px 0 78px;
-      }
-
-      .poly-section-head {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .poly-cast-grid {
+      .cast-grid {
         grid-template-columns: 1fr;
       }
 
-      .poly-cast-item,
-      .poly-cast-item:nth-child(2) {
-        min-height: 190px;
+      .cast-item {
+        min-height: 150px;
         border-right: 0;
-        border-bottom: 1px solid var(--poly-stone);
+        border-bottom: 1px solid var(--stone);
       }
 
-      .poly-cast-item:last-child {
+      .cast-item:last-child {
         border-bottom: 0;
       }
 
-      .poly-read {
-        padding: 76px 0;
+      .chapter-row {
+        grid-template-columns: 110px 1fr;
+        gap: 14px 18px;
       }
 
-      .poly-chapter {
-        grid-template-columns: 1fr auto;
-        gap: 8px 18px;
+      .chapter-thumb {
+        width: 110px;
+        grid-row: 1 / 3;
       }
 
-      .poly-chapter-no {
-        grid-column: 1 / -1;
+      .chapter-no {
+        grid-column: 2;
       }
 
-      .poly-status {
-        padding: 72px 0;
+      .chapter-row h3 {
+        grid-column: 2;
       }
 
-      .poly-status-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
+      .chapter-link {
+        grid-column: 2;
       }
     }
   </style>
 </head>
 
 
-<body class="poly-page">
+<body class="production-page">
 
   <header class="site-header">
-
     <div class="container nav">
 
-      <a
-        href="../../"
-        aria-label="House of Koshi home"
-      >
+      <a href="../../" aria-label="House of Koshi home">
         <span class="wordmark-small">House of</span>
         <span class="wordmark-main">KOSHI</span>
       </a>
 
-      <nav
-        class="navlinks"
-        aria-label="Primary"
-      >
-        <a href="../../artists/">
-          Artists
-        </a>
-
-        <a
-          href="../"
-          aria-current="page"
-        >
-          Studios
-        </a>
-
-        <a href="../../media-editorials/">
-          Media &amp; Editorials
-        </a>
-
-        <a href="../../about/">
-          About
-        </a>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="../../artists/">Artists</a>
+        <a href="../" aria-current="page">Studios</a>
+        <a href="../../media-editorials/">Media &amp; Editorials</a>
+        <a href="../../about/">About</a>
       </nav>
 
     </div>
-
   </header>
 
 
   <main>
 
-    <section class="poly-hero">
+    <section class="production-hero">
 
-      <div class="container">
+      <div class="container production-hero-inner">
 
-        <div class="poly-hero-inner">
+        <div class="production-copy">
 
-          <div class="poly-hero-copy">
+          <div class="production-kicker">
+            <span></span>
+            Koshi Studios · Original Production
+          </div>
 
-            <div class="poly-kicker">
-              <span class="poly-kicker-dot"></span>
-              Koshi Studios · Original Production
-            </div>
+          <div>
 
-            <div>
+            <h1 class="production-title">
+              POLYNOMIALS
+            </h1>
 
-              <h1 class="poly-title">
-                POLYNOMIALS
-              </h1>
+            <p class="production-subtitle">
+              Four women. One friendship.<br>
+              Far too many bad decisions.
+            </p>
 
-              <p class="poly-dek">
-                Four women. One friendship.<br>
-                Far too many bad decisions.
-              </p>
+            <div class="production-actions">
 
-              <div class="poly-actions">
+              <a
+                class="production-button primary"
+                href="../../reader/?book=polynomials"
+              >
+                Read now →
+              </a>
 
-                <a
-                  class="poly-button poly-button-primary"
-                  href="../../reader/?book=polynomials"
-                >
-                  Read now →
-                </a>
-
-                <a
-                  class="poly-button"
-                  href="../../reader/?book=polynomials&amp;chapter=1"
-                >
-                  Chapter 1
-                </a>
-
-                <a
-                  class="poly-button"
-                  href="../../reader/?book=polynomials&amp;chapter=2"
-                >
-                  Chapter 2
-                </a>
-
-              </div>
-
-            </div>
-
-            <div class="poly-meta">
-
-              <div class="poly-meta-block">
-                <span class="poly-meta-label">
-                  Format
-                </span>
-                <span class="poly-meta-value">
-                  Webtoon
-                </span>
-              </div>
-
-              <div class="poly-meta-block">
-                <span class="poly-meta-label">
-                  Genre
-                </span>
-                <span class="poly-meta-value">
-                  Comedy / Drama
-                </span>
-              </div>
-
-              <div class="poly-meta-block">
-                <span class="poly-meta-label">
-                  Status
-                </span>
-                <span class="poly-meta-value">
-                  In production
-                </span>
-              </div>
+              <a
+                class="production-button"
+                href="../../reader/?book=polynomials&amp;chapter=1"
+              >
+                Chapter 1
+              </a>
 
             </div>
 
           </div>
 
-
-          <div class="poly-hero-art">
-
-            <div class="poly-art-placeholder">
-
-              <div class="poly-art-note">
-                Production artwork coming later
-              </div>
-
-            </div>
-
+          <div class="production-meta">
+            <span>Original</span>
+            <span>Comedy / Drama</span>
+            <span>In production</span>
           </div>
+
+        </div>
+
+
+        <div class="production-cover">
+
+          <img
+            src="https://raw.githubusercontent.com/mr-bubs/graphic-novels/main/Polynomials/pages/page-01.png"
+            alt="Polynomials cover artwork"
+          >
 
         </div>
 
@@ -721,9 +442,9 @@
     </section>
 
 
-    <section class="poly-intro">
+    <section class="production-info">
 
-      <div class="container poly-intro-grid">
+      <div class="container production-info-grid">
 
         <div class="section-label">
           The production
@@ -731,18 +452,16 @@
 
         <div>
 
-          <h2 class="poly-intro-title">
-            Friendship gets complicated.
-            <br>
-            <em>They make it worse.</em>
+          <h2>
+            Friendship gets complicated.<br>
+            <span>They make it worse.</span>
           </h2>
 
-          <p class="poly-intro-copy">
+          <p>
             Polynomials is an adult slice-of-life comedy and drama
             centered on Shawna, Mira, Layla and Polly — four women
             navigating friendship, relationships, nights out,
-            domestic chaos and the consequences of their own
-            decisions.
+            domestic chaos and the consequences of their own decisions.
           </p>
 
         </div>
@@ -752,86 +471,56 @@
     </section>
 
 
-    <section class="poly-cast">
+    <section class="cast-band">
 
       <div class="container">
 
-        <div class="poly-section-head">
+        <div class="section-head">
 
           <div>
-
-            <div class="section-label">
-              Core cast
-            </div>
-
-            <h2>
-              THE FOUR
-            </h2>
-
+            <div class="section-label">Core cast</div>
+            <h2>THE FOUR</h2>
           </div>
 
-          <div class="poly-section-note">
+          <span class="serif" style="font-size:1.3rem;color:var(--muted)">
             Different people. Same problem.
-          </div>
+          </span>
 
         </div>
 
 
-        <div class="poly-cast-grid">
+        <div class="cast-grid">
 
-          <article class="poly-cast-item">
-
-            <div class="poly-cast-number">
-              01
-            </div>
-
+          <article class="cast-item">
+            <div class="cast-number">01</div>
             <div>
               <h3>SHAWNA KOSHI</h3>
               <p>Core cast</p>
             </div>
-
           </article>
 
-
-          <article class="poly-cast-item">
-
-            <div class="poly-cast-number">
-              02
-            </div>
-
+          <article class="cast-item">
+            <div class="cast-number">02</div>
             <div>
               <h3>MIRA</h3>
               <p>Core cast</p>
             </div>
-
           </article>
 
-
-          <article class="poly-cast-item">
-
-            <div class="poly-cast-number">
-              03
-            </div>
-
+          <article class="cast-item">
+            <div class="cast-number">03</div>
             <div>
               <h3>LAYLA</h3>
               <p>Core cast</p>
             </div>
-
           </article>
 
-
-          <article class="poly-cast-item">
-
-            <div class="poly-cast-number">
-              04
-            </div>
-
+          <article class="cast-item">
+            <div class="cast-number">04</div>
             <div>
               <h3>POLLY</h3>
               <p>Core cast</p>
             </div>
-
           </article>
 
         </div>
@@ -841,81 +530,59 @@
     </section>
 
 
-    <section
-      class="poly-read"
-      id="read"
-    >
+    <section class="chapter-band">
 
       <div class="container">
 
-        <div class="poly-read-top">
-
-          <div class="section-label" style="color:#817b84">
-            Read / Polynomials
-          </div>
-
+        <div class="section-head">
           <div>
-
-            <h2 class="poly-read-title">
-              Start at the beginning.
-              <br>
-              <span>Or pick up where you left off.</span>
-            </h2>
-
+            <div class="section-label">Read</div>
+            <h2>CHAPTERS</h2>
           </div>
-
-        </div>
-
-
-        <div class="poly-chapters">
-
-          <a
-            class="poly-chapter"
-            href="../../reader/?book=polynomials&amp;chapter=1"
-          >
-
-            <span class="poly-chapter-no">
-              01
-            </span>
-
-            <h3>
-              Chapter 1
-            </h3>
-
-            <span class="poly-chapter-status">
-              Read →
-            </span>
-
-          </a>
-
-
-          <a
-            class="poly-chapter"
-            href="../../reader/?book=polynomials&amp;chapter=2"
-          >
-
-            <span class="poly-chapter-no">
-              02
-            </span>
-
-            <h3>
-              Chapter 2
-            </h3>
-
-            <span class="poly-chapter-status">
-              Read →
-            </span>
-
-          </a>
-
         </div>
 
 
         <a
-          class="poly-reader-all"
-          href="../../reader/?book=polynomials"
+          class="chapter-row"
+          href="../../reader/?book=polynomials&amp;chapter=1"
         >
-          Open full reader →
+
+          <div class="chapter-thumb">
+            <img
+              src="https://raw.githubusercontent.com/mr-bubs/graphic-novels/main/Polynomials/pages/page-02.png"
+              alt="Polynomials Chapter 1 title card"
+              loading="lazy"
+            >
+          </div>
+
+          <span class="chapter-no">01</span>
+
+          <h3>Chapter 1</h3>
+
+          <span class="chapter-link">Read →</span>
+
+        </a>
+
+
+        <a
+          class="chapter-row"
+          href="../../reader/?book=polynomials&amp;chapter=2"
+        >
+
+          <div class="chapter-thumb">
+            <img
+              src="https://raw.githubusercontent.com/mr-bubs/graphic-novels/main/Polynomials/pages/page-13.png"
+              alt="Polynomials Chapter 2 title card"
+              loading="lazy"
+            >
+          </div>
+
+          <span class="chapter-no">02</span>
+
+          <h3>Chapter 2</h3>
+
+          <span class="chapter-link">Read →</span>
+
         </a>
 
       </div>
@@ -923,59 +590,12 @@
     </section>
 
 
-    <section class="poly-status">
-
-      <div class="container poly-status-grid">
-
-        <div class="section-label">
-          Production notes
-        </div>
-
-        <div class="poly-status-content">
-
-          <div class="poly-status-item">
-
-            <h3>
-              House of Koshi Original
-            </h3>
-
-            <p>
-              Polynomials is an original Koshi Studios production.
-            </p>
-
-          </div>
-
-
-          <div class="poly-status-item">
-
-            <h3>
-              Currently in production
-            </h3>
-
-            <p>
-              The story is ongoing. New material can be added to the
-              House of Koshi reader as production continues.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <section class="poly-back">
-
+    <section class="return-band">
       <div class="container">
-
         <a href="../">
           ← All Koshi Studios productions
         </a>
-
       </div>
-
     </section>
 
   </main>
@@ -986,25 +606,12 @@
     <div class="container footer-grid">
 
       <div>
+        <span class="wordmark-small">House of</span>
+        <span class="wordmark-main">KOSHI</span>
 
-        <span class="wordmark-small">
-          House of
-        </span>
-
-        <span class="wordmark-main">
-          KOSHI
-        </span>
-
-        <div
-          style="
-            margin-top:12px;
-            color:var(--muted);
-            font-size:.8rem
-          "
-        >
+        <div style="margin-top:12px;color:var(--muted);font-size:.8rem">
           Artists. Stories. Worlds.
         </div>
-
       </div>
 
       <div class="smallprint">
