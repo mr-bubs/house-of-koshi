@@ -20,7 +20,112 @@
     rel="stylesheet"
     href="../assets/css/site.css"
   >
+
+  <style>
+    .studio-slate {
+      padding: 80px 0 110px;
+      background: var(--ivory);
+    }
+
+    .studio-project {
+      display: grid;
+      grid-template-columns: 150px 72px 1fr auto;
+      gap: 26px;
+      align-items: center;
+      padding: 24px 0;
+      border-top: 1px solid var(--stone);
+    }
+
+    .studio-project:last-child {
+      border-bottom: 1px solid var(--stone);
+    }
+
+    .studio-cover {
+      width: 150px;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: var(--stone);
+    }
+
+    .studio-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .studio-no {
+      color: var(--muted);
+      font-size: .66rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .studio-project h3 {
+      margin: 0;
+      font-size: clamp(1.45rem, 2.4vw, 2rem);
+      font-weight: 500;
+    }
+
+    .studio-project p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .studio-link {
+      color: var(--muted);
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .studio-project:hover .studio-link {
+      color: var(--lilac);
+    }
+
+    @media(max-width:750px) {
+      .studio-project {
+        grid-template-columns: 94px 1fr;
+        gap: 18px;
+        align-items: start;
+      }
+
+      .studio-cover {
+        grid-row: 1 / 4;
+        width: 94px;
+      }
+
+      .studio-no {
+        grid-column: 2;
+      }
+
+      .studio-project > div {
+        grid-column: 2;
+      }
+
+      .studio-link {
+        grid-column: 2;
+      }
+    }
+
+    @media(max-width:430px) {
+      .studio-project {
+        grid-template-columns: 82px 1fr;
+        gap: 15px;
+      }
+
+      .studio-cover {
+        width: 82px;
+      }
+
+      .studio-project h3 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
 </head>
+
 
 <body>
 
@@ -98,7 +203,9 @@
 
           <h2 class="serif manifesto">
             Stories built<br>
-            <span class="accent">around talent.</span>
+            <span class="accent">
+              around talent.
+            </span>
           </h2>
 
           <p class="descriptor">
@@ -113,7 +220,7 @@
     </section>
 
 
-    <section class="studios-band">
+    <section class="studio-slate">
 
       <div class="container">
 
@@ -145,11 +252,19 @@
 
 
         <a
-          class="project-row"
+          class="studio-project"
           href="polynomials/"
         >
 
-          <span class="project-no">
+          <div class="studio-cover">
+            <img
+              src="https://raw.githubusercontent.com/mr-bubs/graphic-novels/main/Polynomials/pages/page-01.png"
+              alt="Polynomials cover artwork"
+              loading="lazy"
+            >
+          </div>
+
+          <span class="studio-no">
             001
           </span>
 
@@ -165,7 +280,7 @@
 
           </div>
 
-          <span class="project-link">
+          <span class="studio-link">
             View production →
           </span>
 
@@ -173,11 +288,19 @@
 
 
         <a
-          class="project-row"
+          class="studio-project"
           href="assigned/"
         >
 
-          <span class="project-no">
+          <div class="studio-cover">
+            <img
+              src="https://raw.githubusercontent.com/mr-bubs/graphic-novels/main/Assigned/pages/page-01.png"
+              alt="The Assigned cover artwork"
+              loading="lazy"
+            >
+          </div>
+
+          <span class="studio-no">
             002
           </span>
 
@@ -193,7 +316,7 @@
 
           </div>
 
-          <span class="project-link">
+          <span class="studio-link">
             View production →
           </span>
 
@@ -201,11 +324,19 @@
 
 
         <a
-          class="project-row"
+          class="studio-project"
           href="art-of-love/"
         >
 
-          <span class="project-no">
+          <div class="studio-cover">
+            <img
+              src="https://raw.githubusercontent.com/mr-bubs/graphic-novels/main/art-of-love/pages/page-01.png"
+              alt="The Art of Love and Destruction cover artwork"
+              loading="lazy"
+            >
+          </div>
+
+          <span class="studio-no">
             003
           </span>
 
@@ -221,7 +352,7 @@
 
           </div>
 
-          <span class="project-link">
+          <span class="studio-link">
             View production →
           </span>
 
@@ -229,11 +360,19 @@
 
 
         <a
-          class="project-row"
+          class="studio-project"
           href="fallen/"
         >
 
-          <span class="project-no">
+          <div class="studio-cover">
+            <img
+              src="https://raw.githubusercontent.com/mr-bubs/graphic-novels/main/fallen/pages/page-01.png"
+              alt="Falling. Fallen. cover artwork"
+              loading="lazy"
+            >
+          </div>
+
+          <span class="studio-no">
             004
           </span>
 
@@ -249,7 +388,7 @@
 
           </div>
 
-          <span class="project-link">
+          <span class="studio-link">
             View production →
           </span>
 
