@@ -18,7 +18,7 @@ const KOSHI_BOOKS = {
     folder: "Assigned/pages",
     complete: false,
     type: "Original",
-    productionUrl: "../studios/the-assigned/",
+    productionUrl: "../studios/",
     chapters: [
       { label: "Chapter 1", startPage: 1 },
     ],
@@ -30,7 +30,7 @@ const KOSHI_BOOKS = {
     folder: "art-of-love/pages",
     complete: true,
     type: "Creative Adaptation",
-    productionUrl: "../studios/art-of-love-and-destruction/",
+    productionUrl: "../studios/",
     credit: {
       text: 'Adapted from "The Art of Destruction" by dilldiva',
       url: "https://archiveofourown.org/works/68964101",
@@ -46,7 +46,7 @@ const KOSHI_BOOKS = {
     folder: "fallen/pages",
     complete: true,
     type: "Creative Adaptation",
-    productionUrl: "../studios/fallen/",
+    productionUrl: "../studios/",
     credit: {
       text: 'Adapted from "Angel of Death" by levitating_marshmallow7',
       url: "https://archiveofourown.org/works/85885511",
