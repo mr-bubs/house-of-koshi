@@ -1,1 +1,676 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ABOUT — House of Koshi</title><link rel="stylesheet" href="../assets/css/site.css"></head><body><header class="site-header"><div class="container nav"><a href="../"><span class="wordmark-small">House of</span><span class="wordmark-main">KOSHI</span></a><nav class="navlinks"><a href="../artists/">Artists</a><a href="../studios/">Studios</a><a href="../media-editorials/">Media &amp; Editorials</a><a href="../about/">About</a></nav></div></header><main><section class="page-hero"><div class="container"><div class="section-label">House of Koshi</div><h1>ABOUT</h1><p class="page-copy">Talent came first. Everything else followed. House of Koshi is a small independent artist-management and production house built around virtual talent, visual storytelling and creative work.</p></div></section><section class="placeholder-list"><div class="container"><div class="placeholder-item"><div class="project-no">01</div><div><h2>Structure locked</h2><p>This landing page is ready for the real House of Koshi content, imagery and individual entries.</p></div></div><div class="placeholder-item"><div class="project-no">02</div><div><h2>Designed to expand</h2><p>The GitHub Pages structure is already in place, so new artists, productions and editorials can be added without changing the global navigation.</p></div></div></div></section></main></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="About House of Koshi — an independent fictional artist management and production house built around virtual talent, stories and visual media."
+  >
+
+  <title>About — House of Koshi</title>
+
+  <link
+    rel="stylesheet"
+    href="../assets/css/site.css"
+  >
+
+  <style>
+    .about-intro {
+      padding: 115px 0;
+      background: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+    }
+
+    .about-manifesto {
+      max-width: 950px;
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3.2rem, 6vw, 6.2rem);
+      font-weight: 400;
+      line-height: .98;
+    }
+
+    .about-manifesto span {
+      color: var(--lilac);
+    }
+
+    .about-copy {
+      max-width: 760px;
+      margin: 34px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .about-divisions {
+      padding: 90px 0 110px;
+      background: var(--ivory);
+    }
+
+    .division-list {
+      border-top: 1px solid var(--stone);
+    }
+
+    .division {
+      display: grid;
+      grid-template-columns: 90px 1fr auto;
+      gap: 30px;
+      align-items: center;
+      padding: 38px 0;
+      border-bottom: 1px solid var(--stone);
+    }
+
+    .division-number {
+      color: var(--muted);
+      font-size: .66rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .division h3 {
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 500;
+      line-height: 1.05;
+    }
+
+    .division p {
+      max-width: 680px;
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .division-link {
+      color: var(--muted);
+      font-size: .67rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .division:hover .division-link {
+      color: var(--lilac);
+    }
+
+    .about-philosophy {
+      padding: 115px 0;
+      background: var(--ink);
+      color: var(--ivory);
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+    }
+
+    .philosophy-title {
+      max-width: 900px;
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3.2rem, 6vw, 6rem);
+      font-weight: 400;
+      line-height: .98;
+    }
+
+    .philosophy-title span {
+      color: #B9A8CA;
+    }
+
+    .philosophy-copy {
+      max-width: 720px;
+      margin: 34px 0 0;
+      color: #BDB6C0;
+      line-height: 1.85;
+    }
+
+    .about-practice {
+      padding: 110px 0;
+      background: #fff;
+    }
+
+    .practice-panel {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 50px;
+      align-items: end;
+      padding: 58px;
+      background: var(--lavender);
+    }
+
+    .practice-panel h2 {
+      max-width: 800px;
+      margin: 16px 0 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 400;
+      line-height: .98;
+    }
+
+    .practice-panel p {
+      max-width: 650px;
+      margin: 26px 0 0;
+      color: #625D64;
+      line-height: 1.8;
+    }
+
+    .practice-panel-side {
+      text-align: right;
+    }
+
+    .about-button {
+      display: inline-block;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--lilac);
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .heritage-section {
+      padding: 90px 0 115px;
+      background: var(--ivory);
+    }
+
+    .heritage-grid {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+    }
+
+    .heritage-content {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .heritage-mark {
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+      border: 1px solid var(--stone);
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .heritage-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 35% 38%;
+      filter: grayscale(1);
+    }
+
+    .heritage-copy h2 {
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2.7rem, 5vw, 4.8rem);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .heritage-copy p {
+      max-width: 650px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    @media(max-width:850px) {
+      .about-grid,
+      .philosophy-grid,
+      .heritage-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .practice-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .practice-panel-side {
+        text-align: left;
+      }
+    }
+
+    @media(max-width:650px) {
+      .about-intro {
+        padding: 78px 0;
+      }
+
+      .about-divisions {
+        padding: 66px 0 82px;
+      }
+
+      .division {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 30px 0;
+      }
+
+      .division-number,
+      .division-link {
+        grid-column: 1;
+      }
+
+      .about-philosophy {
+        padding: 80px 0;
+      }
+
+      .about-practice {
+        padding: 72px 0;
+      }
+
+      .practice-panel {
+        padding: 34px 26px;
+      }
+
+      .heritage-section {
+        padding: 72px 0 90px;
+      }
+
+      .heritage-content {
+        grid-template-columns: 1fr;
+      }
+
+      .heritage-mark {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <header class="site-header">
+
+    <div class="container nav">
+
+      <a
+        href="../"
+        aria-label="House of Koshi home"
+      >
+        <span class="wordmark-small">House of</span>
+        <span class="wordmark-main">KOSHI</span>
+      </a>
+
+      <nav
+        class="navlinks"
+        aria-label="Primary"
+      >
+        <a href="../artists/">
+          Artists
+        </a>
+
+        <a href="../studios/">
+          Studios
+        </a>
+
+        <a href="../media-editorials/">
+          Media &amp; Editorials
+        </a>
+
+        <a
+          href="./"
+          aria-current="page"
+        >
+          About
+        </a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="page-hero">
+
+      <div class="container">
+
+        <div class="section-label">
+          House of Koshi / About
+        </div>
+
+        <h1>
+          HOUSE OF<br>
+          KOSHI
+        </h1>
+
+        <p class="page-copy">
+          An independent artist management and production house
+          built around talent, stories and worlds.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="about-intro">
+
+      <div class="container about-grid">
+
+        <div class="section-label">
+          The house
+        </div>
+
+        <div>
+
+          <h2 class="about-manifesto">
+            Artists.<br>
+            Stories. <span>Worlds.</span>
+          </h2>
+
+          <p class="about-copy">
+            House of Koshi brings artist representation, original
+            productions, creative adaptations and contemporary visual
+            media under one creative house.
+          </p>
+
+          <p class="about-copy">
+            Its artists can move between performance, production,
+            editorial work and other forms of creative expression
+            without being defined by a single role or story.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="about-divisions">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+            <div class="section-label">
+              The divisions
+            </div>
+
+            <h2>
+              HOUSE OF KOSHI
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="division-list">
+
+          <a
+            class="division"
+            href="../artists/"
+          >
+
+            <span class="division-number">
+              01
+            </span>
+
+            <div>
+
+              <h3>
+                KOSHI ARTISTS
+              </h3>
+
+              <p>
+                Talent management and representation for distinctive
+                performers, models and creative personalities.
+              </p>
+
+            </div>
+
+            <span class="division-link">
+              Explore artists →
+            </span>
+
+          </a>
+
+
+          <a
+            class="division"
+            href="../studios/"
+          >
+
+            <span class="division-number">
+              02
+            </span>
+
+            <div>
+
+              <h3>
+                KOSHI STUDIOS
+              </h3>
+
+              <p>
+                Original productions and creative adaptations built
+                around character, performance and visual storytelling.
+              </p>
+
+            </div>
+
+            <span class="division-link">
+              Explore studios →
+            </span>
+
+          </a>
+
+
+          <a
+            class="division"
+            href="../media-editorials/"
+          >
+
+            <span class="division-number">
+              03
+            </span>
+
+            <div>
+
+              <h3>
+                KOSHI MEDIA &amp; EDITORIALS
+              </h3>
+
+              <p>
+                Editorials, interviews, campaigns and contemporary
+                media extending beyond individual productions.
+              </p>
+
+            </div>
+
+            <span class="division-link">
+              Explore media →
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="about-philosophy">
+
+      <div class="container philosophy-grid">
+
+        <div
+          class="section-label"
+          style="color:#817B84"
+        >
+          Philosophy
+        </div>
+
+        <div>
+
+          <h2 class="philosophy-title">
+            Talent came first.<br>
+            <span>
+              Everything else followed.
+            </span>
+          </h2>
+
+          <p class="philosophy-copy">
+            House of Koshi begins with the artist. Productions,
+            editorial work and larger creative worlds grow outward
+            from the talent rather than reducing the talent to a
+            single project.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="about-practice">
+
+      <div class="container">
+
+        <div class="practice-panel">
+
+          <div>
+
+            <div class="section-label">
+              Our practice
+            </div>
+
+            <h2>
+              A fictional studio.<br>
+              A real creative project.
+            </h2>
+
+            <p>
+              House of Koshi is an AI-assisted creative project built
+              around virtual artists, visual storytelling, original
+              work and creative adaptation.
+            </p>
+
+          </div>
+
+
+          <div class="practice-panel-side">
+
+            <a
+              class="about-button"
+              href="ai-virtual-talent/"
+            >
+              AI &amp; Virtual Talent →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="heritage-section">
+
+      <div class="container heritage-grid">
+
+        <div class="section-label">
+          Heritage mark
+        </div>
+
+        <div class="heritage-content">
+
+          <div class="heritage-mark">
+
+            <img
+              src="../assets/images/shawna-heritage-mark.png"
+              alt="Original monochrome Shawna drawing, House of Koshi heritage mark"
+            >
+
+          </div>
+
+
+          <div class="heritage-copy">
+
+            <h2>
+              Shawna / The original mark.
+            </h2>
+
+            <p>
+              The original hand-drawn monochrome portrait of Shawna
+              remains part of House of Koshi as a heritage mark.
+              It is not the primary logo or mascot; the House of Koshi
+              wordmark remains the central identity of the studio.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer-grid">
+
+      <div>
+
+        <span class="wordmark-small">
+          House of
+        </span>
+
+        <span class="wordmark-main">
+          KOSHI
+        </span>
+
+        <div
+          style="
+            margin-top:12px;
+            color:var(--muted);
+            font-size:.8rem
+          "
+        >
+          Artists. Stories. Worlds.
+        </div>
+
+      </div>
+
+      <div class="smallprint">
+        House of Koshi<br>
+        About
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
