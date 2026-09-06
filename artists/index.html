@@ -1,1 +1,646 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ARTISTS — House of Koshi</title><link rel="stylesheet" href="../assets/css/site.css"></head><body><header class="site-header"><div class="container nav"><a href="../"><span class="wordmark-small">House of</span><span class="wordmark-main">KOSHI</span></a><nav class="navlinks"><a href="../artists/">Artists</a><a href="../studios/">Studios</a><a href="../media-editorials/">Media &amp; Editorials</a><a href="../about/">About</a></nav></div></header><main><section class="page-hero"><div class="container"><div class="section-label">Koshi / 01</div><h1>ARTISTS</h1><p class="page-copy">Koshi Artists represents the people at the center of House of Koshi — distinctive virtual talent with individual portfolios, credits, editorials and ongoing work.</p></div></section><section class="placeholder-list"><div class="container"><div class="placeholder-item"><div class="project-no">01</div><div><h2>Structure locked</h2><p>This landing page is ready for the real House of Koshi content, imagery and individual entries.</p></div></div><div class="placeholder-item"><div class="project-no">02</div><div><h2>Designed to expand</h2><p>The GitHub Pages structure is already in place, so new artists, productions and editorials can be added without changing the global navigation.</p></div></div></div></section></main></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="Koshi Artists — represented virtual talent from House of Koshi."
+  >
+
+  <title>Koshi Artists — House of Koshi</title>
+
+  <link
+    rel="stylesheet"
+    href="../assets/css/site.css"
+  >
+
+  <style>
+    .artists-intro {
+      padding: 110px 0;
+      background: #fff;
+    }
+
+    .artists-intro-grid {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+    }
+
+    .artists-intro-title {
+      margin: 0;
+      max-width: 950px;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3.2rem, 6vw, 6.2rem);
+      font-weight: 400;
+      line-height: .98;
+    }
+
+    .artists-intro-title span {
+      color: var(--lilac);
+    }
+
+    .artists-intro-copy {
+      max-width: 760px;
+      margin: 32px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    .artists-roster {
+      padding: 88px 0 110px;
+      background: var(--ivory);
+    }
+
+    .roster-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 70px 28px;
+    }
+
+    .roster-card {
+      display: block;
+    }
+
+    .roster-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          145deg,
+          #E4DED8,
+          #D4CCD5
+        );
+    }
+
+    .roster-image::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border-top: 1px solid rgba(53, 50, 56, .16);
+      border-bottom: 1px solid rgba(53, 50, 56, .16);
+    }
+
+    .roster-initial {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -54%);
+      color: rgba(117, 103, 126, .42);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(7rem, 15vw, 13rem);
+      line-height: 1;
+    }
+
+    .roster-image-note {
+      position: absolute;
+      left: 28px;
+      bottom: 27px;
+      color: #817A83;
+      font-size: .62rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .roster-card:nth-child(2) .roster-image {
+      background:
+        linear-gradient(
+          145deg,
+          #E7E0ED,
+          #D8D2CA
+        );
+    }
+
+    .roster-card:nth-child(3) .roster-image {
+      background:
+        linear-gradient(
+          145deg,
+          #D8D2CA,
+          #E6E1DA
+        );
+    }
+
+    .roster-card:nth-child(4) .roster-image {
+      background:
+        linear-gradient(
+          145deg,
+          #DED8D1,
+          #EEEAE4
+        );
+    }
+
+    .roster-meta {
+      padding-top: 20px;
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 16px;
+    }
+
+    .roster-number {
+      padding-top: 4px;
+      color: var(--muted);
+      font-size: .65rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .roster-name {
+      margin: 0;
+      font-size: clamp(1.55rem, 3vw, 2.15rem);
+      font-weight: 500;
+      line-height: 1.05;
+    }
+
+    .roster-role {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .roster-action {
+      display: inline-block;
+      margin-top: 17px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--lilac);
+      color: var(--ink);
+      font-size: .67rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .roster-card[href]:hover .roster-action {
+      color: #756681;
+    }
+
+    .roster-coming {
+      display: inline-block;
+      margin-top: 17px;
+      color: #999299;
+      font-size: .65rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .artists-statement {
+      padding: 110px 0;
+      background: var(--ink);
+      color: var(--ivory);
+    }
+
+    .artists-statement-grid {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+    }
+
+    .artists-statement h2 {
+      margin: 0;
+      max-width: 900px;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3rem, 6vw, 5.8rem);
+      font-weight: 400;
+      line-height: .98;
+    }
+
+    .artists-statement h2 span {
+      color: #B9A8CA;
+    }
+
+    .artists-statement p {
+      max-width: 720px;
+      margin: 30px 0 0;
+      color: #BDB6C0;
+      line-height: 1.85;
+    }
+
+    @media(max-width:850px) {
+      .artists-intro-grid,
+      .artists-statement-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media(max-width:650px) {
+      .artists-intro {
+        padding: 76px 0;
+      }
+
+      .artists-roster {
+        padding: 64px 0 80px;
+      }
+
+      .roster-grid {
+        grid-template-columns: 1fr;
+        gap: 58px;
+      }
+
+      .roster-image {
+        aspect-ratio: 4 / 5;
+      }
+
+      .roster-meta {
+        grid-template-columns: 45px 1fr;
+      }
+
+      .roster-name {
+        font-size: 2rem;
+      }
+
+      .artists-statement {
+        padding: 78px 0;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <header class="site-header">
+
+    <div class="container nav">
+
+      <a
+        href="../"
+        aria-label="House of Koshi home"
+      >
+        <span class="wordmark-small">House of</span>
+        <span class="wordmark-main">KOSHI</span>
+      </a>
+
+      <nav
+        class="navlinks"
+        aria-label="Primary"
+      >
+        <a
+          href="./"
+          aria-current="page"
+        >
+          Artists
+        </a>
+
+        <a href="../studios/">
+          Studios
+        </a>
+
+        <a href="../media-editorials/">
+          Media &amp; Editorials
+        </a>
+
+        <a href="../about/">
+          About
+        </a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="page-hero">
+
+      <div class="container">
+
+        <div class="section-label">
+          House of Koshi / Artists
+        </div>
+
+        <h1>
+          KOSHI<br>
+          ARTISTS
+        </h1>
+
+        <p class="page-copy">
+          Distinctive talent represented through performance,
+          image, character and creative work.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="artists-intro">
+
+      <div class="container artists-intro-grid">
+
+        <div class="section-label">
+          Koshi / 01
+        </div>
+
+        <div>
+
+          <h2 class="artists-intro-title">
+            Talent came first.<br>
+            <span>
+              Everything else followed.
+            </span>
+          </h2>
+
+          <p class="artists-intro-copy">
+            Koshi Artists is the representation arm of House of Koshi —
+            a growing roster of distinctive virtual performers and
+            creative personalities who move across productions,
+            editorials and visual media.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="artists-roster">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="section-label">
+              Represented talent
+            </div>
+
+            <h2>
+              ARTISTS
+            </h2>
+
+          </div>
+
+          <span
+            class="serif"
+            style="
+              font-size:1.35rem;
+              color:var(--muted)
+            "
+          >
+            Individual. Distinct. Unscripted.
+          </span>
+
+        </div>
+
+
+        <div class="roster-grid">
+
+          <a
+            class="roster-card"
+            href="shawna-koshi/"
+          >
+
+            <div class="roster-image">
+
+              <span class="roster-initial">
+                S
+              </span>
+
+              <span class="roster-image-note">
+                Selected portrait coming later
+              </span>
+
+            </div>
+
+            <div class="roster-meta">
+
+              <span class="roster-number">
+                001
+              </span>
+
+              <div>
+
+                <h3 class="roster-name">
+                  SHAWNA KOSHI
+                </h3>
+
+                <p class="roster-role">
+                  Actor · Model · Creative
+                </p>
+
+                <span class="roster-action">
+                  View artist →
+                </span>
+
+              </div>
+
+            </div>
+
+          </a>
+
+
+          <article class="roster-card">
+
+            <div class="roster-image">
+
+              <span class="roster-initial">
+                L
+              </span>
+
+              <span class="roster-image-note">
+                Selected portrait coming later
+              </span>
+
+            </div>
+
+            <div class="roster-meta">
+
+              <span class="roster-number">
+                002
+              </span>
+
+              <div>
+
+                <h3 class="roster-name">
+                  LAYLA
+                </h3>
+
+                <p class="roster-role">
+                  Actor · Model
+                </p>
+
+                <span class="roster-coming">
+                  Artist profile coming later
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="roster-card">
+
+            <div class="roster-image">
+
+              <span class="roster-initial">
+                M
+              </span>
+
+              <span class="roster-image-note">
+                Selected portrait coming later
+              </span>
+
+            </div>
+
+            <div class="roster-meta">
+
+              <span class="roster-number">
+                003
+              </span>
+
+              <div>
+
+                <h3 class="roster-name">
+                  MIRA
+                </h3>
+
+                <p class="roster-role">
+                  Actor · Model
+                </p>
+
+                <span class="roster-coming">
+                  Artist profile coming later
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="roster-card">
+
+            <div class="roster-image">
+
+              <span class="roster-initial">
+                P
+              </span>
+
+              <span class="roster-image-note">
+                Selected portrait coming later
+              </span>
+
+            </div>
+
+            <div class="roster-meta">
+
+              <span class="roster-number">
+                004
+              </span>
+
+              <div>
+
+                <h3 class="roster-name">
+                  POLLY
+                </h3>
+
+                <p class="roster-role">
+                  Actor · Model
+                </p>
+
+                <span class="roster-coming">
+                  Artist profile coming later
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="artists-statement">
+
+      <div class="container artists-statement-grid">
+
+        <div
+          class="section-label"
+          style="color:#817B84"
+        >
+          Representation
+        </div>
+
+        <div>
+
+          <h2>
+            Artists across stories.<br>
+            <span>
+              Not confined by them.
+            </span>
+          </h2>
+
+          <p>
+            House of Koshi treats its represented artists as talent
+            whose identity extends beyond any single production.
+            Productions, campaigns and editorials can each reveal
+            a different part of their creative presence.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer-grid">
+
+      <div>
+
+        <span class="wordmark-small">
+          House of
+        </span>
+
+        <span class="wordmark-main">
+          KOSHI
+        </span>
+
+        <div
+          style="
+            margin-top:12px;
+            color:var(--muted);
+            font-size:.8rem
+          "
+        >
+          Artists. Stories. Worlds.
+        </div>
+
+      </div>
+
+      <div class="smallprint">
+        Koshi Artists<br>
+        Talent management &amp; representation
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
