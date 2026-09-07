@@ -11,7 +11,7 @@
 
   <meta
     name="description"
-    content="Shawna Koshi — represented artist at House of Koshi."
+    content="Shawna Koshi — actor, model and creative represented by Koshi Artists."
   >
 
   <title>Shawna Koshi — Koshi Artists</title>
@@ -22,307 +22,536 @@
   >
 
   <style>
+
     .artist-page {
-      --artist-dark:#171619;
-      --artist-accent:#A99ABE;
-      --artist-light:#F5F2EC;
-      --artist-muted:#A8A1AA;
+      --artist-dark: #171619;
+      --artist-accent: #A99ABE;
+      --artist-light: #F5F2EC;
+      --artist-muted: #A8A1AA;
     }
 
+
+    /* ========================================
+       ARTIST HERO
+       ======================================== */
+
     .artist-hero {
-      background:var(--artist-dark);
-      color:var(--artist-light);
-      overflow:hidden;
+      background: var(--artist-dark);
+      color: var(--artist-light);
     }
 
     .artist-hero-inner {
-      min-height:760px;
-      display:grid;
-      grid-template-columns:1.02fr .98fr;
+      min-height: 760px;
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
     }
 
     .artist-hero-copy {
-      padding:72px 58px 58px 0;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+      padding: 72px 58px 58px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .artist-kicker {
-      color:var(--artist-muted);
-      font-size:.68rem;
-      letter-spacing:.2em;
-      text-transform:uppercase;
+      color: var(--artist-muted);
+      font-size: .68rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
     }
 
     .artist-kicker span {
-      display:inline-block;
-      width:8px;
-      height:8px;
-      margin-right:10px;
-      border-radius:50%;
-      background:var(--artist-accent);
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 10px;
+      border-radius: 50%;
+      background: var(--artist-accent);
     }
 
     .artist-name {
-      margin:24px 0 0;
-      max-width:800px;
-      font-size:clamp(4rem,9vw,8.7rem);
-      font-weight:500;
-      letter-spacing:-.06em;
-      line-height:.84;
+      margin: 24px 0 0;
+      font-size: clamp(4rem, 9vw, 8.7rem);
+      font-weight: 500;
+      letter-spacing: -.06em;
+      line-height: .84;
     }
 
     .artist-role {
-      margin:30px 0 0;
-      color:#D9D2DB;
-      font-family:"Instrument Serif",Georgia,serif;
-      font-size:clamp(2rem,3.6vw,3.2rem);
-      line-height:1;
+      margin: 30px 0 0;
+      color: #D9D2DB;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2rem, 3.6vw, 3.2rem);
     }
 
     .artist-hero-meta {
-      display:flex;
-      flex-wrap:wrap;
-      gap:34px;
-      padding-top:22px;
-      border-top:1px solid rgba(245,242,236,.17);
-      color:var(--artist-muted);
-      font-size:.66rem;
-      letter-spacing:.14em;
-      text-transform:uppercase;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 34px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(245, 242, 236, .17);
+      color: var(--artist-muted);
+      font-size: .66rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
     }
 
     .artist-portrait {
-      overflow:hidden;
-      background:#242126;
+      overflow: hidden;
     }
 
     .artist-portrait img {
-      width:100%;
-      height:100%;
-      min-height:760px;
-      object-fit:cover;
-      object-position:center top;
+      width: 100%;
+      height: 100%;
+      min-height: 760px;
+      object-fit: cover;
+      object-position: center top;
     }
 
+
+    /* ========================================
+       INTRO
+       ======================================== */
+
     .artist-intro {
-      padding:115px 0;
-      background:#fff;
+      padding: 115px 0;
+      background: #fff;
     }
 
     .artist-grid {
-      display:grid;
-      grid-template-columns:.42fr 1.58fr;
-      gap:60px;
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
     }
 
     .artist-intro-title {
-      max-width:900px;
-      margin:0;
-      font-family:"Instrument Serif",Georgia,serif;
-      font-size:clamp(3.2rem,6vw,6rem);
-      font-weight:400;
-      line-height:.98;
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3.2rem, 6vw, 6rem);
+      font-weight: 400;
+      line-height: .98;
     }
 
     .artist-intro-title span {
-      color:var(--artist-accent);
+      color: var(--artist-accent);
     }
 
     .artist-intro-copy {
-      max-width:760px;
-      margin:32px 0 0;
-      color:var(--muted);
-      line-height:1.85;
+      max-width: 760px;
+      margin: 32px 0 0;
+      color: var(--muted);
+      line-height: 1.85;
     }
 
-    .artist-profile {
-      padding:88px 0 105px;
-      background:var(--ivory);
+
+    /* ========================================
+       SELECTED PORTFOLIO
+       ======================================== */
+
+    .portfolio {
+      padding: 108px 0 125px;
+      background: var(--ivory);
     }
 
-    .profile-grid {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      border-top:1px solid var(--stone);
-      border-bottom:1px solid var(--stone);
+    .portfolio-head {
+      display: grid;
+      grid-template-columns: .42fr 1.58fr;
+      gap: 60px;
+      margin-bottom: 58px;
     }
 
-    .profile-item {
-      min-height:190px;
-      padding:28px 26px;
-      border-right:1px solid var(--stone);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+    .portfolio-title {
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3.1rem, 6vw, 5.8rem);
+      font-weight: 400;
+      line-height: .98;
     }
 
-    .profile-item:last-child {
-      border-right:0;
+    .portfolio-title span {
+      color: var(--artist-accent);
     }
 
-    .profile-label {
-      color:var(--muted);
-      font-size:.63rem;
-      letter-spacing:.15em;
-      text-transform:uppercase;
+    .portfolio-copy {
+      max-width: 620px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      line-height: 1.8;
     }
 
-    .profile-value {
-      margin:0;
-      font-family:"Instrument Serif",Georgia,serif;
-      font-size:clamp(1.8rem,3vw,2.6rem);
-      font-weight:400;
+
+    /*
+       Editorial composition:
+       deliberately uneven rather than a standard gallery grid.
+    */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 22px;
+      align-items: start;
     }
+
+    .portfolio-image {
+      position: relative;
+      overflow: hidden;
+      background: var(--stone);
+    }
+
+    .portfolio-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .55s ease;
+    }
+
+    .portfolio-image:hover img {
+      transform: scale(1.015);
+    }
+
+
+    /* IMAGE 01 — dominant opening portrait */
+
+    .portfolio-image:nth-child(1) {
+      grid-column: 1 / span 7;
+      aspect-ratio: 4 / 5;
+    }
+
+
+    /* IMAGE 02 */
+
+    .portfolio-image:nth-child(2) {
+      grid-column: 9 / span 4;
+      margin-top: 90px;
+      aspect-ratio: 3 / 4;
+    }
+
+
+    /* IMAGE 03 */
+
+    .portfolio-image:nth-child(3) {
+      grid-column: 2 / span 4;
+      margin-top: 40px;
+      aspect-ratio: 3 / 4;
+    }
+
+
+    /* IMAGE 04 */
+
+    .portfolio-image:nth-child(4) {
+      grid-column: 7 / span 6;
+      margin-top: 130px;
+      aspect-ratio: 4 / 5;
+    }
+
+
+    /* IMAGE 05 — strong full-width-ish moment */
+
+    .portfolio-image:nth-child(5) {
+      grid-column: 1 / span 8;
+      margin-top: 50px;
+      aspect-ratio: 5 / 6;
+    }
+
+
+    /* IMAGE 06 */
+
+    .portfolio-image:nth-child(6) {
+      grid-column: 9 / span 4;
+      margin-top: 180px;
+      aspect-ratio: 3 / 4;
+    }
+
+
+    /* IMAGE 07 */
+
+    .portfolio-image:nth-child(7) {
+      grid-column: 1 / span 4;
+      margin-top: 90px;
+      aspect-ratio: 3 / 4;
+    }
+
+
+    /* IMAGE 08 */
+
+    .portfolio-image:nth-child(8) {
+      grid-column: 5 / span 7;
+      margin-top: 30px;
+      aspect-ratio: 4 / 5;
+    }
+
+
+    /* IMAGE 09 — closing image */
+
+    .portfolio-image:nth-child(9) {
+      grid-column: 3 / span 8;
+      margin-top: 100px;
+      aspect-ratio: 5 / 6;
+    }
+
+
+    .portfolio-end {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 68px;
+      color: var(--muted);
+      font-size: .65rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .portfolio-end::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--artist-accent);
+    }
+
+
+    /* ========================================
+       SELECTED WORK
+       ======================================== */
 
     .artist-work {
-      padding:105px 0;
-      background:var(--artist-dark);
-      color:var(--artist-light);
+      padding: 105px 0;
+      background: var(--artist-dark);
+      color: var(--artist-light);
     }
 
     .work-grid {
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:28px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
     }
 
     .work-card {
-      display:flex;
-      flex-direction:column;
-      border-top:1px solid rgba(245,242,236,.18);
-      border-bottom:1px solid rgba(245,242,236,.18);
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid rgba(245, 242, 236, .18);
+      border-bottom: 1px solid rgba(245, 242, 236, .18);
     }
 
     .work-art {
-      overflow:hidden;
-      background:#252229;
+      overflow: hidden;
     }
 
     .work-art img {
-      display:block;
-      width:100%;
-      height:auto;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform .45s ease;
+    }
+
+    .work-card:hover .work-art img {
+      transform: scale(1.012);
     }
 
     .work-copy {
-      padding:30px 0;
-      display:flex;
-      flex-direction:column;
-      flex:1;
+      padding: 30px 0;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     .work-type {
-      color:#817A84;
-      font-size:.65rem;
-      letter-spacing:.15em;
-      text-transform:uppercase;
+      color: #817A84;
+      font-size: .65rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
     }
 
     .work-copy h3 {
-      margin:12px 0 0;
-      font-size:clamp(2rem,4vw,3.5rem);
-      line-height:.95;
-      letter-spacing:-.035em;
+      margin: 12px 0 0;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: .95;
+      letter-spacing: -.035em;
     }
 
     .work-copy p {
-      max-width:580px;
-      margin:18px 0 0;
-      color:#BDB6C0;
-      line-height:1.75;
+      max-width: 580px;
+      margin: 18px 0 0;
+      color: #BDB6C0;
+      line-height: 1.75;
     }
 
     .work-link,
     .return-link {
-      display:inline-block;
-      width:fit-content;
-      margin-top:auto;
-      padding-top:28px;
-      padding-bottom:4px;
-      border-bottom:1px solid var(--artist-accent);
-      font-size:.68rem;
-      font-weight:600;
-      letter-spacing:.14em;
-      text-transform:uppercase;
+      display: inline-block;
+      width: fit-content;
+      margin-top: auto;
+      padding-top: 28px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--artist-accent);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
     }
+
+
+    /* ========================================
+       RETURN
+       ======================================== */
 
     .artist-return {
-      padding:70px 0;
-      background:var(--ivory);
-      text-align:center;
+      padding: 70px 0;
+      background: var(--ivory);
+      text-align: center;
     }
 
-    @media(max-width:900px) {
+
+    /* ========================================
+       TABLET
+       ======================================== */
+
+    @media (max-width: 900px) {
+
       .artist-hero-inner,
-      .artist-grid {
-        grid-template-columns:1fr;
+      .artist-grid,
+      .portfolio-head {
+        grid-template-columns: 1fr;
       }
 
       .artist-hero-copy {
-        min-height:580px;
-        padding:54px 0 46px;
+        min-height: 580px;
+        padding: 54px 0 46px;
       }
 
       .artist-portrait img {
-        height:auto;
-        min-height:0;
+        height: auto;
+        min-height: 0;
       }
+
+      .portfolio-head {
+        gap: 26px;
+      }
+
     }
 
-    @media(max-width:650px) {
+
+    /* ========================================
+       MOBILE
+       ======================================== */
+
+    @media (max-width: 650px) {
+
       .artist-intro {
-        padding:78px 0;
+        padding: 78px 0;
       }
 
-      .artist-profile {
-        padding:66px 0 78px;
+      .portfolio {
+        padding: 76px 0 88px;
       }
 
-      .profile-grid,
+      .portfolio-head {
+        margin-bottom: 42px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .portfolio-image:nth-child(n) {
+        grid-column: 1;
+        margin-top: 0;
+        aspect-ratio: auto;
+      }
+
+      .portfolio-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .portfolio-image:nth-child(2),
+      .portfolio-image:nth-child(4),
+      .portfolio-image:nth-child(6),
+      .portfolio-image:nth-child(8) {
+        width: 82%;
+        margin-left: auto;
+      }
+
+      .portfolio-image:nth-child(3),
+      .portfolio-image:nth-child(7) {
+        width: 82%;
+        margin-right: auto;
+      }
+
+      .portfolio-image:nth-child(9) {
+        width: 100%;
+      }
+
+      .portfolio-end {
+        margin-top: 46px;
+      }
+
       .work-grid {
-        grid-template-columns:1fr;
-      }
-
-      .profile-item {
-        min-height:140px;
-        border-right:0;
-        border-bottom:1px solid var(--stone);
-      }
-
-      .profile-item:last-child {
-        border-bottom:0;
+        grid-template-columns: 1fr;
+        gap: 54px;
       }
 
       .artist-work {
-        padding:76px 0;
+        padding: 76px 0;
       }
 
-      .work-grid {
-        gap:54px;
-      }
     }
+
   </style>
 </head>
 
 
 <body class="artist-page">
 
+
+  <!-- ========================================
+       HEADER
+       ======================================== -->
+
   <header class="site-header">
 
     <div class="container nav">
 
-      <a href="../../">
-        <span class="wordmark-small">House of</span>
-        <span class="wordmark-main">KOSHI</span>
+      <a
+        href="../../"
+        aria-label="House of Koshi home"
+      >
+        <span class="wordmark-small">
+          House of
+        </span>
+
+        <span class="wordmark-main">
+          KOSHI
+        </span>
       </a>
 
-      <nav class="navlinks">
-        <a href="../" aria-current="page">Artists</a>
-        <a href="../../studios/">Studios</a>
-        <a href="../../media-editorials/">Media &amp; Editorials</a>
-        <a href="../../about/">About</a>
+
+      <nav
+        class="navlinks"
+        aria-label="Primary"
+      >
+
+        <a
+          href="../"
+          aria-current="page"
+        >
+          Artists
+        </a>
+
+        <a href="../../studios/">
+          Studios
+        </a>
+
+        <a href="../../media-editorials/">
+          Media &amp; Editorials
+        </a>
+
+        <a href="../../about/">
+          About
+        </a>
+
       </nav>
 
     </div>
@@ -332,9 +561,15 @@
 
   <main>
 
+
+    <!-- ========================================
+         HERO
+         ======================================== -->
+
     <section class="artist-hero">
 
       <div class="container artist-hero-inner">
+
 
         <div class="artist-hero-copy">
 
@@ -342,6 +577,7 @@
             <span></span>
             Koshi Artists · Represented Talent
           </div>
+
 
           <div>
 
@@ -356,10 +592,21 @@
 
           </div>
 
+
           <div class="artist-hero-meta">
-            <span>Koshi Artists</span>
-            <span>Represented talent</span>
-            <span>House of Koshi</span>
+
+            <span>
+              Koshi Artists
+            </span>
+
+            <span>
+              Represented talent
+            </span>
+
+            <span>
+              House of Koshi
+            </span>
+
           </div>
 
         </div>
@@ -374,18 +621,25 @@
 
         </div>
 
+
       </div>
 
     </section>
 
 
+    <!-- ========================================
+         INTRO
+         ======================================== -->
+
     <section class="artist-intro">
 
       <div class="container artist-grid">
 
+
         <div class="section-label">
           Artist / 001
         </div>
+
 
         <div>
 
@@ -403,53 +657,182 @@
 
         </div>
 
+
       </div>
 
     </section>
 
 
-    <section class="artist-profile">
+    <!-- ========================================
+         SELECTED PORTFOLIO
+         ======================================== -->
+
+    <section class="portfolio">
 
       <div class="container">
 
-        <div class="section-head">
+
+        <div class="portfolio-head">
+
+          <div class="section-label">
+            Selected portfolio
+          </div>
+
+
           <div>
-            <div class="section-label">Representation</div>
-            <h2>PROFILE</h2>
-          </div>
-        </div>
 
-        <div class="profile-grid">
+            <h2 class="portfolio-title">
+              Beyond the role.<br>
+              <span>In her own frame.</span>
+            </h2>
 
-          <div class="profile-item">
-            <span class="profile-label">Performance</span>
-            <p class="profile-value">Actor</p>
-          </div>
+            <p class="portfolio-copy">
+              Selected portrait, fashion and editorial work
+              from Shawna Koshi.
+            </p>
 
-          <div class="profile-item">
-            <span class="profile-label">Image</span>
-            <p class="profile-value">Model</p>
-          </div>
-
-          <div class="profile-item">
-            <span class="profile-label">Practice</span>
-            <p class="profile-value">Creative</p>
           </div>
 
         </div>
+
+
+        <div class="portfolio-grid">
+
+
+          <figure class="portfolio-image">
+
+            <img
+              src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786506276834-0.png"
+              alt="Shawna Koshi selected portfolio image 1"
+              loading="lazy"
+              decoding="async"
+            >
+
+          </figure>
+
+
+          <figure class="portfolio-image">
+
+            <img
+              src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786506394262-0.png"
+              alt="Shawna Koshi selected portfolio image 2"
+              loading="lazy"
+              decoding="async"
+            >
+
+          </figure>
+
+
+          <figure class="portfolio-image">
+
+            <img
+              src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786506444511-0.png"
+              alt="Shawna Koshi selected portfolio image 3"
+              loading="lazy"
+              decoding="async"
+            >
+
+          </figure>
+
+
+          <figure class="portfolio-image">
+
+            <img
+              src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786507032262-0.png"
+              alt="Shawna Koshi selected portfolio image 4"
+              loading="lazy"
+              decoding="async"
+            >
+
+          </figure>
+
+
+          <figure class="portfolio-image">
+
+            <img
+              src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786507168015-0.png"
+              alt="Shawna Koshi selected portfolio image 5"
+              loading="lazy"
+              decoding="async"
+            >
+
+          </figure>
+
+
+          <figure class="portfolio-image">
+
+            <img
+              src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786513038745-0.png"
+              alt="Shawna Koshi selected portfolio image 6"
+              loading="lazy"
+              decoding="async"
+            >
+
+          </figure>
+
+
+          <figure class="portfolio-image">
+
+            <img
+              src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786513412964-0.png"
+              alt="Shawna Koshi selected portfolio image 7"
+              loading="lazy"
+              decoding="async"
+            >
+
+          </figure>
+
+
+          <figure class="portfolio-image">
+
+            <img
+              src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786543694678-0.png"
+              alt="Shawna Koshi selected portfolio image 8"
+              loading="lazy"
+              decoding="async"
+            >
+
+          </figure>
+
+
+          <figure class="portfolio-image">
+
+            <img
+              src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786553394654-0.png"
+              alt="Shawna Koshi selected portfolio image 9"
+              loading="lazy"
+              decoding="async"
+            >
+
+          </figure>
+
+
+        </div>
+
+
+        <div class="portfolio-end">
+          Shawna Koshi · Selected Portfolio
+        </div>
+
 
       </div>
 
     </section>
 
+
+    <!-- ========================================
+         SELECTED WORK
+         ======================================== -->
 
     <section class="artist-work">
 
       <div class="container">
 
+
         <div class="section-head">
 
           <div>
+
             <div
               class="section-label"
               style="color:#817B84"
@@ -460,12 +843,16 @@
             <h2>
               PRODUCTIONS
             </h2>
+
           </div>
 
         </div>
 
 
         <div class="work-grid">
+
+
+          <!-- POLYNOMIALS -->
 
           <a
             class="work-card"
@@ -482,21 +869,26 @@
 
             </div>
 
+
             <div class="work-copy">
 
-              <div class="work-type">
-                Original Production · Core Cast
+              <div>
+
+                <div class="work-type">
+                  Original Production · Core Cast
+                </div>
+
+                <h3>
+                  POLYNOMIALS
+                </h3>
+
+                <p>
+                  Shawna is a core cast member in House of Koshi's
+                  ongoing original production, Polynomials.
+                </p>
+
               </div>
 
-              <h3>
-                POLYNOMIALS
-              </h3>
-
-              <p>
-                Shawna appears as part of the core cast of
-                House of Koshi's ongoing original production,
-                Polynomials.
-              </p>
 
               <span class="work-link">
                 View production →
@@ -506,6 +898,8 @@
 
           </a>
 
+
+          <!-- FALLING. FALLEN. -->
 
           <a
             class="work-card"
@@ -522,20 +916,26 @@
 
             </div>
 
+
             <div class="work-copy">
 
-              <div class="work-type">
-                Creative Adaptation · Cameo Appearance
+              <div>
+
+                <div class="work-type">
+                  Creative Adaptation · Cameo Appearance
+                </div>
+
+                <h3>
+                  FALLING. FALLEN.
+                </h3>
+
+                <p>
+                  Shawna makes a cameo appearance in the completed
+                  Koshi Studios creative adaptation.
+                </p>
+
               </div>
 
-              <h3>
-                FALLING. FALLEN.
-              </h3>
-
-              <p>
-                Shawna makes a cameo appearance in the completed
-                Koshi Studios creative adaptation.
-              </p>
 
               <span class="work-link">
                 View production →
@@ -545,12 +945,17 @@
 
           </a>
 
+
         </div>
 
       </div>
 
     </section>
 
+
+    <!-- ========================================
+         RETURN TO ARTISTS
+         ======================================== -->
 
     <section class="artist-return">
 
@@ -567,12 +972,18 @@
 
     </section>
 
+
   </main>
 
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
 
   <footer class="footer">
 
     <div class="container footer-grid">
+
 
       <div>
 
@@ -584,20 +995,29 @@
           KOSHI
         </span>
 
-        <div style="margin-top:12px;color:var(--muted);font-size:.8rem">
+        <div
+          style="
+            margin-top:12px;
+            color:var(--muted);
+            font-size:.8rem;
+          "
+        >
           Artists. Stories. Worlds.
         </div>
 
       </div>
+
 
       <div class="smallprint">
         Koshi Artists<br>
         Shawna Koshi · Represented Talent
       </div>
 
+
     </div>
 
   </footer>
+
 
 </body>
 
