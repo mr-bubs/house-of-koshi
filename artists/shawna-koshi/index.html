@@ -657,6 +657,7 @@
 
         <div
           class="portfolio-track"
+          id="portfolioTrack"
           aria-label="Shawna Koshi selected portfolio"
         >
 
@@ -667,7 +668,7 @@
 
               <img
                 src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786506276834-0.png"
-                alt="Shawna Koshi selected portfolio image 1"
+                alt="Shawna Koshi selected portfolio image"
                 loading="lazy"
                 decoding="async"
               >
@@ -675,7 +676,7 @@
             </div>
 
             <div class="portfolio-number">
-              <span>01</span>
+              <span class="portfolio-index">01</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -688,7 +689,7 @@
 
               <img
                 src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786506394262-0.png"
-                alt="Shawna Koshi selected portfolio image 2"
+                alt="Shawna Koshi selected portfolio image"
                 loading="lazy"
                 decoding="async"
               >
@@ -696,7 +697,7 @@
             </div>
 
             <div class="portfolio-number">
-              <span>02</span>
+              <span class="portfolio-index">02</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -709,7 +710,7 @@
 
               <img
                 src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786506444511-0.png"
-                alt="Shawna Koshi selected portfolio image 3"
+                alt="Shawna Koshi selected portfolio image"
                 loading="lazy"
                 decoding="async"
               >
@@ -717,7 +718,7 @@
             </div>
 
             <div class="portfolio-number">
-              <span>03</span>
+              <span class="portfolio-index">03</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -730,7 +731,7 @@
 
               <img
                 src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786507032262-0.png"
-                alt="Shawna Koshi selected portfolio image 4"
+                alt="Shawna Koshi selected portfolio image"
                 loading="lazy"
                 decoding="async"
               >
@@ -738,7 +739,7 @@
             </div>
 
             <div class="portfolio-number">
-              <span>04</span>
+              <span class="portfolio-index">04</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -751,7 +752,7 @@
 
               <img
                 src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786507168015-0.png"
-                alt="Shawna Koshi selected portfolio image 5"
+                alt="Shawna Koshi selected portfolio image"
                 loading="lazy"
                 decoding="async"
               >
@@ -759,7 +760,7 @@
             </div>
 
             <div class="portfolio-number">
-              <span>05</span>
+              <span class="portfolio-index">05</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -772,7 +773,7 @@
 
               <img
                 src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786513038745-0.png"
-                alt="Shawna Koshi selected portfolio image 6"
+                alt="Shawna Koshi selected portfolio image"
                 loading="lazy"
                 decoding="async"
               >
@@ -780,7 +781,7 @@
             </div>
 
             <div class="portfolio-number">
-              <span>06</span>
+              <span class="portfolio-index">06</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -793,7 +794,7 @@
 
               <img
                 src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786513412964-0.png"
-                alt="Shawna Koshi selected portfolio image 7"
+                alt="Shawna Koshi selected portfolio image"
                 loading="lazy"
                 decoding="async"
               >
@@ -801,7 +802,7 @@
             </div>
 
             <div class="portfolio-number">
-              <span>07</span>
+              <span class="portfolio-index">07</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -814,7 +815,7 @@
 
               <img
                 src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786543694678-0.png"
-                alt="Shawna Koshi selected portfolio image 8"
+                alt="Shawna Koshi selected portfolio image"
                 loading="lazy"
                 decoding="async"
               >
@@ -822,7 +823,7 @@
             </div>
 
             <div class="portfolio-number">
-              <span>08</span>
+              <span class="portfolio-index">08</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -835,7 +836,7 @@
 
               <img
                 src="https://cxvinrcwagrherugqcoy.supabase.co/storage/v1/object/public/images/shawna/1786553394654-0.png"
-                alt="Shawna Koshi selected portfolio image 9"
+                alt="Shawna Koshi selected portfolio image"
                 loading="lazy"
                 decoding="async"
               >
@@ -843,7 +844,7 @@
             </div>
 
             <div class="portfolio-number">
-              <span>09</span>
+              <span class="portfolio-index">09</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -1054,6 +1055,99 @@
     </div>
 
   </footer>
+
+
+  <!-- ========================================
+       RANDOMIZE PORTFOLIO ON EACH PAGE LOAD
+       ======================================== -->
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const track = document.getElementById("portfolioTrack");
+
+      if (!track) {
+        return;
+      }
+
+      const cards = Array.from(
+        track.querySelectorAll(".portfolio-card")
+      );
+
+
+      /*
+        Fisher-Yates shuffle.
+
+        Each time the page loads or refreshes,
+        the portfolio cards are rearranged into
+        a new random order.
+      */
+
+      for (let i = cards.length - 1; i > 0; i--) {
+
+        const randomIndex = Math.floor(
+          Math.random() * (i + 1)
+        );
+
+        [
+          cards[i],
+          cards[randomIndex]
+        ] = [
+          cards[randomIndex],
+          cards[i]
+        ];
+
+      }
+
+
+      /*
+        Put the shuffled cards back into
+        the horizontal scrolling track.
+      */
+
+      cards.forEach(function (card) {
+        track.appendChild(card);
+      });
+
+
+      /*
+        Renumber the visible order so the
+        labels always read 01, 02, 03...
+        regardless of which photograph
+        happens to appear first.
+      */
+
+      const shuffledCards = track.querySelectorAll(
+        ".portfolio-card"
+      );
+
+      shuffledCards.forEach(function (card, index) {
+
+        const number = card.querySelector(
+          ".portfolio-index"
+        );
+
+        if (number) {
+
+          number.textContent = String(
+            index + 1
+          ).padStart(2, "0");
+
+        }
+
+      });
+
+
+      /*
+        Always begin at the first shuffled image.
+      */
+
+      track.scrollLeft = 0;
+
+    });
+
+  </script>
 
 
 </body>
