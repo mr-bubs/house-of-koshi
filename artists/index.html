@@ -11,7 +11,7 @@
 
   <meta
     name="description"
-    content="Koshi Artists — represented virtual talent from House of Koshi."
+    content="Koshi Artists — represented talent from House of Koshi."
   >
 
   <title>Koshi Artists — House of Koshi</title>
@@ -61,8 +61,8 @@
 
     .roster-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 70px 28px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 66px 24px;
     }
 
     .roster-card {
@@ -70,7 +70,6 @@
     }
 
     .roster-image {
-      position: relative;
       width: 100%;
       aspect-ratio: 4 / 5;
       overflow: hidden;
@@ -78,6 +77,7 @@
     }
 
     .roster-image img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -89,61 +89,43 @@
       transform: scale(1.018);
     }
 
-    .roster-image::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          to top,
-          rgba(23, 22, 25, .18),
-          transparent 32%
-        );
-      pointer-events: none;
-    }
-
     .roster-meta {
-      padding-top: 20px;
+      padding-top: 18px;
       display: grid;
-      grid-template-columns: 56px 1fr;
-      gap: 16px;
+      grid-template-columns: 48px 1fr;
+      gap: 12px;
     }
 
     .roster-number {
       padding-top: 4px;
       color: var(--muted);
-      font-size: .65rem;
+      font-size: .63rem;
       letter-spacing: .15em;
       text-transform: uppercase;
     }
 
     .roster-name {
       margin: 0;
-      font-size: clamp(1.55rem, 3vw, 2.15rem);
+      font-size: clamp(1.4rem, 2.4vw, 1.95rem);
       font-weight: 500;
       line-height: 1.05;
     }
 
     .roster-role {
-      margin: 8px 0 0;
+      margin: 7px 0 0;
       color: var(--muted);
-      font-size: .82rem;
+      font-size: .8rem;
     }
 
     .roster-action {
       display: inline-block;
-      margin-top: 17px;
+      margin-top: 15px;
       padding-bottom: 4px;
       border-bottom: 1px solid var(--lilac);
-      color: var(--ink);
-      font-size: .67rem;
+      font-size: .65rem;
       font-weight: 600;
       letter-spacing: .14em;
       text-transform: uppercase;
-    }
-
-    .roster-card:hover .roster-action {
-      color: #756681;
     }
 
     .artists-statement {
@@ -178,7 +160,11 @@
       line-height: 1.85;
     }
 
-    @media(max-width:850px) {
+    @media(max-width:900px) {
+      .roster-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .artists-intro-grid,
       .artists-statement-grid {
         grid-template-columns: 1fr;
@@ -186,7 +172,7 @@
       }
     }
 
-    @media(max-width:650px) {
+    @media(max-width:600px) {
       .artists-intro {
         padding: 76px 0;
       }
@@ -197,15 +183,11 @@
 
       .roster-grid {
         grid-template-columns: 1fr;
-        gap: 58px;
-      }
-
-      .roster-image {
-        aspect-ratio: 4 / 5;
+        gap: 56px;
       }
 
       .roster-meta {
-        grid-template-columns: 45px 1fr;
+        grid-template-columns: 44px 1fr;
       }
 
       .roster-name {
@@ -234,10 +216,8 @@
         <span class="wordmark-main">KOSHI</span>
       </a>
 
-      <nav
-        class="navlinks"
-        aria-label="Primary"
-      >
+      <nav class="navlinks" aria-label="Primary">
+
         <a
           href="./"
           aria-current="page"
@@ -256,6 +236,7 @@
         <a href="../about/">
           About
         </a>
+
       </nav>
 
     </div>
@@ -300,16 +281,14 @@
 
           <h2 class="artists-intro-title">
             Talent came first.<br>
-            <span>
-              Everything else followed.
-            </span>
+            <span>Everything else followed.</span>
           </h2>
 
           <p class="artists-intro-copy">
             Koshi Artists is the representation arm of House of Koshi —
-            a growing roster of distinctive virtual performers and
-            creative personalities who move across productions,
-            editorials and visual media.
+            a growing roster of distinctive performers and creative
+            personalities moving across productions, editorials and
+            visual media.
           </p>
 
         </div>
@@ -326,7 +305,6 @@
         <div class="section-head">
 
           <div>
-
             <div class="section-label">
               Represented talent
             </div>
@@ -334,15 +312,11 @@
             <h2>
               ARTISTS
             </h2>
-
           </div>
 
           <span
             class="serif"
-            style="
-              font-size:1.35rem;
-              color:var(--muted)
-            "
+            style="font-size:1.35rem;color:var(--muted)"
           >
             Individual. Distinct. Unscripted.
           </span>
@@ -352,40 +326,24 @@
 
         <div class="roster-grid">
 
-          <a
-            class="roster-card"
-            href="shawna-koshi/"
-          >
+
+          <a class="roster-card" href="shawna-koshi/">
 
             <div class="roster-image">
-
               <img
                 src="../assets/images/artists/shawna-headshot.png"
                 alt="Shawna Koshi portrait"
               >
-
             </div>
 
             <div class="roster-meta">
 
-              <span class="roster-number">
-                001
-              </span>
+              <span class="roster-number">001</span>
 
               <div>
-
-                <h3 class="roster-name">
-                  SHAWNA KOSHI
-                </h3>
-
-                <p class="roster-role">
-                  Actor · Model · Creative
-                </p>
-
-                <span class="roster-action">
-                  View artist →
-                </span>
-
+                <h3 class="roster-name">SHAWNA KOSHI</h3>
+                <p class="roster-role">Actor · Model · Creative</p>
+                <span class="roster-action">View artist →</span>
               </div>
 
             </div>
@@ -393,41 +351,24 @@
           </a>
 
 
-          <a
-            class="roster-card"
-            href="layla/"
-          >
+          <a class="roster-card" href="layla/">
 
             <div class="roster-image">
-
               <img
                 src="../assets/images/artists/layla-headshot.png"
                 alt="Layla portrait"
                 loading="lazy"
               >
-
             </div>
 
             <div class="roster-meta">
 
-              <span class="roster-number">
-                002
-              </span>
+              <span class="roster-number">002</span>
 
               <div>
-
-                <h3 class="roster-name">
-                  LAYLA
-                </h3>
-
-                <p class="roster-role">
-                  Actor · Model
-                </p>
-
-                <span class="roster-action">
-                  View artist →
-                </span>
-
+                <h3 class="roster-name">LAYLA</h3>
+                <p class="roster-role">Actor · Model</p>
+                <span class="roster-action">View artist →</span>
               </div>
 
             </div>
@@ -435,41 +376,24 @@
           </a>
 
 
-          <a
-            class="roster-card"
-            href="mira/"
-          >
+          <a class="roster-card" href="mira/">
 
             <div class="roster-image">
-
               <img
                 src="../assets/images/artists/mira-headshot.png"
                 alt="Mira portrait"
                 loading="lazy"
               >
-
             </div>
 
             <div class="roster-meta">
 
-              <span class="roster-number">
-                003
-              </span>
+              <span class="roster-number">003</span>
 
               <div>
-
-                <h3 class="roster-name">
-                  MIRA
-                </h3>
-
-                <p class="roster-role">
-                  Actor · Model
-                </p>
-
-                <span class="roster-action">
-                  View artist →
-                </span>
-
+                <h3 class="roster-name">MIRA</h3>
+                <p class="roster-role">Actor · Model</p>
+                <span class="roster-action">View artist →</span>
               </div>
 
             </div>
@@ -477,46 +401,155 @@
           </a>
 
 
-          <a
-            class="roster-card"
-            href="polly/"
-          >
+          <a class="roster-card" href="polly/">
 
             <div class="roster-image">
-
               <img
                 src="../assets/images/artists/polly-headshot.png"
                 alt="Polly portrait"
                 loading="lazy"
               >
-
             </div>
 
             <div class="roster-meta">
 
-              <span class="roster-number">
-                004
-              </span>
+              <span class="roster-number">004</span>
 
               <div>
-
-                <h3 class="roster-name">
-                  POLLY
-                </h3>
-
-                <p class="roster-role">
-                  Actor · Model
-                </p>
-
-                <span class="roster-action">
-                  View artist →
-                </span>
-
+                <h3 class="roster-name">POLLY</h3>
+                <p class="roster-role">Actor · Model</p>
+                <span class="roster-action">View artist →</span>
               </div>
 
             </div>
 
           </a>
+
+
+          <a class="roster-card" href="thea/">
+
+            <div class="roster-image">
+              <img
+                src="../assets/images/artists/thea-headshot.png"
+                alt="Thea portrait"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="roster-meta">
+
+              <span class="roster-number">005</span>
+
+              <div>
+                <h3 class="roster-name">THEA</h3>
+                <p class="roster-role">Actor</p>
+                <span class="roster-action">View artist →</span>
+              </div>
+
+            </div>
+
+          </a>
+
+
+          <a class="roster-card" href="shuri/">
+
+            <div class="roster-image">
+              <img
+                src="../assets/images/artists/shuri-headshot.png"
+                alt="Shuri portrait"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="roster-meta">
+
+              <span class="roster-number">006</span>
+
+              <div>
+                <h3 class="roster-name">SHURI</h3>
+                <p class="roster-role">Actor</p>
+                <span class="roster-action">View artist →</span>
+              </div>
+
+            </div>
+
+          </a>
+
+
+          <a class="roster-card" href="lena/">
+
+            <div class="roster-image">
+              <img
+                src="../assets/images/artists/lena-headshot.png"
+                alt="Lena portrait"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="roster-meta">
+
+              <span class="roster-number">007</span>
+
+              <div>
+                <h3 class="roster-name">LENA</h3>
+                <p class="roster-role">Actor</p>
+                <span class="roster-action">View artist →</span>
+              </div>
+
+            </div>
+
+          </a>
+
+
+          <a class="roster-card" href="june/">
+
+            <div class="roster-image">
+              <img
+                src="../assets/images/artists/june-headshot.png"
+                alt="June portrait"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="roster-meta">
+
+              <span class="roster-number">008</span>
+
+              <div>
+                <h3 class="roster-name">JUNE</h3>
+                <p class="roster-role">Actor</p>
+                <span class="roster-action">View artist →</span>
+              </div>
+
+            </div>
+
+          </a>
+
+
+          <a class="roster-card" href="lana/">
+
+            <div class="roster-image">
+              <img
+                src="../assets/images/artists/lana-headshot.png"
+                alt="Lana portrait"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="roster-meta">
+
+              <span class="roster-number">009</span>
+
+              <div>
+                <h3 class="roster-name">LANA</h3>
+                <p class="roster-role">Actor</p>
+                <span class="roster-action">View artist →</span>
+              </div>
+
+            </div>
+
+          </a>
+
 
         </div>
 
@@ -540,9 +573,7 @@
 
           <h2>
             Artists across stories.<br>
-            <span>
-              Not confined by them.
-            </span>
+            <span>Not confined by them.</span>
           </h2>
 
           <p>
@@ -567,21 +598,10 @@
 
       <div>
 
-        <span class="wordmark-small">
-          House of
-        </span>
+        <span class="wordmark-small">House of</span>
+        <span class="wordmark-main">KOSHI</span>
 
-        <span class="wordmark-main">
-          KOSHI
-        </span>
-
-        <div
-          style="
-            margin-top:12px;
-            color:var(--muted);
-            font-size:.8rem
-          "
-        >
+        <div style="margin-top:12px;color:var(--muted);font-size:.8rem">
           Artists. Stories. Worlds.
         </div>
 
