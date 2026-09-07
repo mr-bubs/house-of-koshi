@@ -86,7 +86,7 @@
       flex-wrap: wrap;
       gap: 34px;
       padding-top: 22px;
-      border-top: 1px solid rgba(245, 242, 236, .17);
+      border-top: 1px solid rgba(245,242,236,.17);
       color: var(--artist-muted);
       font-size: .66rem;
       letter-spacing: .14em;
@@ -94,46 +94,17 @@
     }
 
     .artist-portrait {
-      position: relative;
       min-height: 760px;
       overflow: hidden;
-      background:
-        linear-gradient(
-          145deg,
-          #342F36,
-          #201D22
-        );
+      background: #242126;
     }
 
-    .artist-portrait::before {
-      content: "S";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -54%);
-      color: rgba(169, 154, 190, .24);
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(16rem, 32vw, 28rem);
-      line-height: 1;
-    }
-
-    .artist-portrait::after {
-      content: "";
-      position: absolute;
-      inset: 36px;
-      border-top: 1px solid rgba(169, 154, 190, .3);
-      border-bottom: 1px solid rgba(169, 154, 190, .3);
-    }
-
-    .artist-portrait-note {
-      position: absolute;
-      z-index: 2;
-      left: 42px;
-      bottom: 42px;
-      color: #857E88;
-      font-size: .62rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
+    .artist-portrait img {
+      width: 100%;
+      height: 100%;
+      min-height: 760px;
+      object-fit: cover;
+      object-position: center top;
     }
 
     .artist-intro {
@@ -141,7 +112,7 @@
       background: #fff;
     }
 
-    .artist-intro-grid {
+    .artist-grid {
       display: grid;
       grid-template-columns: .42fr 1.58fr;
       gap: 60px;
@@ -173,14 +144,14 @@
       background: var(--ivory);
     }
 
-    .artist-profile-grid {
+    .profile-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
       border-top: 1px solid var(--stone);
       border-bottom: 1px solid var(--stone);
     }
 
-    .artist-profile-item {
+    .profile-item {
       min-height: 190px;
       padding: 28px 26px;
       border-right: 1px solid var(--stone);
@@ -189,23 +160,22 @@
       justify-content: space-between;
     }
 
-    .artist-profile-item:last-child {
+    .profile-item:last-child {
       border-right: 0;
     }
 
-    .artist-profile-label {
+    .profile-label {
       color: var(--muted);
       font-size: .63rem;
       letter-spacing: .15em;
       text-transform: uppercase;
     }
 
-    .artist-profile-value {
+    .profile-value {
       margin: 0;
       font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-size: clamp(1.8rem,3vw,2.6rem);
       font-weight: 400;
-      line-height: 1.05;
     }
 
     .artist-work {
@@ -214,40 +184,15 @@
       color: var(--artist-light);
     }
 
-    .artist-work-intro {
-      display: grid;
-      grid-template-columns: .42fr 1.58fr;
-      gap: 60px;
-      margin-bottom: 52px;
-    }
-
-    .artist-work-title {
-      margin: 0;
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(3.1rem, 6vw, 5.8rem);
-      font-weight: 400;
-      line-height: .98;
-    }
-
-    .artist-work-title span {
-      color: #B9A8CA;
-    }
-
     .work-card {
       display: grid;
-      grid-template-columns: minmax(260px, .75fr) 1.25fr;
+      grid-template-columns: minmax(260px,.75fr) 1.25fr;
       min-height: 460px;
-      border-top: 1px solid rgba(245, 242, 236, .18);
-      border-bottom: 1px solid rgba(245, 242, 236, .18);
-    }
-
-    .work-art {
-      overflow: hidden;
-      background: #252229;
+      border-top: 1px solid rgba(245,242,236,.18);
+      border-bottom: 1px solid rgba(245,242,236,.18);
     }
 
     .work-art img {
-      display: block;
       width: 100%;
       height: 100%;
       min-height: 460px;
@@ -271,8 +216,7 @@
 
     .work-copy h3 {
       margin: 10px 0 0;
-      font-size: clamp(2.2rem, 5vw, 4.8rem);
-      font-weight: 500;
+      font-size: clamp(2.2rem,5vw,4.8rem);
       line-height: .9;
       letter-spacing: -.04em;
     }
@@ -284,57 +228,15 @@
       line-height: 1.75;
     }
 
-    .work-link {
+    .work-link,
+    .return-link {
       display: inline-block;
       width: fit-content;
-      margin-top: 30px;
       padding-bottom: 4px;
       border-bottom: 1px solid var(--artist-accent);
-      color: var(--artist-light);
       font-size: .68rem;
       font-weight: 600;
       letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .artist-editorial {
-      padding: 105px 0;
-      background: #fff;
-    }
-
-    .artist-editorial-grid {
-      display: grid;
-      grid-template-columns: .42fr 1.58fr;
-      gap: 60px;
-    }
-
-    .editorial-placeholder {
-      margin-top: 36px;
-      min-height: 350px;
-      position: relative;
-      overflow: hidden;
-      background: var(--lavender);
-    }
-
-    .editorial-placeholder::before {
-      content: "EDITORIAL";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      color: rgba(117, 103, 126, .45);
-      font-size: clamp(2rem, 6vw, 5rem);
-      font-weight: 500;
-      letter-spacing: .12em;
-    }
-
-    .editorial-placeholder-note {
-      position: absolute;
-      left: 26px;
-      bottom: 24px;
-      color: #817A83;
-      font-size: .62rem;
-      letter-spacing: .15em;
       text-transform: uppercase;
     }
 
@@ -344,39 +246,25 @@
       text-align: center;
     }
 
-    .artist-return a {
-      display: inline-block;
-      padding-bottom: 4px;
-      border-bottom: 1px solid var(--artist-accent);
-      font-size: .7rem;
-      font-weight: 600;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
-
     @media(max-width:900px) {
-      .artist-hero-inner {
+      .artist-hero-inner,
+      .artist-grid,
+      .work-card {
         grid-template-columns: 1fr;
       }
 
       .artist-hero-copy {
-        min-height: 620px;
+        min-height: 580px;
         padding: 54px 0 46px;
       }
 
-      .artist-portrait {
-        min-height: 520px;
+      .artist-portrait,
+      .artist-portrait img {
+        min-height: 0;
       }
 
-      .artist-intro-grid,
-      .artist-work-intro,
-      .artist-editorial-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-
-      .work-card {
-        grid-template-columns: 1fr;
+      .artist-portrait img {
+        height: auto;
       }
 
       .work-art img {
@@ -386,18 +274,6 @@
     }
 
     @media(max-width:650px) {
-      .artist-name {
-        font-size: clamp(4rem, 19vw, 6rem);
-      }
-
-      .artist-hero-copy {
-        min-height: 560px;
-      }
-
-      .artist-portrait {
-        min-height: 430px;
-      }
-
       .artist-intro {
         padding: 78px 0;
       }
@@ -406,17 +282,17 @@
         padding: 66px 0 78px;
       }
 
-      .artist-profile-grid {
+      .profile-grid {
         grid-template-columns: 1fr;
       }
 
-      .artist-profile-item {
+      .profile-item {
         min-height: 140px;
         border-right: 0;
         border-bottom: 1px solid var(--stone);
       }
 
-      .artist-profile-item:last-child {
+      .profile-item:last-child {
         border-bottom: 0;
       }
 
@@ -424,21 +300,9 @@
         padding: 76px 0;
       }
 
-      .work-card {
-        min-height: 0;
-      }
-
       .work-copy {
-        min-height: 360px;
+        min-height: 340px;
         padding: 30px 0;
-      }
-
-      .artist-editorial {
-        padding: 76px 0;
-      }
-
-      .editorial-placeholder {
-        min-height: 260px;
       }
     }
   </style>
@@ -451,36 +315,16 @@
 
     <div class="container nav">
 
-      <a
-        href="../../"
-        aria-label="House of Koshi home"
-      >
+      <a href="../../">
         <span class="wordmark-small">House of</span>
         <span class="wordmark-main">KOSHI</span>
       </a>
 
-      <nav
-        class="navlinks"
-        aria-label="Primary"
-      >
-        <a
-          href="../"
-          aria-current="page"
-        >
-          Artists
-        </a>
-
-        <a href="../../studios/">
-          Studios
-        </a>
-
-        <a href="../../media-editorials/">
-          Media &amp; Editorials
-        </a>
-
-        <a href="../../about/">
-          About
-        </a>
+      <nav class="navlinks">
+        <a href="../" aria-current="page">Artists</a>
+        <a href="../../studios/">Studios</a>
+        <a href="../../media-editorials/">Media &amp; Editorials</a>
+        <a href="../../about/">About</a>
       </nav>
 
     </div>
@@ -525,9 +369,10 @@
 
         <div class="artist-portrait">
 
-          <div class="artist-portrait-note">
-            Selected artist portrait coming later
-          </div>
+          <img
+            src="../../assets/images/artists/shawna-headshot.png"
+            alt="Shawna Koshi portrait"
+          >
 
         </div>
 
@@ -538,7 +383,7 @@
 
     <section class="artist-intro">
 
-      <div class="container artist-intro-grid">
+      <div class="container artist-grid">
 
         <div class="section-label">
           Artist / 001
@@ -554,8 +399,8 @@
           <p class="artist-intro-copy">
             Shawna Koshi is represented by Koshi Artists across
             performance, modelling and creative work. Her portfolio
-            will bring together selected productions, editorials
-            and future House of Koshi projects.
+            brings together productions, editorial work and the wider
+            creative world of House of Koshi.
           </p>
 
         </div>
@@ -570,58 +415,27 @@
       <div class="container">
 
         <div class="section-head">
-
           <div>
-            <div class="section-label">
-              Representation
-            </div>
-
-            <h2>
-              PROFILE
-            </h2>
+            <div class="section-label">Representation</div>
+            <h2>PROFILE</h2>
           </div>
-
         </div>
 
+        <div class="profile-grid">
 
-        <div class="artist-profile-grid">
-
-          <div class="artist-profile-item">
-
-            <span class="artist-profile-label">
-              Performance
-            </span>
-
-            <p class="artist-profile-value">
-              Actor
-            </p>
-
+          <div class="profile-item">
+            <span class="profile-label">Performance</span>
+            <p class="profile-value">Actor</p>
           </div>
 
-
-          <div class="artist-profile-item">
-
-            <span class="artist-profile-label">
-              Image
-            </span>
-
-            <p class="artist-profile-value">
-              Model
-            </p>
-
+          <div class="profile-item">
+            <span class="profile-label">Image</span>
+            <p class="profile-value">Model</p>
           </div>
 
-
-          <div class="artist-profile-item">
-
-            <span class="artist-profile-label">
-              Practice
-            </span>
-
-            <p class="artist-profile-value">
-              Creative
-            </p>
-
+          <div class="profile-item">
+            <span class="profile-label">Practice</span>
+            <p class="profile-value">Creative</p>
           </div>
 
         </div>
@@ -635,24 +449,19 @@
 
       <div class="container">
 
-        <div class="artist-work-intro">
-
-          <div
-            class="section-label"
-            style="color:#817B84"
-          >
-            Selected work
-          </div>
+        <div class="section-head">
 
           <div>
+            <div
+              class="section-label"
+              style="color:#817B84"
+            >
+              Selected work
+            </div>
 
-            <h2 class="artist-work-title">
-              Stories become<br>
-              <span>
-                part of the portfolio.
-              </span>
+            <h2>
+              PRODUCTIONS
             </h2>
-
           </div>
 
         </div>
@@ -706,53 +515,14 @@
     </section>
 
 
-    <section class="artist-editorial">
-
-      <div class="container artist-editorial-grid">
-
-        <div class="section-label">
-          Media &amp; Editorials
-        </div>
-
-        <div>
-
-          <h2
-            class="serif"
-            style="
-              margin:0;
-              font-size:clamp(3rem,6vw,5.8rem);
-              line-height:.98
-            "
-          >
-            Beyond the role.
-          </h2>
-
-          <p class="descriptor">
-            Portraiture, editorial work, interviews and campaigns
-            will live alongside Shawna's production portfolio as
-            House of Koshi Media &amp; Editorials develops.
-          </p>
-
-          <div class="editorial-placeholder">
-
-            <div class="editorial-placeholder-note">
-              Selected editorial work coming later
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
     <section class="artist-return">
 
       <div class="container">
 
-        <a href="../">
+        <a
+          class="return-link"
+          href="../"
+        >
           ← All Koshi Artists
         </a>
 
@@ -768,25 +538,12 @@
     <div class="container footer-grid">
 
       <div>
+        <span class="wordmark-small">House of</span>
+        <span class="wordmark-main">KOSHI</span>
 
-        <span class="wordmark-small">
-          House of
-        </span>
-
-        <span class="wordmark-main">
-          KOSHI
-        </span>
-
-        <div
-          style="
-            margin-top:12px;
-            color:var(--muted);
-            font-size:.8rem
-          "
-        >
+        <div style="margin-top:12px;color:var(--muted);font-size:.8rem">
           Artists. Stories. Worlds.
         </div>
-
       </div>
 
       <div class="smallprint">
