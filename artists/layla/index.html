@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Layla — represented artist at House of Koshi."
+  >
+
+  <title>Layla — Koshi Artists</title>
+
+  <link rel="stylesheet" href="../../assets/css/site.css">
+
+  <style>
+    .artist-page {
+      --artist-dark:#171619;
+      --artist-accent:#A99ABE;
+      --artist-light:#F5F2EC;
+      --artist-muted:#A8A1AA;
+    }
+
+    .artist-hero {
+      background:var(--artist-dark);
+      color:var(--artist-light);
+      overflow:hidden;
+    }
+
+    .artist-hero-inner {
+      min-height:760px;
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+    }
+
+    .artist-hero-copy {
+      padding:72px 58px 58px 0;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .artist-kicker {
+      color:var(--artist-muted);
+      font-size:.68rem;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+    }
+
+    .artist-kicker span {
+      display:inline-block;
+      width:8px;
+      height:8px;
+      margin-right:10px;
+      border-radius:50%;
+      background:var(--artist-accent);
+    }
+
+    .artist-name {
+      margin:24px 0 0;
+      font-size:clamp(4.4rem,10vw,9rem);
+      font-weight:500;
+      letter-spacing:-.06em;
+      line-height:.84;
+    }
+
+    .artist-role {
+      margin:30px 0 0;
+      color:#D9D2DB;
+      font-family:"Instrument Serif",Georgia,serif;
+      font-size:clamp(2rem,3.6vw,3.2rem);
+    }
+
+    .artist-hero-meta {
+      display:flex;
+      flex-wrap:wrap;
+      gap:34px;
+      padding-top:22px;
+      border-top:1px solid rgba(245,242,236,.17);
+      color:var(--artist-muted);
+      font-size:.66rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .artist-portrait img {
+      width:100%;
+      height:100%;
+      min-height:760px;
+      object-fit:cover;
+      object-position:center top;
+    }
+
+    .artist-intro {
+      padding:115px 0;
+    }
+
+    .artist-grid {
+      display:grid;
+      grid-template-columns:.42fr 1.58fr;
+      gap:60px;
+    }
+
+    .artist-intro-title {
+      margin:0;
+      font-family:"Instrument Serif",Georgia,serif;
+      font-size:clamp(3.2rem,6vw,6rem);
+      font-weight:400;
+      line-height:.98;
+    }
+
+    .artist-intro-title span {
+      color:var(--artist-accent);
+    }
+
+    .artist-intro-copy {
+      max-width:760px;
+      margin:32px 0 0;
+      color:var(--muted);
+      line-height:1.85;
+    }
+
+    .artist-profile {
+      padding:88px 0 105px;
+      background:var(--ivory);
+    }
+
+    .profile-grid {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      border-top:1px solid var(--stone);
+      border-bottom:1px solid var(--stone);
+    }
+
+    .profile-item {
+      min-height:190px;
+      padding:28px 26px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      border-right:1px solid var(--stone);
+    }
+
+    .profile-item:last-child {
+      border-right:0;
+    }
+
+    .profile-label {
+      color:var(--muted);
+      font-size:.63rem;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+    }
+
+    .profile-value {
+      margin:0;
+      font-family:"Instrument Serif",Georgia,serif;
+      font-size:clamp(1.8rem,3vw,2.6rem);
+    }
+
+    .artist-work {
+      padding:105px 0;
+      background:var(--artist-dark);
+      color:var(--artist-light);
+    }
+
+    .work-card {
+      display:grid;
+      grid-template-columns:minmax(260px,.75fr) 1.25fr;
+      border-top:1px solid rgba(245,242,236,.18);
+      border-bottom:1px solid rgba(245,242,236,.18);
+    }
+
+    .work-art img {
+      width:100%;
+      height:100%;
+      min-height:460px;
+      object-fit:cover;
+      object-position:center top;
+    }
+
+    .work-copy {
+      padding:42px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .work-type {
+      color:#817A84;
+      font-size:.65rem;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+    }
+
+    .work-copy h3 {
+      margin:10px 0 0;
+      font-size:clamp(2.2rem,5vw,4.8rem);
+      line-height:.9;
+    }
+
+    .work-copy p {
+      max-width:580px;
+      margin:20px 0 0;
+      color:#BDB6C0;
+      line-height:1.75;
+    }
+
+    .work-link,
+    .return-link {
+      display:inline-block;
+      width:fit-content;
+      padding-bottom:4px;
+      border-bottom:1px solid var(--artist-accent);
+      font-size:.68rem;
+      font-weight:600;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .artist-return {
+      padding:70px 0;
+      background:var(--ivory);
+      text-align:center;
+    }
+
+    @media(max-width:900px) {
+      .artist-hero-inner,
+      .artist-grid,
+      .work-card {
+        grid-template-columns:1fr;
+      }
+
+      .artist-hero-copy {
+        min-height:580px;
+        padding:54px 0 46px;
+      }
+
+      .artist-portrait img,
+      .work-art img {
+        height:auto;
+        min-height:0;
+      }
+    }
+
+    @media(max-width:650px) {
+      .artist-intro {padding:78px 0}
+      .artist-profile {padding:66px 0 78px}
+
+      .profile-grid {
+        grid-template-columns:1fr;
+      }
+
+      .profile-item {
+        min-height:140px;
+        border-right:0;
+        border-bottom:1px solid var(--stone);
+      }
+
+      .profile-item:last-child {
+        border-bottom:0;
+      }
+
+      .artist-work {padding:76px 0}
+
+      .work-copy {
+        min-height:340px;
+        padding:30px 0;
+      }
+    }
+  </style>
+</head>
+
+
+<body class="artist-page">
+
+  <header class="site-header">
+
+    <div class="container nav">
+
+      <a href="../../">
+        <span class="wordmark-small">House of</span>
+        <span class="wordmark-main">KOSHI</span>
+      </a>
+
+      <nav class="navlinks">
+        <a href="../" aria-current="page">Artists</a>
+        <a href="../../studios/">Studios</a>
+        <a href="../../media-editorials/">Media &amp; Editorials</a>
+        <a href="../../about/">About</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="artist-hero">
+
+      <div class="container artist-hero-inner">
+
+        <div class="artist-hero-copy">
+
+          <div class="artist-kicker">
+            <span></span>
+            Koshi Artists · Represented Talent
+          </div>
+
+          <div>
+
+            <h1 class="artist-name">
+              LAYLA
+            </h1>
+
+            <p class="artist-role">
+              Actor · Model
+            </p>
+
+          </div>
+
+          <div class="artist-hero-meta">
+            <span>Koshi Artists</span>
+            <span>Represented talent</span>
+            <span>House of Koshi</span>
+          </div>
+
+        </div>
+
+
+        <div class="artist-portrait">
+
+          <img
+            src="../../assets/images/artists/layla-headshot.png"
+            alt="Layla portrait"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="artist-intro">
+
+      <div class="container artist-grid">
+
+        <div class="section-label">
+          Artist / 002
+        </div>
+
+        <div>
+
+          <h2 class="artist-intro-title">
+            Performance.<br>
+            <span>Presence.</span>
+          </h2>
+
+          <p class="artist-intro-copy">
+            Layla is represented by Koshi Artists across performance
+            and modelling. Her portfolio brings together selected
+            productions, portraiture and future editorial work.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="artist-profile">
+
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <div class="section-label">Representation</div>
+            <h2>PROFILE</h2>
+          </div>
+        </div>
+
+        <div class="profile-grid">
+
+          <div class="profile-item">
+            <span class="profile-label">Performance</span>
+            <p class="profile-value">Actor</p>
+          </div>
+
+          <div class="profile-item">
+            <span class="profile-label">Image</span>
+            <p class="profile-value">Model</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="artist-work">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+            <div class="section-label" style="color:#817B84">
+              Selected work
+            </div>
+            <h2>PRODUCTIONS</h2>
+          </div>
+
+        </div>
+
+
+        <a
+          class="work-card"
+          href="../../studios/polynomials/"
+        >
+
+          <div class="work-art">
+
+            <img
+              src="https://raw.githubusercontent.com/mr-bubs/graphic-novels/main/Polynomials/pages/page-01.png"
+              alt="Polynomials cover artwork"
+              loading="lazy"
+            >
+
+          </div>
+
+          <div class="work-copy">
+
+            <div>
+
+              <div class="work-type">
+                Koshi Studios · Original Production
+              </div>
+
+              <h3>
+                POLYNOMIALS
+              </h3>
+
+              <p>
+                Layla appears as part of the core cast of
+                House of Koshi's ongoing original production,
+                Polynomials.
+              </p>
+
+            </div>
+
+            <span class="work-link">
+              View production →
+            </span>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <section class="artist-return">
+
+      <div class="container">
+        <a class="return-link" href="../">
+          ← All Koshi Artists
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer-grid">
+
+      <div>
+        <span class="wordmark-small">House of</span>
+        <span class="wordmark-main">KOSHI</span>
+
+        <div style="margin-top:12px;color:var(--muted);font-size:.8rem">
+          Artists. Stories. Worlds.
+        </div>
+      </div>
+
+      <div class="smallprint">
+        Koshi Artists<br>
+        Layla · Represented Talent
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
