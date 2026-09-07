@@ -202,20 +202,14 @@
     .portfolio-track {
       display: flex;
       gap: 22px;
-
       width: 100%;
-
       overflow-x: auto;
       overflow-y: hidden;
-
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
-
       overscroll-behavior-x: contain;
       -webkit-overflow-scrolling: touch;
-
       padding: 0 0 18px;
-
       scrollbar-width: thin;
       scrollbar-color: var(--artist-accent) transparent;
     }
@@ -582,7 +576,7 @@
 
 
     <!-- ========================================
-         INTRO
+         BIO
          ======================================== -->
 
     <section class="artist-intro">
@@ -603,10 +597,15 @@
           </h2>
 
           <p class="artist-intro-copy">
-            Shawna Koshi is represented by Koshi Artists across
-            performance, modelling and creative work. Her portfolio
-            brings together productions, editorial work and the wider
-            creative world of House of Koshi.
+            Shawna Koshi is a 29-year-old actor, model and creative
+            with a distinctive alternative presence and an instinct
+            for expressive, character-led work. Recognisable by her
+            vivid purple hair, piercings and ornamental tattooing,
+            she moves naturally between punk nonchalance and polished
+            editorial styling. Self-possessed and quietly rebellious,
+            Shawna brings a confident physicality to both performance
+            and fashion, while her creative work extends her presence
+            beyond the frame.
           </p>
 
         </div>
@@ -1114,8 +1113,6 @@
       /*
         Renumber the visible order so the
         labels always read 01, 02, 03...
-        regardless of which photograph
-        happens to appear first.
       */
 
       const shuffledCards = track.querySelectorAll(
