@@ -74,68 +74,32 @@
       width: 100%;
       aspect-ratio: 4 / 5;
       overflow: hidden;
-      background:
-        linear-gradient(
-          145deg,
-          #E4DED8,
-          #D4CCD5
-        );
+      background: var(--stone);
     }
 
-    .roster-image::before {
+    .roster-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform .45s ease;
+    }
+
+    .roster-card:hover .roster-image img {
+      transform: scale(1.018);
+    }
+
+    .roster-image::after {
       content: "";
       position: absolute;
-      inset: 24px;
-      border-top: 1px solid rgba(53, 50, 56, .16);
-      border-bottom: 1px solid rgba(53, 50, 56, .16);
-    }
-
-    .roster-initial {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -54%);
-      color: rgba(117, 103, 126, .42);
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: clamp(7rem, 15vw, 13rem);
-      line-height: 1;
-    }
-
-    .roster-image-note {
-      position: absolute;
-      left: 28px;
-      bottom: 27px;
-      color: #817A83;
-      font-size: .62rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .roster-card:nth-child(2) .roster-image {
+      inset: 0;
       background:
         linear-gradient(
-          145deg,
-          #E7E0ED,
-          #D8D2CA
+          to top,
+          rgba(23, 22, 25, .18),
+          transparent 32%
         );
-    }
-
-    .roster-card:nth-child(3) .roster-image {
-      background:
-        linear-gradient(
-          145deg,
-          #D8D2CA,
-          #E6E1DA
-        );
-    }
-
-    .roster-card:nth-child(4) .roster-image {
-      background:
-        linear-gradient(
-          145deg,
-          #DED8D1,
-          #EEEAE4
-        );
+      pointer-events: none;
     }
 
     .roster-meta {
@@ -178,17 +142,8 @@
       text-transform: uppercase;
     }
 
-    .roster-card[href]:hover .roster-action {
+    .roster-card:hover .roster-action {
       color: #756681;
-    }
-
-    .roster-coming {
-      display: inline-block;
-      margin-top: 17px;
-      color: #999299;
-      font-size: .65rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
     }
 
     .artists-statement {
@@ -404,13 +359,10 @@
 
             <div class="roster-image">
 
-              <span class="roster-initial">
-                S
-              </span>
-
-              <span class="roster-image-note">
-                Selected portrait coming later
-              </span>
+              <img
+                src="../assets/images/artists/shawna-headshot.png"
+                alt="Shawna Koshi portrait"
+              >
 
             </div>
 
@@ -441,17 +393,18 @@
           </a>
 
 
-          <article class="roster-card">
+          <a
+            class="roster-card"
+            href="layla/"
+          >
 
             <div class="roster-image">
 
-              <span class="roster-initial">
-                L
-              </span>
-
-              <span class="roster-image-note">
-                Selected portrait coming later
-              </span>
+              <img
+                src="../assets/images/artists/layla-headshot.png"
+                alt="Layla portrait"
+                loading="lazy"
+              >
 
             </div>
 
@@ -471,28 +424,29 @@
                   Actor · Model
                 </p>
 
-                <span class="roster-coming">
-                  Artist profile coming later
+                <span class="roster-action">
+                  View artist →
                 </span>
 
               </div>
 
             </div>
 
-          </article>
+          </a>
 
 
-          <article class="roster-card">
+          <a
+            class="roster-card"
+            href="mira/"
+          >
 
             <div class="roster-image">
 
-              <span class="roster-initial">
-                M
-              </span>
-
-              <span class="roster-image-note">
-                Selected portrait coming later
-              </span>
+              <img
+                src="../assets/images/artists/mira-headshot.png"
+                alt="Mira portrait"
+                loading="lazy"
+              >
 
             </div>
 
@@ -512,28 +466,29 @@
                   Actor · Model
                 </p>
 
-                <span class="roster-coming">
-                  Artist profile coming later
+                <span class="roster-action">
+                  View artist →
                 </span>
 
               </div>
 
             </div>
 
-          </article>
+          </a>
 
 
-          <article class="roster-card">
+          <a
+            class="roster-card"
+            href="polly/"
+          >
 
             <div class="roster-image">
 
-              <span class="roster-initial">
-                P
-              </span>
-
-              <span class="roster-image-note">
-                Selected portrait coming later
-              </span>
+              <img
+                src="../assets/images/artists/polly-headshot.png"
+                alt="Polly portrait"
+                loading="lazy"
+              >
 
             </div>
 
@@ -553,15 +508,15 @@
                   Actor · Model
                 </p>
 
-                <span class="roster-coming">
-                  Artist profile coming later
+                <span class="roster-action">
+                  View artist →
                 </span>
 
               </div>
 
             </div>
 
-          </article>
+          </a>
 
         </div>
 
