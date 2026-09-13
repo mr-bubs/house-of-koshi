@@ -518,6 +518,52 @@
           </a>
 
 
+          <a class="roster-card" href="vikas/">
+
+            <div class="roster-image">
+              <img
+                src="../assets/images/artists/vikas-headshot.png"
+                alt="Vikas portrait"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="roster-meta">
+
+              <div>
+                <h3 class="roster-name">VIKAS</h3>
+                <p class="roster-role">Actor</p>
+                <span class="roster-action">View artist →</span>
+              </div>
+
+            </div>
+
+          </a>
+
+
+          <a class="roster-card" href="smriti/">
+
+            <div class="roster-image">
+              <img
+                src="../assets/images/artists/smriti-headshot.png"
+                alt="Smriti portrait"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="roster-meta">
+
+              <div>
+                <h3 class="roster-name">SMRITI</h3>
+                <p class="roster-role">Actor</p>
+                <span class="roster-action">View artist →</span>
+              </div>
+
+            </div>
+
+          </a>
+
+
         </div>
 
       </div>
@@ -585,6 +631,37 @@
 
 
   <script src="../assets/js/theme.js"></script>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const roster = document.querySelector(".roster-grid");
+
+      if (!roster) {
+        return;
+      }
+
+      const cards = Array.from(
+        roster.querySelectorAll(".roster-card")
+      );
+
+      for (let i = cards.length - 1; i > 0; i--) {
+        const j = Math.floor(
+          Math.random() * (i + 1)
+        );
+
+        [cards[i], cards[j]] = [
+          cards[j],
+          cards[i]
+        ];
+      }
+
+      cards.forEach(function (card) {
+        roster.appendChild(card);
+      });
+    })();
+  </script>
 
 </body>
 
