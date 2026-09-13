@@ -115,7 +115,7 @@
 
     .artist-intro {
       padding: 115px 0;
-      background: #fff;
+      background: var(--page);
     }
 
     .artist-grid {
@@ -249,7 +249,7 @@
 
     .portfolio-number {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       gap: 20px;
       padding-top: 12px;
       color: var(--muted);
@@ -577,7 +577,7 @@
 
 
         <div class="section-label">
-          Artist / 003
+          Artist
         </div>
 
 
@@ -663,7 +663,6 @@
             </div>
 
             <div class="portfolio-number">
-              <span class="portfolio-index">01</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -684,7 +683,6 @@
             </div>
 
             <div class="portfolio-number">
-              <span class="portfolio-index">02</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -705,7 +703,6 @@
             </div>
 
             <div class="portfolio-number">
-              <span class="portfolio-index">03</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -726,7 +723,6 @@
             </div>
 
             <div class="portfolio-number">
-              <span class="portfolio-index">04</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -747,7 +743,6 @@
             </div>
 
             <div class="portfolio-number">
-              <span class="portfolio-index">05</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -768,7 +763,6 @@
             </div>
 
             <div class="portfolio-number">
-              <span class="portfolio-index">06</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -789,7 +783,6 @@
             </div>
 
             <div class="portfolio-number">
-              <span class="portfolio-index">07</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -810,7 +803,6 @@
             </div>
 
             <div class="portfolio-number">
-              <span class="portfolio-index">08</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -831,7 +823,6 @@
             </div>
 
             <div class="portfolio-number">
-              <span class="portfolio-index">09</span>
               <span>Selected Portfolio</span>
             </div>
 
@@ -1099,32 +1090,6 @@
 
 
       /*
-        Renumber the visible order so the
-        labels always read 01, 02, 03...
-      */
-
-      const shuffledCards = track.querySelectorAll(
-        ".portfolio-card"
-      );
-
-      shuffledCards.forEach(function (card, index) {
-
-        const number = card.querySelector(
-          ".portfolio-index"
-        );
-
-        if (number) {
-
-          number.textContent = String(
-            index + 1
-          ).padStart(2, "0");
-
-        }
-
-      });
-
-
-      /*
         Always begin at the first shuffled image.
       */
 
@@ -1133,6 +1098,9 @@
     });
 
   </script>
+
+
+  <script src="../../assets/js/theme.js"></script>
 
 
 </body>
