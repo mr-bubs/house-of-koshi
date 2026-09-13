@@ -70,8 +70,6 @@ html[data-theme="dark"] {
 
 /* ========================================
    SYSTEM DARK MODE
-   Used only when JavaScript has not set
-   an explicit theme preference.
    ======================================== */
 
 @media (prefers-color-scheme: dark) {
@@ -203,7 +201,8 @@ button {
 .navlinks {
   display:flex;
   gap:28px;
-  flex-wrap:wrap;
+  flex-wrap:nowrap;
+  align-items:center;
   font-size:.72rem;
   letter-spacing:.14em;
   text-transform:uppercase;
@@ -213,6 +212,7 @@ button {
 .navlinks a {
   padding:8px 0;
   border-bottom:1px solid transparent;
+  white-space:nowrap;
 }
 
 .navlinks a:hover,
@@ -377,6 +377,11 @@ button {
   gap:50px;
 }
 
+.home-intro {
+  max-width:980px;
+  margin:0 auto;
+}
+
 .section-label {
   font-size:.68rem;
   text-transform:uppercase;
@@ -424,6 +429,14 @@ button {
 .section-head h2 {
   font-size:2.1rem;
   margin:4px 0 0;
+}
+
+.section-subtitle {
+  margin:8px 0 0;
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:1.35rem;
+  font-weight:400;
+  color:var(--text-muted);
 }
 
 
@@ -477,6 +490,68 @@ button {
 
 
 /* ========================================
+   HOMEPAGE ARTIST ROSTER
+   ======================================== */
+
+.home-artist-track {
+  display:flex;
+  gap:24px;
+  width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+
+  overscroll-behavior-inline:contain;
+
+  padding:0 0 18px;
+
+  scrollbar-width:thin;
+  scrollbar-color:var(--lilac) transparent;
+}
+
+.home-artist-track::-webkit-scrollbar {
+  height:4px;
+}
+
+.home-artist-track::-webkit-scrollbar-track {
+  background:transparent;
+}
+
+.home-artist-track::-webkit-scrollbar-thumb {
+  background:var(--lilac);
+  border-radius:99px;
+}
+
+.home-artist-track .artist-card {
+  flex:0 0 calc((100% - 72px) / 4);
+  min-width:0;
+  scroll-snap-align:start;
+  scroll-snap-stop:always;
+}
+
+.home-artist-track .artist-card .photo {
+  padding:0;
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:3/4;
+}
+
+.home-artist-track .artist-card .photo img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  transition:transform .45s ease;
+}
+
+.home-artist-track .artist-card:hover .photo img {
+  transform:scale(1.02);
+}
+
+
+/* ========================================
    STUDIOS
    ======================================== */
 
@@ -487,15 +562,28 @@ button {
 
 .project-row {
   display:grid;
-  grid-template-columns:90px 1fr auto;
-  gap:24px;
+  grid-template-columns:110px minmax(0,1fr) auto;
+  gap:28px;
   align-items:center;
-  padding:30px 0;
+  padding:28px 0;
   border-top:1px solid var(--rule);
 }
 
 .project-row:last-child {
   border-bottom:1px solid var(--rule);
+}
+
+.project-cover {
+  width:110px;
+  aspect-ratio:2/3;
+  overflow:hidden;
+  background:var(--surface-soft);
+}
+
+.project-cover img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 .project-row h3 {
@@ -504,7 +592,7 @@ button {
 }
 
 .project-row p {
-  margin:4px 0 0;
+  margin:6px 0 0;
   color:var(--text-muted);
 }
 
@@ -514,6 +602,10 @@ button {
   color:var(--text-muted);
   text-transform:uppercase;
   letter-spacing:.14em;
+}
+
+.project-link {
+  white-space:nowrap;
 }
 
 
@@ -708,8 +800,6 @@ button {
 
 /* ========================================
    DARK MODE — SHARED PAGE OVERRIDES
-   These allow existing page-specific CSS
-   to inherit the dark theme cleanly.
    ======================================== */
 
 html[data-theme="dark"] body {
@@ -779,7 +869,6 @@ html[data-theme="dark"] .placeholder-item {
 
 /* ========================================
    SYSTEM DARK MODE — EXISTING PAGE OVERRIDES
-   These apply before theme.js is installed.
    ======================================== */
 
 @media (prefers-color-scheme: dark) {
@@ -874,6 +963,10 @@ html[data-theme="dark"] .placeholder-item {
     grid-template-columns:repeat(2,1fr);
   }
 
+  .home-artist-track .artist-card {
+    flex:0 0 calc((100% - 18px) / 2);
+  }
+
   .media-grid {
     grid-template-columns:1fr;
   }
@@ -893,7 +986,12 @@ html[data-theme="dark"] .placeholder-item {
   }
 
   .project-row {
-    grid-template-columns:60px 1fr;
+    grid-template-columns:88px minmax(0,1fr);
+    gap:20px;
+  }
+
+  .project-cover {
+    width:88px;
   }
 
   .project-link {
@@ -929,10 +1027,21 @@ html[data-theme="dark"] .placeholder-item {
     align-items:flex-start;
     flex-direction:column;
     padding-right:42px;
+    gap:22px;
   }
 
   .navlinks {
-    gap:16px 22px;
+    width:100%;
+    display:grid;
+    grid-template-columns:auto auto auto auto;
+    justify-content:space-between;
+    gap:8px;
+    font-size:.61rem;
+    letter-spacing:.09em;
+  }
+
+  .navlinks a {
+    padding:4px 0;
   }
 
   .theme-toggle {
@@ -959,9 +1068,16 @@ html[data-theme="dark"] .placeholder-item {
     padding:72px 0;
   }
 
-  .artist-grid {
-    grid-template-columns:1fr 1fr;
+  .home-intro {
+    margin:0;
+  }
+
+  .home-artist-track {
     gap:16px;
+  }
+
+  .home-artist-track .artist-card {
+    flex:0 0 72%;
   }
 
   .section-head {
@@ -974,12 +1090,27 @@ html[data-theme="dark"] .placeholder-item {
   }
 
   .project-row {
-    grid-template-columns:1fr;
+    grid-template-columns:76px minmax(0,1fr);
+    gap:16px;
+    padding:24px 0;
   }
 
-  .project-no,
+  .project-cover {
+    width:76px;
+  }
+
+  .project-row h3 {
+    font-size:1.2rem;
+    line-height:1.15;
+  }
+
+  .project-row p {
+    font-size:.8rem;
+  }
+
   .project-link {
-    grid-column:1;
+    grid-column:2;
+    margin-top:4px;
   }
 
   .practice {
@@ -989,6 +1120,21 @@ html[data-theme="dark"] .placeholder-item {
   .heritage img {
     width:60px;
     height:60px;
+  }
+
+}
+
+
+/* ========================================
+   VERY SMALL MOBILE
+   ======================================== */
+
+@media(max-width:390px) {
+
+  .navlinks {
+    font-size:.56rem;
+    letter-spacing:.065em;
+    gap:6px;
   }
 
 }
@@ -1006,8 +1152,10 @@ html[data-theme="dark"] .placeholder-item {
 
   body,
   .site-header,
-  .theme-toggle {
+  .theme-toggle,
+  .home-artist-track {
     transition:none;
+    scroll-behavior:auto;
   }
 
 }
