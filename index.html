@@ -471,6 +471,58 @@
 
           </a>
 
+
+          <a
+            class="artist-card"
+            href="artists/vikas/"
+          >
+
+            <div class="photo">
+
+              <img
+                src="assets/images/artists/vikas-headshot.png"
+                alt="Vikas portrait"
+                loading="lazy"
+              >
+
+            </div>
+
+            <h3>
+              VIKAS
+            </h3>
+
+            <p>
+              Actor
+            </p>
+
+          </a>
+
+
+          <a
+            class="artist-card"
+            href="artists/smriti/"
+          >
+
+            <div class="photo">
+
+              <img
+                src="assets/images/artists/smriti-headshot.png"
+                alt="Smriti portrait"
+                loading="lazy"
+              >
+
+            </div>
+
+            <h3>
+              SMRITI
+            </h3>
+
+            <p>
+              Actor
+            </p>
+
+          </a>
+
         </div>
 
       </div>
@@ -847,6 +899,39 @@
 
 
   <script src="assets/js/theme.js"></script>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const track = document.querySelector(".home-artist-track");
+
+      if (!track) {
+        return;
+      }
+
+      const cards = Array.from(
+        track.querySelectorAll(".artist-card")
+      );
+
+      for (let i = cards.length - 1; i > 0; i--) {
+        const j = Math.floor(
+          Math.random() * (i + 1)
+        );
+
+        [cards[i], cards[j]] = [
+          cards[j],
+          cards[i]
+        ];
+      }
+
+      cards.forEach(function (card) {
+        track.appendChild(card);
+      });
+
+      track.scrollLeft = 0;
+    })();
+  </script>
 
 </body>
 
