@@ -24,7 +24,7 @@
   <style>
     .about-intro {
       padding: 115px 0;
-      background: #fff;
+      background: var(--page);
     }
 
     .about-grid {
@@ -65,18 +65,11 @@
 
     .division {
       display: grid;
-      grid-template-columns: 90px 1fr auto;
+      grid-template-columns: 1fr auto;
       gap: 30px;
       align-items: center;
       padding: 38px 0;
       border-bottom: 1px solid var(--stone);
-    }
-
-    .division-number {
-      color: var(--muted);
-      font-size: .66rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
     }
 
     .division h3 {
@@ -108,8 +101,8 @@
 
     .about-philosophy {
       padding: 115px 0;
-      background: var(--ink);
-      color: var(--ivory);
+      background: #171619;
+      color: #F5F2EC;
     }
 
     .philosophy-grid {
@@ -140,7 +133,7 @@
 
     .about-practice {
       padding: 110px 0;
-      background: #fff;
+      background: var(--page);
     }
 
     .practice-panel {
@@ -164,7 +157,7 @@
     .practice-panel p {
       max-width: 650px;
       margin: 26px 0 0;
-      color: #625D64;
+      color: var(--text-soft);
       line-height: 1.8;
     }
 
@@ -206,7 +199,7 @@
       overflow: hidden;
       border: 1px solid var(--stone);
       border-radius: 50%;
-      background: #fff;
+      background: var(--page);
     }
 
     .heritage-mark img {
@@ -264,7 +257,6 @@
         padding: 30px 0;
       }
 
-      .division-number,
       .division-link {
         grid-column: 1;
       }
@@ -426,10 +418,6 @@
             href="../artists/"
           >
 
-            <span class="division-number">
-              01
-            </span>
-
             <div>
 
               <h3>
@@ -455,10 +443,6 @@
             href="../studios/"
           >
 
-            <span class="division-number">
-              02
-            </span>
-
             <div>
 
               <h3>
@@ -483,10 +467,6 @@
             class="division"
             href="../media-editorials/"
           >
-
-            <span class="division-number">
-              03
-            </span>
 
             <div>
 
@@ -670,6 +650,9 @@
     </div>
 
   </footer>
+
+
+  <script src="../assets/js/theme.js"></script>
 
 </body>
 
