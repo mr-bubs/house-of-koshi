@@ -162,6 +162,70 @@
       line-height:1.85;
     }
 
+    .cast-band {
+      padding:88px 0 105px;
+      background:var(--page);
+      border-top:1px solid var(--stone);
+    }
+
+    .cast-grid {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+    }
+
+    .cast-card {
+      display:block;
+    }
+
+    .cast-image {
+      width:100%;
+      aspect-ratio:4 / 5;
+      overflow:hidden;
+      background:var(--stone);
+    }
+
+    .cast-image img {
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
+      transition:transform .45s ease;
+    }
+
+    .cast-card:hover .cast-image img {
+      transform:scale(1.018);
+    }
+
+    .cast-meta {
+      padding-top:18px;
+    }
+
+    .cast-name {
+      margin:0;
+      font-size:clamp(1.5rem,2.5vw,2rem);
+      font-weight:500;
+      line-height:1.05;
+    }
+
+    .cast-role {
+      margin:7px 0 0;
+      color:var(--muted);
+      font-size:.8rem;
+    }
+
+    .cast-action {
+      display:inline-block;
+      margin-top:15px;
+      padding-bottom:4px;
+      border-bottom:1px solid var(--production-accent);
+      font-size:.65rem;
+      font-weight:600;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
     .chapter-band {
       padding:88px 0 105px;
       background:var(--ivory);
@@ -247,6 +311,15 @@
 
       .production-button {
         width:100%;
+      }
+
+      .cast-band {
+        padding:70px 0 85px;
+      }
+
+      .cast-grid {
+        grid-template-columns:1fr;
+        gap:52px;
       }
 
       .chapter-band {
@@ -399,6 +472,110 @@
             The production is currently in progress and available
             through the House of Koshi reader.
           </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="cast-band">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="section-label">
+              Koshi Artists
+            </div>
+
+            <h2>
+              CORE CAST
+            </h2>
+
+          </div>
+
+          <span
+            class="serif"
+            style="font-size:1.35rem;color:var(--muted)"
+          >
+            The faces of The Assigned.
+          </span>
+
+        </div>
+
+
+        <div class="cast-grid">
+
+          <a
+            class="cast-card"
+            href="../../artists/vikas/"
+          >
+
+            <div class="cast-image">
+
+              <img
+                src="../../assets/images/artists/vikas-headshot.png"
+                alt="Vikas portrait"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="cast-meta">
+
+              <h3 class="cast-name">
+                VIKAS
+              </h3>
+
+              <p class="cast-role">
+                Koshi Artist · Actor
+              </p>
+
+              <span class="cast-action">
+                View artist →
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <a
+            class="cast-card"
+            href="../../artists/smriti/"
+          >
+
+            <div class="cast-image">
+
+              <img
+                src="../../assets/images/artists/smriti-headshot.png"
+                alt="Smriti portrait"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="cast-meta">
+
+              <h3 class="cast-name">
+                SMRITI
+              </h3>
+
+              <p class="cast-role">
+                Koshi Artist · Actor
+              </p>
+
+              <span class="cast-action">
+                View artist →
+              </span>
+
+            </div>
+
+          </a>
 
         </div>
 
