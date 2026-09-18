@@ -58,4 +58,16 @@ const KOSHI_BOOKS = {
       { label: "Chapter 4", startPage: 28 },
     ],
   },
+
+  "wet-cats": {
+    title: "Wet Cats",
+    slug: "wet-cats",
+    folder: "wet-cats",
+    complete: false,
+    type: "Original",
+    productionUrl: "../studios/wet-cats/",
+    chapters: [
+      { label: "Chapter 1", startPage: 3 },
+    ],
+  },
 };
